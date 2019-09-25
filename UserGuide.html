@@ -23,7 +23,7 @@
 <li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.8. Encrypting data files <code>[coming in v2.0]</code></a></li>
 <li><a href="#autocomplete-code-coming-in-v2-0-code">3.9. Autocomplete  <code>[coming in v2.0]</code></a></li>
 <li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">3.10. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
-<li><a href="#export-data-to-pdf-excel-code-coming-in-v2-0-code">3.11. Export data to PDF/Excel  <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">3.11. Export data to PDF  <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -192,36 +192,42 @@ Format: <code>find -o INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-an-order-code-update-o-code"><a class="link" href="#update-an-order-code-update-o-code">3.3.3. Update an order : <code>update -o</code></a></h4>
+<h4 id="complete-an-order-code-complete-o-code"><a class="link" href="#complete-an-order-code-complete-o-code">3.3.3. Complete an order : <code>complete -o</code></a></h4>
 <div class="paragraph">
-<p>Updates the order status. <br>
-Format: <code>update -o INDEX</code><br>
-Possible status: <code>UNSCHEDULED</code> , <code>SCHEDULED</code> , <code>COMPLETED</code></p>
+<p>Completes the order, order status changed to <code>COMPLETED</code>.<br>
+Format: <code>complete -o INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="cancel-an-order-code-cancel-o-code"><a class="link" href="#cancel-an-order-code-cancel-o-code">3.3.4. Cancel an order : <code>cancel -o</code></a></h4>
+<h4 id="schedule-an-order-code-schedule-o-code"><a class="link" href="#schedule-an-order-code-schedule-o-code">3.3.4. Schedule an order : <code>schedule -o</code></a></h4>
+<div class="paragraph">
+<p>Schedule the order for meet up. <br>
+Format: <code>schedule -o INDEX DD/MM/YY HHMM</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cancel-an-order-code-cancel-o-code"><a class="link" href="#cancel-an-order-code-cancel-o-code">3.3.5. Cancel an order : <code>cancel -o</code></a></h4>
 <div class="paragraph">
 <p>Cancels the order at the specified index.<br>
 Format: <code>cancel -o INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-the-orders-code-list-o-code"><a class="link" href="#list-the-orders-code-list-o-code">3.3.5. List the orders : <code>list -o</code></a></h4>
+<h4 id="list-the-orders-code-list-o-code"><a class="link" href="#list-the-orders-code-list-o-code">3.3.6. List the orders : <code>list -o</code></a></h4>
 <div class="paragraph">
 <p>List all the orders in the list.<br>
 Format: <code>list -o</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">3.3.6. Copy order field : <code>copy -o</code></a></h4>
+<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">3.3.7. Copy order field : <code>copy -o</code></a></h4>
 <div class="paragraph">
 <p>Copies an order field to clipboard.<br>
 Format: <code>copy -o &lt;field&gt;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="duplicate-an-order-code-duplicate-o-code"><a class="link" href="#duplicate-an-order-code-duplicate-o-code">3.3.7. Duplicate an order : <code>duplicate -o</code></a></h4>
+<h4 id="duplicate-an-order-code-duplicate-o-code"><a class="link" href="#duplicate-an-order-code-duplicate-o-code">3.3.8. Duplicate an order : <code>duplicate -o</code></a></h4>
 <div class="paragraph">
 <p>Duplicate an order of the specified index.<br>
 Format: <code>duplicate -o INDEX</code></p>
@@ -256,7 +262,7 @@ A person can have any number of tags, including 0.
 <h4 id="delete-a-customer-code-delete-c-code"><a class="link" href="#delete-a-customer-code-delete-c-code">3.4.2. Delete a customer : <code>delete -c</code></a></h4>
 <div class="paragraph">
 <p>Deletes a customer in the address book.<br>
-Format: `delete -c INDEX</p>
+Format: <code>delete -c INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -349,7 +355,7 @@ Format: <code>exit</code></p>
 <p>Import csv file into the application.<br>
 Export application data into csv file.<br>
 Export application stats.<br>
-Format: <code>import &lt;flag&gt;</code> / <code>export &lt;flag&gt;</code><br>
+Format: <code>import &lt;flag&gt; &lt;file name&gt;</code> / <code>export &lt;flag&gt; &lt;file name&gt;</code><br>
 Possible flag: <code>-p</code> for phone, <code>-c</code> for customer, <code>-o</code> for order.</p>
 </div>
 </div>
@@ -379,7 +385,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-to-pdf-excel-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-excel-code-coming-in-v2-0-code">3.11. Export data to PDF/Excel  <code>[coming in v2.0]</code></a></h3>
+<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">3.11. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Export any of the data in SML to PDF format.</p>
 </div>
@@ -438,6 +444,16 @@ There is no need to save manually.</p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
+</li>
+<li>
+<p><strong>Complete</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>order : <code>complete -o INDEX</code></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Copy</strong><br></p>
@@ -555,6 +571,16 @@ There is no need to save manually.</p>
 <p><strong>Redo</strong> : <code>redo</code></p>
 </li>
 <li>
+<p><strong>Schedule</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>order : <code>schedule -o INDEX DD/MM/YY HHMM</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p><strong>Undo</strong> : <code>undo</code></p>
 </li>
 <li>
@@ -567,13 +593,10 @@ There is no need to save manually.</p>
 <li>
 <p>phone : <code>update -p n/NAME [p/PRICE] [q/QUANTITY] [t/TAG]&#8230;&#8203;</code></p>
 </li>
-<li>
-<p>order : <code>update -o INDEX</code></p>
-</li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-25 05:18:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-25 12:39:36 UTC</div></div></div></body></html>
