@@ -17,13 +17,14 @@
 <li><a href="#phone-commands">3.2. Phone Commands</a></li>
 <li><a href="#order-commands">3.3. Order Commands</a></li>
 <li><a href="#customer-commands">3.4. Customer Commands</a></li>
-<li><a href="#utility-commands">3.5. Utility Commands</a></li>
-<li><a href="#import-export-data-code-import-export-code">3.6. Import/export data : <code>import / export</code></a></li>
-<li><a href="#saving-the-data">3.7. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.8. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#autocomplete-code-coming-in-v2-0-code">3.9. Autocomplete  <code>[coming in v2.0]</code></a></li>
-<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">3.10. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
-<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">3.11. Export data to PDF  <code>[coming in v2.0]</code></a></li>
+<li><a href="#schedule-commands">3.5. Schedule Commands</a></li>
+<li><a href="#utility-commands">3.6. Utility Commands</a></li>
+<li><a href="#import-export-data-code-import-export-code">3.7. Import/export data : <code>import / export</code></a></li>
+<li><a href="#saving-the-data">3.8. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.9. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#autocomplete-code-coming-in-v2-0-code">3.10. Autocomplete  <code>[coming in v2.0]</code></a></li>
+<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">3.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">3.12. Export data to PDF  <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -130,45 +131,45 @@ Format: <code>help</code></p>
 <p>Commands that work on phones that you have in your inventory.</p>
 </div>
 <div class="sect3">
-<h4 id="add-a-phone-code-add-p-code"><a class="link" href="#add-a-phone-code-add-p-code">3.2.1. Add a phone : <code>add -p</code></a></h4>
+<h4 id="add-a-phone-code-add-p-code"><a class="link" href="#add-a-phone-code-add-p-code">3.2.1. Add a phone : <code>add-p</code></a></h4>
 <div class="paragraph">
 <p>Adds a phone or updates the inventory.<br>
-Format: <code>add -p n/NAME q/QUANTITY [p/PRICE] [t/TAG]…​</code></p>
+Format: <code>add-p n/NAME q/QUANTITY [p/PRICE] [t/TAG]…​</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-a-phone-code-delete-p-code"><a class="link" href="#delete-a-phone-code-delete-p-code">3.2.2. Delete a phone : <code>delete -p</code></a></h4>
+<h4 id="delete-a-phone-code-delete-p-code"><a class="link" href="#delete-a-phone-code-delete-p-code">3.2.2. Delete a phone : <code>delete-p</code></a></h4>
 <div class="paragraph">
 <p>Deletes a phone from the inventory.<br>
-Format: <code>delete -p INDEX</code></p>
+Format: <code>delete-p INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-a-phone-code-find-p-code"><a class="link" href="#find-a-phone-code-find-p-code">3.2.3. Find a phone : <code>find -p</code></a></h4>
+<h4 id="find-a-phone-code-find-p-code"><a class="link" href="#find-a-phone-code-find-p-code">3.2.3. Find a phone : <code>find-p</code></a></h4>
 <div class="paragraph">
 <p>Returns all the information pertaining to phone with matching name.<br>
-Format: <code>find -p p/PHONE</code></p>
+Format: <code>find-p p/PHONE</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-the-phones-code-list-p-code"><a class="link" href="#list-the-phones-code-list-p-code">3.2.4. List the phones : <code>list -p</code></a></h4>
+<h4 id="list-the-phones-code-list-p-code"><a class="link" href="#list-the-phones-code-list-p-code">3.2.4. List the phones : <code>list-p</code></a></h4>
 <div class="paragraph">
 <p>List all the phones in lexicographical order.<br>
-Format: <code>list -p</code></p>
+Format: <code>list-p</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-a-phone-code-update-p-code"><a class="link" href="#update-a-phone-code-update-p-code">3.2.5. Update a phone : <code>update -p</code></a></h4>
+<h4 id="edit-a-phone-code-edit-p-code"><a class="link" href="#edit-a-phone-code-edit-p-code">3.2.5. Edit a phone : <code>edit-p</code></a></h4>
 <div class="paragraph">
-<p>Updates the appropriate fields of a phone.<br>
-Format: <code>update -p n/NAME [p/PRICE] [q/QUANTITY] [t/TAG]&#8230;&#8203;</code></p>
+<p>Edits the appropriate fields of a phone.<br>
+Format: <code>edit-p n/NAME [p/PRICE] [q/QUANTITY] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="copy-phone-field-code-copy-p-code"><a class="link" href="#copy-phone-field-code-copy-p-code">3.2.6. Copy phone field : <code>copy -p</code></a></h4>
+<h4 id="copy-phone-field-code-copy-p-code"><a class="link" href="#copy-phone-field-code-copy-p-code">3.2.6. Copy phone field : <code>copy-p</code></a></h4>
 <div class="paragraph">
 <p>Copies a phone field to clipboard.<br>
-Format: <code>copy -p &lt;field&gt;</code></p>
+Format: <code>copy-p &lt;field&gt;</code></p>
 </div>
 </div>
 </div>
@@ -178,59 +179,52 @@ Format: <code>copy -p &lt;field&gt;</code></p>
 <p>Commands that work on orders that you have.</p>
 </div>
 <div class="sect3">
-<h4 id="add-an-order-code-add-o-code"><a class="link" href="#add-an-order-code-add-o-code">3.3.1. Add an order : <code>add -o</code></a></h4>
+<h4 id="add-an-order-code-add-o-code"><a class="link" href="#add-an-order-code-add-o-code">3.3.1. Add an order : <code>add-o</code></a></h4>
 <div class="paragraph">
 <p>Adds an order to the list of orders.<br>
-Format: <code>add -o p/PHONE_NUMBER i/ITEM&#8230;&#8203;</code></p>
+Format: <code>add-o p/PHONE_NUMBER i/ITEM&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-an-order-code-find-o-code"><a class="link" href="#find-an-order-code-find-o-code">3.3.2. Find an order : <code>find -o</code></a></h4>
+<h4 id="find-an-order-code-find-o-code"><a class="link" href="#find-an-order-code-find-o-code">3.3.2. Find an order : <code>find-o</code></a></h4>
 <div class="paragraph">
 <p>Returns all the information pertaining to the order.<br>
-Format: <code>find -o INDEX</code></p>
+Format: <code>find-o INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="complete-an-order-code-complete-o-code"><a class="link" href="#complete-an-order-code-complete-o-code">3.3.3. Complete an order : <code>complete -o</code></a></h4>
+<h4 id="complete-an-order-code-complete-o-code"><a class="link" href="#complete-an-order-code-complete-o-code">3.3.3. Complete an order : <code>complete-o</code></a></h4>
 <div class="paragraph">
 <p>Completes the order, order status changed to <code>COMPLETED</code>.<br>
-Format: <code>complete -o INDEX</code></p>
+Format: <code>complete-o INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="schedule-an-order-code-schedule-o-code"><a class="link" href="#schedule-an-order-code-schedule-o-code">3.3.4. Schedule an order : <code>schedule -o</code></a></h4>
-<div class="paragraph">
-<p>Schedule the order for meet up. <br>
-Format: <code>schedule -o INDEX DD/MM/YY HHMM</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="cancel-an-order-code-cancel-o-code"><a class="link" href="#cancel-an-order-code-cancel-o-code">3.3.5. Cancel an order : <code>cancel -o</code></a></h4>
+<h4 id="cancel-an-order-code-cancel-o-code"><a class="link" href="#cancel-an-order-code-cancel-o-code">3.3.4. Cancel an order : <code>cancel-o</code></a></h4>
 <div class="paragraph">
 <p>Cancels the order at the specified index.<br>
-Format: <code>cancel -o INDEX</code></p>
+Format: <code>cancel-o INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-the-orders-code-list-o-code"><a class="link" href="#list-the-orders-code-list-o-code">3.3.6. List the orders : <code>list -o</code></a></h4>
+<h4 id="list-the-orders-code-list-o-code"><a class="link" href="#list-the-orders-code-list-o-code">3.3.5. List the orders : <code>list-o</code></a></h4>
 <div class="paragraph">
 <p>List all the orders in the list.<br>
-Format: <code>list -o</code></p>
+Format: <code>list-o</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">3.3.7. Copy order field : <code>copy -o</code></a></h4>
+<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">3.3.6. Copy order field : <code>copy-o</code></a></h4>
 <div class="paragraph">
 <p>Copies an order field to clipboard.<br>
-Format: <code>copy -o &lt;field&gt;</code></p>
+Format: <code>copy-o &lt;field&gt;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="duplicate-an-order-code-duplicate-o-code"><a class="link" href="#duplicate-an-order-code-duplicate-o-code">3.3.8. Duplicate an order : <code>duplicate -o</code></a></h4>
+<h4 id="duplicate-an-order-code-duplicate-o-code"><a class="link" href="#duplicate-an-order-code-duplicate-o-code">3.3.7. Duplicate an order : <code>duplicate-o</code></a></h4>
 <div class="paragraph">
 <p>Duplicate an order of the specified index.<br>
-Format: <code>duplicate -o INDEX</code></p>
+Format: <code>duplicate-o INDEX</code></p>
 </div>
 </div>
 </div>
@@ -240,10 +234,10 @@ Format: <code>duplicate -o INDEX</code></p>
 <p>Commands that work on customers in your list.</p>
 </div>
 <div class="sect3">
-<h4 id="add-a-customer-code-add-c-code"><a class="link" href="#add-a-customer-code-add-c-code">3.4.1. Add a customer : <code>add -c</code></a></h4>
+<h4 id="add-a-customer-code-add-c-code"><a class="link" href="#add-a-customer-code-add-c-code">3.4.1. Add a customer : <code>add-c</code></a></h4>
 <div class="paragraph">
 <p>Adds a customer to the address book.<br>
-Format: <code>add -c n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</code></p>
+Format: <code>add-c n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -259,59 +253,90 @@ A person can have any number of tags, including 0.
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-a-customer-code-delete-c-code"><a class="link" href="#delete-a-customer-code-delete-c-code">3.4.2. Delete a customer : <code>delete -c</code></a></h4>
+<h4 id="delete-a-customer-code-delete-c-code"><a class="link" href="#delete-a-customer-code-delete-c-code">3.4.2. Delete a customer : <code>delete-c</code></a></h4>
 <div class="paragraph">
 <p>Deletes a customer in the address book.<br>
-Format: <code>delete -c INDEX</code></p>
+Format: <code>delete-c INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-a-customer-code-find-c-code"><a class="link" href="#find-a-customer-code-find-c-code">3.4.3. Find a customer : <code>find -c</code></a></h4>
+<h4 id="find-a-customer-code-find-c-code"><a class="link" href="#find-a-customer-code-find-c-code">3.4.3. Find a customer : <code>find-c</code></a></h4>
 <div class="paragraph">
 <p>Finds customers whose names contain any of the given keywords.<br>
-Format: <code>find -c KEYWORD [MORE_KEYWORDS]</code></p>
+Format: <code>find-c KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-the-customers-code-list-c-code"><a class="link" href="#list-the-customers-code-list-c-code">3.4.4. List the customers : <code>list -c</code></a></h4>
+<h4 id="list-the-customers-code-list-c-code"><a class="link" href="#list-the-customers-code-list-c-code">3.4.4. List the customers : <code>list-c</code></a></h4>
 <div class="paragraph">
 <p>List every single customer in SML.<br>
-Format: <code>list -c</code></p>
+Format: <code>list-c</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-a-customer-code-update-c-code"><a class="link" href="#update-a-customer-code-update-c-code">3.4.5. Update a customer : <code>update -c</code></a></h4>
+<h4 id="edit-a-customer-code-edit-c-code"><a class="link" href="#edit-a-customer-code-edit-c-code">3.4.5. Edit a customer : <code>edit-c</code></a></h4>
 <div class="paragraph">
-<p>Updates an existing customer.<br>
-Format: <code>update -c INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…</code></p>
+<p>Edits an existing customer.<br>
+Format: <code>edit-c INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="copy-customer-field-code-copy-c-code"><a class="link" href="#copy-customer-field-code-copy-c-code">3.4.6. Copy customer field : <code>copy -c</code></a></h4>
+<h4 id="copy-customer-field-code-copy-c-code"><a class="link" href="#copy-customer-field-code-copy-c-code">3.4.6. Copy customer field : <code>copy-c</code></a></h4>
 <div class="paragraph">
 <p>Copies a customer field to clipboard.<br>
-Format: <code>copy -c &lt;field&gt;</code></p>
+Format: <code>copy-c &lt;field&gt;</code></p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="utility-commands"><a class="link" href="#utility-commands">3.5. Utility Commands</a></h3>
+<h3 id="schedule-commands"><a class="link" href="#schedule-commands">3.5. Schedule Commands</a></h3>
 <div class="sect3">
-<h4 id="undo-code-undo-code"><a class="link" href="#undo-code-undo-code">3.5.1. Undo : <code>undo</code></a></h4>
+<h4 id="go-to-specific-date-in-calendar-code-schedule-code"><a class="link" href="#go-to-specific-date-in-calendar-code-schedule-code">3.5.1. Go to specific date in calendar : <code>schedule</code></a></h4>
+<div class="paragraph">
+<p>Shows the week of the date specified by the user.<br>
+Format: <code>schedule cd/DATE</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">3.5.2. Add a schedule : <code>add-s</code></a></h4>
+<div class="paragraph">
+<p>Adds a schedule to the address book.<br>
+Format: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]…</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-schedule-code-delete-s-code"><a class="link" href="#delete-a-schedule-code-delete-s-code">3.5.3. Delete a schedule : <code>delete-s</code></a></h4>
+<div class="paragraph">
+<p>Deletes a schedule in the address book.<br>
+Format: <code>delete-s ORDER_INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-schedule-code-edit-s-code"><a class="link" href="#edit-a-schedule-code-edit-s-code">3.5.4. Edit a schedule : <code>edit-s</code></a></h4>
+<div class="paragraph">
+<p>Edits an existing schedule.<br>
+Format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]…</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="utility-commands"><a class="link" href="#utility-commands">3.6. Utility Commands</a></h3>
+<div class="sect3">
+<h4 id="undo-code-undo-code"><a class="link" href="#undo-code-undo-code">3.6.1. Undo : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Undo the previous command. <br>
 Format: <code>undo</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo-code-redo-code"><a class="link" href="#redo-code-redo-code">3.5.2. Redo : <code>redo</code></a></h4>
+<h4 id="redo-code-redo-code"><a class="link" href="#redo-code-redo-code">3.6.2. Redo : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>redo the previous command. <br>
 Format: <code>redo</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">3.5.3. Generate stats : <code>generate-s</code></a></h4>
+<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">3.6.3. Generate stats : <code>generate-s</code></a></h4>
 <div class="paragraph">
 <p>Accepts two types of input: Without date input and with date input<br></p>
 </div>
@@ -329,7 +354,7 @@ Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="check-code-check-code"><a class="link" href="#check-code-check-code">3.5.4. Check : <code>check</code></a></h4>
+<h4 id="check-code-check-code"><a class="link" href="#check-code-check-code">3.6.4. Check : <code>check</code></a></h4>
 <div class="paragraph">
 <p>Check for stock etc. For stock, see the phones that have &lt; threshold quantity.  <br>
 Format: <code>check &lt;flag&gt;</code><br>
@@ -337,21 +362,14 @@ Possible flag: <code>-p</code> for phone stock, <code>check -p &lt;threshold&gt;
 </div>
 </div>
 <div class="sect3">
-<h4 id="schedule-code-schedule-code"><a class="link" href="#schedule-code-schedule-code">3.5.5. Schedule : <code>schedule</code></a></h4>
-<div class="paragraph">
-<p>Check for schedule.  <br>
-Format: <code>schedule</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.5.6. Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.6.5. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clears all entries of items, orders and customers.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.5.7. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.6.6. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
@@ -359,7 +377,7 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-export-data-code-import-export-code"><a class="link" href="#import-export-data-code-import-export-code">3.6. Import/export data : <code>import / export</code></a></h3>
+<h3 id="import-export-data-code-import-export-code"><a class="link" href="#import-export-data-code-import-export-code">3.7. Import/export data : <code>import / export</code></a></h3>
 <div class="paragraph">
 <p>Import csv file into the application.<br>
 Export application data into csv file.<br>
@@ -369,32 +387,32 @@ Possible flag: <code>-p</code> for phone, <code>-c</code> for customer, <code>-o
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.7. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.8. Saving the data</a></h3>
 <div class="paragraph">
 <p>SML data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.8. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.9. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Explain how the user can enable/disable data encryption</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">3.9. Autocomplete  <code>[coming in v2.0]</code></a></h3>
+<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">3.10. Autocomplete  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Press <kbd>Tab</kbd> to autocomplete the line. (like in command line)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">3.10. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
+<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">3.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Notification page to show any notifications of reminders or alerts.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">3.11. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
+<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">3.12. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Export any of the data in SML to PDF format.</p>
 </div>
@@ -608,4 +626,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-21 16:41:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-21 17:08:05 UTC</div></div></div></body></html>
