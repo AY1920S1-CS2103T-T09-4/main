@@ -152,6 +152,141 @@
 </tbody>
 </table>
 <div class="sect2">
+<h3 id="statistics-calculation-and-chart-generation-feature"><a class="link" href="#statistics-calculation-and-chart-generation-feature">Statistics Calculation and Chart generation feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>This statistic calculation and chart generation feature
+extends <code>Seller Manager Lite</code> which allows seller to quickly
+generate total statistics from their <code>DataBooks</code>, through the use
+of a <code>statistic</code> module that handles this calculation.
+There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Profit</code></p>
+</li>
+<li>
+<p><code>Cost</code></p>
+</li>
+<li>
+<p><code>Revenue</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It implements the following mode of operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>default mode with no date input: generates on all completed order total <code>profit</code> , <code>cost</code> or <code>revenue</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The command enter by the user will be e.g for profit type <code>generate-s s/PROFIT</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>mode with date input from user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code> and generates the <code>profit</code>
+, <code>cost</code> or <code>revenue</code>  each <code>month</code> between this 2 dates.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>command entered by user will be e.g for profit type`generate-s s/PROFIT s1/YYYY.MM.DD s2/YYYY.MM.DD`</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="statistic-module"><a class="link" href="#statistic-module">Statistic Module</a></h5>
+<div class="paragraph">
+<p>The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
+analogous to the output mode, there are 2 types of methods in this module, one that returns a
+<code>String</code> and the other and <code>XYChart.Data&lt;String,Number&gt;</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Methods that return a <code>String</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>calculateTotalProfitOnCompleted()</code></p>
+</li>
+<li>
+<p><code>calculateTotalRevenueOnCompleted()</code></p>
+</li>
+<li>
+<p><code>calculateTotalCostOnCompleted()</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Methods that return a <code>XYChart.Data&lt;String,Number&gt;</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>calculateTotalProfitOnCompletedGraph()</code></p>
+</li>
+<li>
+<p><code>calculateTotalRevenueOnCompletedGraph()</code></p>
+</li>
+<li>
+<p><code>calculateTotalCostOnCompletedGraph()</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-alternative-designs-considered"><a class="link" href="#design-considerations-alternative-designs-considered">Design Considerations / Alternative designs considered</a></h5>
+<div class="paragraph">
+<p>Given that the number of orders in a seller database might be scaled to be very large in the future
+the main focus of this feature was to <strong>calculate statistics only when needed</strong>.</p>
+</div>
+<div class="paragraph">
+<p>One way that was initially considered was actually to maintain a running statistic
+counter upon loading of the main app, update this counter when calculation is needed ,
+and then display it. This implementation would be much easier to implement within the existing AB3 code
+since it meant extending the <code>Model</code> class with a statistic model, than having the UI class to read from
+this value <strong>However, we dropped this due to the consideration
+mentioned in the previous paragraph</strong></p>
+</div>
+<div class="paragraph">
+<p>Given that consideration, we decided that it will be the <code>UI</code> to trigger this call to <code>Logic</code> for calculation
+and then display the result of that call.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, given that this feature requires date input from the user, we will need to find a way to get <code>UI</code> to send
+the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains a feedback to user
+with the actual changes on data done with a call to model during <code>execute(model)</code>.</p>
+</div>
+<div class="paragraph">
+<p>We decided to extend this command pattern by creating a <code>statsPayload</code> object. This object will hold the user
+queries for the statistic calculation (if there is any) and be bundled along with the <code>CommandResult</code> class to the
+<code>UI</code> to use in its query to logic.</p>
+</div>
+<div class="paragraph">
+<p>Attached below is a quick summary of what occurs when a statistic command is entered by the user:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsCommandSequenceDiagram.png" alt="StatsCommandSequenceDiagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">[Proposed] Undo/Redo feature</a></h3>
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">Proposed Implementation</a></h4>
@@ -381,4 +516,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-21 16:22:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-21 16:41:45 UTC</div></div></div></body></html>
