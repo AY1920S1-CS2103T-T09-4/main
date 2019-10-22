@@ -156,11 +156,12 @@
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>This statistic calculation and chart generation feature
-extends <code>Seller Manager Lite</code> which allows seller to quickly
-generate total statistics from their <code>DataBooks</code>, through the use
-of a <code>statistic</code> module that handles this calculation.
-There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
+<p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows seller to quickly
+generate total statistics from their <code>DataBooks</code>, through the use of a <code>statistic</code>
+module that handles this calculation.</p>
+</div>
+<div class="paragraph">
+<p>There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -191,8 +192,8 @@ There is three type of statistic to be calculated and only on <code>completed or
 </div>
 </li>
 <li>
-<p>mode with date input from user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code> and generates the <code>profit</code>
-, <code>cost</code> or <code>revenue</code>  each <code>month</code> between this 2 dates.</p>
+<p>mode with date input from user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code>
+and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>  each <code>month</code> between this 2 dates.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -203,12 +204,20 @@ There is three type of statistic to be calculated and only on <code>completed or
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Here is the sequence of steps taken by SMLJ when it receives a <code>StatCommand</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatisticsCalculationActvityDiagram.png" alt="StatisticsCalculationActvityDiagram">
+</div>
+</div>
 <div class="sect4">
 <h5 id="statistic-module"><a class="link" href="#statistic-module">Statistic Module</a></h5>
 <div class="paragraph">
 <p>The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
 analogous to the output mode, there are 2 types of methods in this module, one that returns a
-<code>String</code> and the other and <code>XYChart.Data&lt;String,Number&gt;</code></p>
+<code>String</code> and the other and <code>XYChart.Series&lt;String,Number&gt;</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -229,7 +238,7 @@ analogous to the output mode, there are 2 types of methods in this module, one t
 </div>
 </li>
 <li>
-<p>Methods that return a <code>XYChart.Data&lt;String,Number&gt;</code>:</p>
+<p>Methods that return a <code>XYChart.Series&lt;String,Number&gt;</code>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -246,6 +255,15 @@ analogous to the output mode, there are 2 types of methods in this module, one t
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>All methods were written using java8 Stream() feature. This is such that there are no loops in the code to make it
+more readable and maintainable.</p>
+</div>
+<div class="paragraph">
+<p><code>org.apache.commons.math3.stat.StatUtils</code> library is used to calculate the raw data inside a <code>double[]</code> .
+While the current <code>v1.4</code> only use <code>sum</code> to calculate the exact <code>profit</code> , <code>revenue</code> and <code>cost</code> , <code>v2.0</code> implementation
+will make use of the <code>linear regression</code> / <code>average</code> methods inside the library to generate more advanced statistics.</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="design-considerations-alternative-designs-considered"><a class="link" href="#design-considerations-alternative-designs-considered">Design Considerations / Alternative designs considered</a></h5>
@@ -257,30 +275,110 @@ the main focus of this feature was to <strong>calculate statistics only when nee
 <p>One way that was initially considered was actually to maintain a running statistic
 counter upon loading of the main app, update this counter when calculation is needed ,
 and then display it. This implementation would be much easier to implement within the existing AB3 code
-since it meant extending the <code>Model</code> class with a statistic model, than having the UI class to read from
+since it meant extending the <code>Model</code> class with a statistic model, than having the <code>UI</code> class to read from
 this value <strong>However, we dropped this due to the consideration
 mentioned in the previous paragraph</strong></p>
 </div>
+<div class="sect5">
+<h6 id="decision-1"><a class="link" href="#decision-1">Decision 1:</a></h6>
 <div class="paragraph">
 <p>Given that consideration, we decided that it will be the <code>UI</code> to trigger this call to <code>Logic</code> for calculation
-and then display the result of that call.</p>
+and then display the result of that call. Thus when Statistics need to be shown, the <code>UI</code> module will query the
+<code>Logic</code> for the respective data</p>
+</div>
+<div class="paragraph">
+<p>One of the motivation for this approach was to maintain the architecture that is already in place in AB3.</p>
 </div>
 <div class="paragraph">
 <p>Furthermore, given that this feature requires date input from the user, we will need to find a way to get <code>UI</code> to send
 the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains a feedback to user
 with the actual changes on data done with a call to model during <code>execute(model)</code>.</p>
 </div>
+</div>
+<div class="sect5">
+<h6 id="decision-2"><a class="link" href="#decision-2">Decision 2:</a></h6>
 <div class="paragraph">
 <p>We decided to extend this command pattern by creating a <code>statsPayload</code> object. This object will hold the user
 queries for the statistic calculation (if there is any) and be bundled along with the <code>CommandResult</code> class to the
-<code>UI</code> to use in its query to logic.</p>
+<code>UI</code> to use in its query to logic. When the Ui executes the command to logic, the <code>CommandResult</code> is returned with
+this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>.</p>
 </div>
 <div class="paragraph">
-<p>Attached below is a quick summary of what occurs when a statistic command is entered by the user:</p>
+<p>The resulting change is that the <code>commandResult</code> type will have a slightly different behaviour. *All <code>commands</code> that
+are not <code>statsCommand</code> will call the default constructor of the <code>commandResult</code> class, where there is  an
+<code>Optional.empty()</code> in place of the <code>StatsPayload</code> * .</p>
+</div>
+<div class="paragraph">
+<p>All <code>statsCommand</code> type will have call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.</p>
+</div>
+<div class="paragraph">
+<p>The key motivation behind this idea of a payload was to be able to encapsulate details about the calculation inside a
+single object, passed it to the appropriate place to be "unwrapped" when needed. This unwrapping is done by the
+<code>mainWindow</code> class in SMLJ and subsequently the data is passed to the  <code>statistic</code> module.</p>
+</div>
+<div class="paragraph">
+<p>A high level view of the packages working together:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statsOverallClassDiagram.png" alt="statsOverallClassDiagram">
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="step-by-step-breakdown"><a class="link" href="#step-by-step-breakdown">Step-by-step breakdown</a></h6>
+<div class="paragraph">
+<p>Below is a more in-depth explanation at each step:</p>
+</div>
+<div class="paragraph">
+<p>step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
+</div>
+<div class="paragraph">
+<p>The commandBox executes it and the <code>MainWindow</code> runs its <code>executeCommand(commandText)</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Referring to the sequence diagram below,this results in <code>logic.execute(commandText)</code> being called and
+the <code>statsCommandParser</code> parses the input from the user, returning a
+<code>Command</code> object</p>
+</div>
+<div class="paragraph">
+<p>step 2: the logic then calls <code>command.execute(command)</code> (refer to the second set of arrow coming out of <code>LogicManager</code>)</p>
+</div>
+<div class="paragraph">
+<p>When this happens, the <code>StatsCommand</code> execute triggering a call to create the new <code>StatsPayload</code>. Then this is used to
+create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is a quick summary of step 1-2:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/StatsCommandSequenceDiagram.png" alt="StatsCommandSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
+<code>performUiChanges</code> that handles the specific <code>UI</code> change.</p>
+</div>
+<div class="paragraph">
+<p>This then results in the <code>statsPayload</code> class being passed to <code>Logic</code> class and subsequently the <code>statistics</code> module,
+where the appropriate calculation will take place.</p>
+</div>
+<div class="paragraph">
+<p>step 4: <code>Statistic Manager</code> calculates the date</p>
+</div>
+<div class="paragraph">
+<p>Depending on the input, the <code>Statistic Manager</code> will calculate the value and return that, either in the form of
+a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
+form or string form. With this the feature has finished executing! Attached below is the summary for step 3-5:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatisticsCalculationUI.png" alt="StatisticsCalculationUI">
+</div>
 </div>
 </div>
 </div>
@@ -516,4 +614,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-22 13:02:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-22 17:52:50 UTC</div></div></div></body></html>
