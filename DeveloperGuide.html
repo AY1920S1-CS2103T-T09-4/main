@@ -23,11 +23,13 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#statistics-calculation-and-chart-generation-feature">3.1. Statistics Calculation and Chart generation feature</a></li>
-<li><a href="#find-customer-phone-order-feature">3.2. Find Customer/Phone/Order feature</a></li>
-<li><a href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
+<li><a href="#autocomplete-feature">3.2. Autocomplete feature</a></li>
+<li><a href="#calendar-schedule-feature">3.3. Calendar / Schedule feature</a></li>
+<li><a href="#find-customer-phone-order-feature">3.4. Find Customer/Phone/Order feature</a></li>
+<li><a href="#proposed-undo-redo-feature">3.5. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">3.6. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.8. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -280,7 +282,13 @@ The lifeline for <code>DeleteCustomerCommandParser</code> should end at the dest
 <p>stores a <code>CalendarDate</code> object that stores date shown on the calendar panel.</p>
 </li>
 <li>
-<p>stores the Seller Manager data.</p>
+<p>stores <code>Customer</code>, <code>Phone</code>, <code>Order</code> and <code>Schedule</code> data in a <code>DataBook</code> each.</p>
+</li>
+<li>
+<p>a <code>DataBook</code> is backed by an underlying <code>UniqueList</code> which stores subclasses of <code>Identifiable</code></p>
+</li>
+<li>
+<p>the <code>Identifiable</code> interfaces exposes an <code>isSameAs</code> method which is used to determine if two objects have the same identity</p>
 </li>
 <li>
 <p>exposes 4 unmodifiable <code>ObservableList&lt;Identifiable&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
@@ -575,12 +583,61 @@ form or string form. With this the feature has finished executing! Attached belo
 <img src="images/StatisticsCalculationUI.png" alt="StatisticsCalculationUI">
 </div>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>=== Calendar / Schedule feature
-==== Implementation</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="autocomplete-feature"><a class="link" href="#autocomplete-feature">3.2. Autocomplete feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">3.2.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>This feature is visible in the UI as a dropdown menu when the user enters input into the command box.</p>
+</div>
+<div class="sect4">
+<h5 id="how-the-ui-works"><a class="link" href="#how-the-ui-works">How the UI works</a></h5>
+<div class="paragraph">
+<p>The command box uses a custom <code>AutoCompleteTextField</code> which extends from JavaFX&#8217;s <code>TextField</code>, which adds an additional listener for changes in the input text.
+This listener reads the entire input text on each character change and performs comparisons with a predefined set of strings.
+For all predefined strings that matches the input text, they are sorted according to their "closeness", and a maximum of 5 is displayed.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="the-underlying-data-structures"><a class="link" href="#the-underlying-data-structures">The underlying data structures</a></h5>
+<div class="paragraph">
+<p>This feature was designed to display values that are currently in the <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example, the input text <code>add-c n/</code> would display a list of <code>CustomerName</code> that already exists in the <code>Customer</code> <code>DataBook</code>.</p>
+</div>
+<div class="paragraph">
+<p>In order to achieve this, the underlying data structure used is a directed <code>Graph</code> with every <code>Node</code> storing a reference to a set of values,
+and a <code>Map&lt;String, Node&gt;</code> to represent outgoing edges. The keys of this map represent the possible prefixes for the next argument of the input text, such as <code>c/</code> or <code>e/</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Dynamically updated: By storing references to a set of values that can be backed by <code>ObservableList</code> in the <code>Model</code>, whenever the user alters any data, it will be reflected in the displayed values.</p>
+</li>
+<li>
+<p>Supports optional arguments: By storing the possible prefixes as "edge weights", it is possible to represent an optional argument by having an edge to the <code>Node</code> containing its values, as well as an edge to the next <code>Node</code>.</p>
+</li>
+<li>
+<p>Infinite structure: By having a <code>TagNode</code> store a reference to itself, it is possible to endlessly display <code>t/</code> as a possible argument at the end of the input text,
+which is consistent with the unlimited number of <code>Tag</code> a <code>Customer</code> can hold.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-schedule-feature"><a class="link" href="#calendar-schedule-feature">3.3. Calendar / Schedule feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>We decided to incorporate a third party library, <code>JFXtras&#8217;s Agenda</code>, to represent our schedules on a calendar for easy viewing by our users.</p>
 </div>
@@ -652,9 +709,8 @@ When any of the schedule commands are executed, the model will edit the <code>Ca
 <p>Adding on, we will be adding an additional feature to check for clashing schedules.
 In the case of a clash, users will be given a choice to allow clashing schedules, or to just change to timing to avoid the clashes.</p>
 </div>
-<div class="paragraph">
-<p>===== Design Considerations / Alternative designs considered</p>
-</div>
+<div class="sect4">
+<h5 id="design-considerations-alternative-designs-considered-2"><a class="link" href="#design-considerations-alternative-designs-considered-2">Design Considerations / Alternative designs considered</a></h5>
 <div class="paragraph">
 <p>We do not keep a list of <code>Appointment</code> in <code>CalendarPanel</code> as <code>Appointment</code> is only used for <code>Agenda</code> while the rest of our system uses <code>Schedule</code>.
 Instead, we have decided to only convert <code>Schedule</code> into <code>Appointment</code> when needed - during the instantiation of <code>CalendarPanel</code> or when there are changes made to the <code>UniqueList&lt;Schedule&gt;</code>.
@@ -680,11 +736,8 @@ Also, this ensures that <code>CommandResult</code> remains unchanged and kept as
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
 <div class="sect2">
-<h3 id="find-customer-phone-order-feature"><a class="link" href="#find-customer-phone-order-feature">3.2. Find Customer/Phone/Order feature</a></h3>
+<h3 id="find-customer-phone-order-feature"><a class="link" href="#find-customer-phone-order-feature">3.4. Find Customer/Phone/Order feature</a></h3>
 <div class="paragraph">
 <p>The find feature allows the user to find the customer/phone/order according to its data field(e.g. CustomerName, ContactNumber)
 or without any data field. We wanted to implement an OR search and so long as the customer/phone/order contained the keyword
@@ -705,7 +758,7 @@ For simplicity&#8217;s sake, we will only focus on Customer in this section.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.2.1. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>In order to implement the find function, we decided to create multiple predicates for each data field of Customer.
 By doing this, we could do chaining of predicates by using the static <code>or()</code> provided in <code>java.util.Predicate</code> package.
@@ -737,7 +790,7 @@ Thus, we would be able to find the customer easily with the keywords given in th
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-alternative-designs-considered-2"><a class="link" href="#design-considerations-alternative-designs-considered-2">3.2.2. Design Considerations / Alternative designs considered</a></h4>
+<h4 id="design-considerations-alternative-designs-considered-3"><a class="link" href="#design-considerations-alternative-designs-considered-3">3.4.2. Design Considerations / Alternative designs considered</a></h4>
 <div class="paragraph">
 <p>Alternative 2: The other alternative that we considered in implementing the find feature was using a single predicate.
 First, we create a <code>FindCustomerDescriptor</code> that would store all the strings that were to be searched under the various data fields.
@@ -787,9 +840,9 @@ as one would need to understand the parsing.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.5. [Proposed] Undo/Redo feature</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.3.1. Proposed Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.5.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -931,7 +984,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1001,20 +1054,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.6. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.7. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1045,7 +1098,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1803,4 +1856,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:43:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 16:14:13 UTC</div></div></div></body></html>
