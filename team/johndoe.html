@@ -380,14 +380,12 @@ form or string form. With this the feature has finished executing! Attached belo
 <img src="../images/StatisticsCalculationUI.png" alt="StatisticsCalculationUI">
 </div>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>=== Calendar / Schedule feature
+==== Implementation</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="calendar-schedule-feature"><a class="link" href="#calendar-schedule-feature">Calendar / Schedule feature</a></h3>
-<div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
 <div class="paragraph">
 <p>We decided to incorporate a third party library, <code>JFXtras&#8217;s Agenda</code>, to represent our schedules on a calendar for easy viewing by our users.</p>
 </div>
@@ -459,8 +457,9 @@ When any of the schedule commands are executed, the model will edit the <code>Ca
 <p>Adding on, we will be adding an additional feature to check for clashing schedules.
 In the case of a clash, users will be given a choice to allow clashing schedules, or to just change to timing to avoid the clashes.</p>
 </div>
-<div class="sect4">
-<h5 id="design-considerations-alternative-designs-considered-2"><a class="link" href="#design-considerations-alternative-designs-considered-2">Design Considerations / Alternative designs considered</a></h5>
+<div class="paragraph">
+<p>===== Design Considerations / Alternative designs considered</p>
+</div>
 <div class="paragraph">
 <p>We do not keep a list of <code>Appointment</code> in <code>CalendarPanel</code> as <code>Appointment</code> is only used for <code>Agenda</code> while the rest of our system uses <code>Schedule</code>.
 Instead, we have decided to only convert <code>Schedule</code> into <code>Appointment</code> when needed - during the instantiation of <code>CalendarPanel</code> or when there are changes made to the <code>UniqueList&lt;Schedule&gt;</code>.
@@ -483,13 +482,22 @@ Hence, we decided to use a listener instead.
 <code>CalendarDate</code> is then placed in <code>Model</code> so that it can be edited right away when <code>Model</code> executes any schedule related commands.
 Also, this ensures that <code>CommandResult</code> remains unchanged and kept as simple as possible.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-customer-phone-order-feature"><a class="link" href="#find-customer-phone-order-feature">Find Customer/Phone/Order feature</a></h3>
 <div class="paragraph">
-<p>=== Find Customer/Phone feature</p>
+<p>The find feature allows the user to find the customer/phone/order according to its data field(e.g. CustomerName, ContactNumber)
+or without any data field. We wanted to implement an OR search and so long as the customer/phone/order contained the keyword
+in its data, it would be shown to the user.
+For simplicity&#8217;s sake, we will only focus on Customer in this section.</p>
 </div>
 <div class="paragraph">
-<p>The find feature allows the user to find the order according to its data field or without any data field.</p>
+<p>The commands that we wanted to implement are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -501,14 +509,85 @@ Also, this ensures that <code>CommandResult</code> remains unchanged and kept as
 </li>
 </ul>
 </div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>==== Current Implementation</p>
+<p>In order to implement the find function, we decided to create multiple predicates for each data field of Customer.
+By doing this, we could do chaining of predicates by using the static <code>or()</code> provided in <code>java.util.Predicate</code> package.
+Thus, we would be able to find the customer easily with the keywords given in the input.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CustomerPredicateClassDiagram.png" alt="CustomerPredicateClassDiagram">
+</div>
 </div>
 <div class="paragraph">
-<p>In order to implement the find function, we decided to create a predicate for each field.</p>
+<p>Below is a diagram to show you how <code>find-c n/Alice</code> runs in the program.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCustomerCommandSequenceDiagram1.png" alt="FindCustomerCommandSequenceDiagram1">
 </div>
 </div>
+<div class="paragraph">
+<p>Below is another diagram to show you how <code>find-c n/Alice e/alex</code> runs in the program.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCustomerCommandSequenceDiagram2.png" alt="FindCustomerCommandSequenceDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that chaining takes place by creating new instances of XYZContainsKeywordsPredicates.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-alternative-designs-considered-2"><a class="link" href="#design-considerations-alternative-designs-considered-2">Design Considerations / Alternative designs considered</a></h4>
+<div class="paragraph">
+<p>Alternative 2: The other alternative that we considered in implementing the find feature was using a single predicate.
+First, we create a <code>FindCustomerDescriptor</code> that would store all the strings that were to be searched under the various data fields.
+The <code>FindCustomerCommandParser</code> would store the relevant keywords in the FindCustomerDescriptor and generate a predicate,
+<code>CustomerContainsKeywordsPredicate</code>, using the FindCustomerDescriptor and pass it to <code>FindCustomerCommand</code>. <code>FindCustomerCommand</code> would then be executed.</p>
+</div>
+<div class="paragraph">
+<p>The predicate <code>CustomerContainsKeywordsPredicate</code> would do the heavy lifting by doing further parsing of the keywords
+and test whether Customer contains the relevant keywords.</p>
+</div>
+<div class="paragraph">
+<p>However, we did not do this as <code>CustomerContainsKeywordsPredicate</code> violated the Single-Responsibility Principle.
+It had to do further parsing of the keywords instead of simply testing whether the Customer contains the keywords.
+Also, if there was a change to the <code>Customer</code> class, it would be less intuitive to modify <code>CustomerContainsKeywordsPredicate</code>
+as one would need to understand the parsing.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Multiple predicates.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Duplicated code due to multiple predicates.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Single predicate.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code written in total.</p>
+</li>
+<li>
+<p>Cons: Harder to maintain.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -742,4 +821,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:17:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:43:04 UTC</div></div></div></body></html>
