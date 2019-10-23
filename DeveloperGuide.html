@@ -23,7 +23,27 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#statistics-calculation-and-chart-generation-feature">3.1. Statistics Calculation and Chart generation feature</a></li>
-<li><a href="#find-customer-phone-feature">3.2. Find Customer/Phone feature</a></li>
+<li><a href="#calendar-schedule-feature">3.2. Calendar / Schedule feature</a></li>
+<li><a href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
+</ul>
+</li>
+<li><a href="#documentation">4. Documentation</a></li>
+<li><a href="#testing">5. Testing</a></li>
+<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#product-scope">Appendix A: Product Scope</a></li>
+<li><a href="#user-stories">Appendix B: User Stories</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
+<li><a href="#glossary">Appendix E: Glossary</a></li>
+<li><a href="#product-survey">Appendix F: Product Survey</a></li>
+<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<ul class="sectlevel2">
+<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
+<li><a href="#saving-data">G.3. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -89,7 +109,7 @@ The following class plays an important role at the architecture level:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The rest of the App consists of four components.</p>
+<p>The rest of the App consists of five components.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -105,10 +125,13 @@ The following class plays an important role at the architecture level:</p>
 <li>
 <p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
 </li>
+<li>
+<p><a href="#Design-Statistics"><strong><code>Statistics</code></strong></a>: Generate statistics and charts.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Each of the four components</p>
+<p>Each of the five components</p>
 </div>
 <div class="ulist">
 <ul>
@@ -137,7 +160,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 3. Component interactions for <code>delete-c 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -205,21 +228,21 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 <p>The command execution can affect the <code>Model</code> (e.g. adding a customer/phone/order/schedule).</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+<p>The result of the command execution, a <code>String</code> message and <code>UiChange</code> enum is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
 </li>
 <li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
+<p>In addition, the <code>UiChange</code> enum in the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying the respective panels or help/statistics window.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete-c 1")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete-c 1</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -228,7 +251,7 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeleteCustomerCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </td>
 </tr>
 </table>
@@ -254,13 +277,16 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores a <code>CalendarDate</code> object that stores date shown on the calendar panel.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>stores the Seller Manager data.</p>
 </li>
 <li>
-<p>does not depend on any of the other three components.</p>
+<p>exposes 4 unmodifiable <code>ObservableList&lt;Identifiable&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>does not depend on any of the other four components.</p>
 </li>
 </ul>
 </div>
@@ -271,7 +297,9 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+As a more OOP model, we can store a <code>UniqueList&lt;Tag&gt;</code> in <code>Seller Manager</code>, which <code>Customer</code> / <code>Phone</code> / <code>Order</code> / <code>Schedule</code>  can reference.
+This would allow <code>Seller Manager</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each object needing their own <code>Tag</code>.
+An example of how such <code>UniqueList&lt;Tag&gt;</code> and <code>UniqueList&lt;Customer&gt;</code> interacts is given below.<br>
 <br>
 <span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
 </td>
@@ -552,7 +580,109 @@ form or string form. With this the feature has finished executing! Attached belo
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-customer-phone-feature"><a class="link" href="#find-customer-phone-feature">3.2. Find Customer/Phone feature</a></h3>
+<h3 id="calendar-schedule-feature"><a class="link" href="#calendar-schedule-feature">3.2. Calendar / Schedule feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>We decided to incorporate a third party library, <code>JFXtras&#8217;s Agenda</code>, to represent our schedules on a calendar for easy viewing by our users.</p>
+</div>
+<div class="paragraph">
+<p><code>CalendarPanel</code> keeps <code>UniqueList&lt;Schedule&gt;</code> and <code>UniqueList&lt;Order&gt;</code> objects as class variables. On instantiation, all the schedules in <code>UniqueList&lt;Schedule&gt;</code> will be converted to <code>Appointments</code> and then added to <code>Agenda</code>.
+To set the display information of the <code>Schedule</code> object, we will find its <code>Order</code> in the <code>UniqueList&lt;Order&gt;</code> and retrieve its index.
+<code>CalendarPanel</code> also keeps <code>CalendarDate</code> as a variable to set the date shown by <code>Agenda</code>.</p>
+</div>
+<div class="paragraph">
+<p>Schedule supports a few basic commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add&#8201;&#8212;&#8201;adds a new schedule into SML, command will be in this format: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAGS]</code></p>
+</li>
+<li>
+<p>Edit&#8201;&#8212;&#8201;edits an existing schedule in SML, command will be in this format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAGS]</code></p>
+</li>
+<li>
+<p>Delete&#8201;&#8212;&#8201;delete an existing schedule in SML, command will be in this format: <code>delete-s ORDER_INDEX</code></p>
+</li>
+<li>
+<p>Schedule&#8201;&#8212;&#8201;switches the week on the panel to the week containing the date entered, command will be in this format: <code>schedule cd/DATE</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The schedules and date the calendar panel shows is automatically updated depending on the commands executed by the users.
+For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the user adds/edits/deletes a schedule&#8201;&#8212;&#8201;calendar panel will display the week with the date of the schedule.</p>
+</li>
+<li>
+<p>If the user uses the switch-s command&#8201;&#8212;&#8201;calendar panel will display the week with today&#8217;s date.</p>
+</li>
+<li>
+<p>If the user uses the schedule command&#8201;&#8212;&#8201;calendar will display the week with the date resquested by the user.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Changes to the schedules are made in the model by editing the <code>UniqueList&lt;Schedule&gt;</code> object.
+<code>CalendarPanel</code> adds a listener to its <code>UniqueList&lt;Schedule&gt;</code> variable.
+<code>CalendarPanel</code> listen to the changes and generates the updated list of <code>Schedules</code> into <code>Appointments</code> to add to <code>Agenda</code>.</p>
+</div>
+<div class="paragraph">
+<p>The current date shown on the calendar panel is encapsulated in a <code>CalendarDate</code> object.
+The <code>CalendarDate</code> class uses <code>SimpleObjectProperty</code> to keep track of the Calendar (date).
+When any of the schedule commands are executed, the model will edit the <code>CalendarDate</code> object with the updated Calendar (date).
+<code>CalendarPanel</code> adds a listener to its <code>CalendarDate</code> variable.
+<code>CalendarPanel</code> listen to the changes and sets the agenda view to the new <code>Calendar</code> in <code>CalendarDate</code>.</p>
+</div>
+<div class="paragraph">
+<p>Here is a sample of what happens when a schedule command is entered by the user:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ScheduleCommandSequenceDiagram.png" alt="ScheduleCommandSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Basically, after the setCalendarDate(calendar) method in <code>Model</code> is executed, <code>CalendarPanel</code> listens to it and make the necessary changes to the agenda view by calling its setAgendaView(calendar) method.</p>
+</div>
+<div class="paragraph">
+<p>Adding on, we will be adding an additional feature to check for clashing schedules.
+In the case of a clash, users will be given a choice to allow clashing schedules, or to just change to timing to avoid the clashes.</p>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-alternative-designs-considered-2"><a class="link" href="#design-considerations-alternative-designs-considered-2">Design Considerations / Alternative designs considered</a></h5>
+<div class="paragraph">
+<p>We do not keep a list of <code>Appointment</code> in <code>CalendarPanel</code> as <code>Appointment</code> is only used for <code>Agenda</code> while the rest of our system uses <code>Schedule</code>.
+Instead, we have decided to only convert <code>Schedule</code> into <code>Appointment</code> when needed - during the instantiation of <code>CalendarPanel</code> or when there are changes made to the <code>UniqueList&lt;Schedule&gt;</code>.
+Not keeping a list of <code>Appointment</code> ensures that we do not keep duplicate information.</p>
+</div>
+<div class="paragraph">
+<p>The changes to <code>CalendarDate</code> was initially done in the <code>CalendarPanel</code> itself.
+So, <code>CommandResult</code> was made to have one more variable <code>Optional&lt;Calendar&gt;</code>.
+In that case, every time a schedule command was executed, a specific <code>Calendar</code> (if any) will be placed inside the constructor while creating the <code>CommandResult</code> object.
+Else, Optional.Empty() will be placed inside.</p>
+</div>
+<div class="paragraph">
+<p>When the <code>MainWindow</code> executes the method performUiChanges(CommandResult), it will call the handleSchedule method with Calendar (from CommandResult) as an argument.
+If <code>Optional&lt;Calendar&gt;</code> in <code>CommandResult</code> is empty, today&#8217;s date and time will be used instead.
+Then, <code>CalendarPanel</code> will be called in the handleSchedule method to set the agenda view.</p>
+</div>
+<div class="paragraph">
+<p>This implementation was however changed because we thought that the date shown on the panel should be changed automatically.
+Hence, we decided to use a listener instead.
+<code>CalendarDate</code> is then placed in <code>Model</code> so that it can be edited right away when <code>Model</code> executes any schedule related commands.
+Also, this ensures that <code>CommandResult</code> remains unchanged and kept as simple as possible.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>=== Find Customer/Phone feature</p>
+</div>
 <div class="paragraph">
 <p>The find feature allows the user to find the order according to its data field or without any data field.</p>
 </div>
@@ -566,17 +696,21 @@ form or string form. With this the feature has finished executing! Attached belo
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.2.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>==== Current Implementation</p>
+</div>
 <div class="paragraph">
 <p>In order to implement the find function, we decided to create a predicate for each field.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>=== [Proposed] Undo/Redo feature
-==== Proposed Implementation</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.3.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -716,12 +850,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
 </div>
 </div>
-<div class="paragraph">
-<p>==== Design Considerations</p>
 </div>
-<div class="paragraph">
-<p>===== Aspect: How undo &amp; redo executes</p>
-</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.3.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -752,9 +885,9 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>===== Aspect: Data structure to support the undo/redo commands</p>
 </div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -785,22 +918,24 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>=== [Proposed] Data Encryption</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
-<div class="paragraph">
-<p>=== Logging</p>
 </div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">[Implementation-Configuration]</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -829,33 +964,42 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<div id="Implementation-Configuration" class="paragraph">
-<p>=== Configuration</p>
 </div>
+<div class="sect2">
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
-<div class="paragraph">
-<p>== Documentation</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
 </div>
-<div class="paragraph">
-<p>== Testing</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
 </div>
-<div class="paragraph">
-<p>== Dev Ops</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
 </div>
-<div class="paragraph">
-<p>== Product Scope</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Target user profile</strong>:</p>
 </div>
@@ -887,9 +1031,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p><strong>Value proposition</strong>: Keep track of your phone, orders and customers faster than a typical mouse/GUI driven app</p>
 </div>
-<div class="paragraph">
-<p>== User Stories</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
 </div>
@@ -1094,9 +1240,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
-<div class="paragraph">
-<p>== Use Cases</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>SML</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
@@ -1364,9 +1512,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
-<div class="paragraph">
-<p>== Non Functional Requirements</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1401,9 +1551,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p>_ {More to be added}_</p>
 </div>
-<div class="paragraph">
-<p>== Glossary</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
+<div class="sectionbody">
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
@@ -1424,9 +1576,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>== Product Survey</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Product Name</strong></p>
 </div>
@@ -1459,9 +1613,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>== Instructions for Manual Testing</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
 </div>
@@ -1477,9 +1633,8 @@ These instructions only provide a starting point for testers to work on; testers
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>=== Launch and Shutdown</p>
-</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1515,9 +1670,9 @@ Expected: The most recent window size and location is retained.</p>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
-<div class="paragraph">
-<p>=== Deleting a person</p>
 </div>
+<div class="sect2">
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1547,9 +1702,9 @@ Expected: Similar to previous.</p>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
-<div class="paragraph">
-<p>=== Saving data</p>
 </div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1569,7 +1724,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:16:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:17:05 UTC</div></div></div></body></html>
