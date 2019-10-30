@@ -199,6 +199,10 @@ Multi-purpose mobile computing device. Also known as smartphones.</p>
 <p><strong>Order</strong><br>
 A request for goods.</p>
 </li>
+<li>
+<p><strong>Schedule</strong><br>
+A meetup with buyer to pass the goods.</p>
+</li>
 </ol>
 </div>
 </div>
@@ -225,6 +229,11 @@ Each phone entry comprises of IdentityNumber, SerialNumber, Brand, PhoneName, Co
 <p><strong>OrderBook</strong><br>
 A OrderBook is a list that stores Order(s) that has been added in SML.
 Each order entry comprises of a customer, a phone, OrderID, Price and OrderStatus.</p>
+</li>
+<li>
+<p><strong>ScheduleBook</strong><br>
+A ScheduleBook is a list that stores Schedules(s) that has been added in SML.
+Each schedule entry comprises a Venue and Calendar with date and time.</p>
 </li>
 <li>
 <p><strong>Archived</strong><br>
@@ -1062,32 +1071,185 @@ Format: <code>list-o</code></p>
 </div>
 <div class="sect2">
 <h3 id="schedule-commands"><a class="link" href="#schedule-commands">5.5. Schedule Commands</a></h3>
+<div class="paragraph">
+<p>Commands that work on schedules you have.</p>
+</div>
 <div class="sect3">
-<h4 id="go-to-specific-date-in-calendar-code-schedule-code"><a class="link" href="#go-to-specific-date-in-calendar-code-schedule-code">5.5.1. Go to specific date in calendar : <code>schedule</code></a></h4>
+<h4 id="switch-to-schedule-tab-panel-code-switch-s-code"><a class="link" href="#switch-to-schedule-tab-panel-code-switch-s-code">5.5.1. Switch to Schedule Tab Panel : <code>switch-s</code></a></h4>
+<div class="paragraph">
+<p>Switches to Schedule Tab Panel.<br>
+<span class="underline">Format</span>: <code>switch-s</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="go-to-specific-date-in-calendar-code-schedule-code"><a class="link" href="#go-to-specific-date-in-calendar-code-schedule-code">5.5.2. Go to specific date in calendar : <code>schedule</code></a></h4>
 <div class="paragraph">
 <p>Shows the week of the date specified by the user.<br>
-Format: <code>schedule cd/DATE</code></p>
+<span class="underline">Format</span>: <code>schedule cd/DATE</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Date should be in the format YYYY.MM.HH with valid year, month and date.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">5.5.2. Add a schedule : <code>add-s</code></a></h4>
+<h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">5.5.3. Add a schedule : <code>add-s</code></a></h4>
 <div class="paragraph">
-<p>Adds a schedule to the address book.<br>
-Format: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]…</code></p>
+<p>Adds a schedule.<br>
+If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules, or change the time.<br>
+<span class="underline">Format</span>: `add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow] `<br>
+<span class="underline">Example</span>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-s 3 cd/2018.7.25 ct/18.00 v/Starbucks t/freebie -allow</code><br></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-add-s.png" alt="ug add s" width="800">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Order index should be a positive integer and must exist in the order list.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Date should be in the format YYYY.MM.HH with valid year, month and date.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Time should be in the 24-hour format HH.MM with valid hour and minute.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Schedule can have any number of tags, including 0.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-a-schedule-code-delete-s-code"><a class="link" href="#delete-a-schedule-code-delete-s-code">5.5.3. Delete a schedule : <code>delete-s</code></a></h4>
+<h4 id="delete-a-schedule-code-delete-s-code"><a class="link" href="#delete-a-schedule-code-delete-s-code">5.5.4. Delete a schedule : <code>delete-s</code></a></h4>
 <div class="paragraph">
-<p>Deletes a schedule in the address book.<br>
-Format: <code>delete-s ORDER_INDEX</code></p>
+<p>Deletes a schedule.<br>
+<span class="underline">Format</span>: <code>delete-s ORDER_INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the schedule of the order at the specified <code>ORDER_INDEX</code>.</p>
+</li>
+<li>
+<p>Order index is a positive integer and must exist in the order list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Example</span>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the schedule of the 2nd order.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>list-o</code><br></p>
+</li>
+<li>
+<p><code>delete-s 2</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-a-schedule-code-edit-s-code"><a class="link" href="#edit-a-schedule-code-edit-s-code">5.5.4. Edit a schedule : <code>edit-s</code></a></h4>
+<h4 id="edit-a-schedule-code-edit-s-code"><a class="link" href="#edit-a-schedule-code-edit-s-code">5.5.5. Edit a schedule : <code>edit-s</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing schedule.<br>
-Format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]…</code></p>
+If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules, or change the time.<br>
+<span class="underline">Format</span>: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]… [-allow]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the schedule of the order at the specified <code>ORDER_INDEX</code>.</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the schedule will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the schedule&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the date of the schedule of the 1st order and allow it to clash with the existing schedules.<br>
+<code>edit-s 1 cd/2019.12.12 -allow</code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1210,22 +1372,14 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="check-code-check-code"><a class="link" href="#check-code-check-code">5.6.4. Check : <code>check</code></a></h4>
-<div class="paragraph">
-<p>Check for stock etc. For stock, see the phones that have &lt; threshold quantity.  <br>
-Format: <code>check &lt;flag&gt;</code><br>
-Possible flag: <code>-p</code> for phone stock, <code>check -p &lt;threshold&gt;</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">5.6.5. Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">5.6.4. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clears all entries of items, orders and customers.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.6.6. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.6.5. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
@@ -1302,7 +1456,7 @@ There is no need to save manually.</p>
 <p>order : <code>add-o p/PHONE_NUMBER i/ITEM&#8230;&#8203;</code></p>
 </li>
 <li>
-<p>schedule : <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]…</code></p>
+<p>schedule : <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow]</code></p>
 </li>
 </ul>
 </div>
@@ -1386,7 +1540,7 @@ There is no need to save manually.</p>
 <p>order : <code>edit-o INDEX &#8230;&#8203;</code></p>
 </li>
 <li>
-<p>schedule : <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]…</code></p>
+<p>schedule : <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]… [-allow]</code></p>
 </li>
 </ul>
 </div>
@@ -1447,4 +1601,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 12:42:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 12:42:49 UTC</div></div></div></body></html>
