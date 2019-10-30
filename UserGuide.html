@@ -32,7 +32,7 @@
 <li><a href="#order-commands">5.4. Order Commands</a></li>
 <li><a href="#schedule-commands">5.5. Schedule Commands</a></li>
 <li><a href="#utility-commands">5.6. Utility Commands</a></li>
-<li><a href="#import-export-data-code-import-export-code">5.7. Import/export data : <code>import / export</code></a></li>
+<li><a href="#export-data-code-export-code">5.7. Export data : <code>export</code></a></li>
 <li><a href="#saving-the-data">5.8. Saving the data</a></li>
 <li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.9. Encrypting data files <code>[coming in v2.0]</code></a></li>
 <li><a href="#autocomplete-code-coming-in-v2-0-code">5.10. Autocomplete  <code>[coming in v2.0]</code></a></li>
@@ -1233,13 +1233,12 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-export-data-code-import-export-code"><a class="link" href="#import-export-data-code-import-export-code">5.7. Import/export data : <code>import / export</code></a></h3>
+<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.7. Export data : <code>export</code></a></h3>
 <div class="paragraph">
-<p>Import csv file into the application.<br>
-Export application data into csv file.<br>
-Export application stats.<br>
-Format: <code>import &lt;flag&gt; &lt;file name&gt;</code> / <code>export &lt;flag&gt; &lt;file name&gt;</code><br>
-Possible flag: <code>-p</code> for phone, <code>-c</code> for customer, <code>-o</code> for order.</p>
+<p>Exports application data into csv file.<br>
+If csv file of the input file name exists, the application data will be exported to the existing file.<br>
+If csv file of the input file name does not exist, the application data will be exported into a new file.
+Format: <code>export &lt;file name&gt;</code><br></p>
 </div>
 </div>
 <div class="sect2">
@@ -1396,20 +1395,7 @@ There is no need to save manually.</p>
 <p><strong>Exit</strong> : <code>exit</code></p>
 </li>
 <li>
-<p><strong>Export</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>export-c</code></p>
-</li>
-<li>
-<p>phone : <code>export-p</code></p>
-</li>
-<li>
-<p>order : <code>export-o</code></p>
-</li>
-</ul>
-</div>
+<p><strong>Export</strong> : <code>export &lt;file name&gt;</code></p>
 </li>
 <li>
 <p><strong>Find</strong><br></p>
@@ -1429,22 +1415,6 @@ There is no need to save manually.</p>
 </li>
 <li>
 <p><strong>Generate</strong> : <code>generate -s s/STAT -d d/ -t t/TYPE</code></p>
-</li>
-<li>
-<p><strong>Import</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>import-c</code></p>
-</li>
-<li>
-<p>phone : <code>import-p</code></p>
-</li>
-<li>
-<p>order : <code>import-o</code></p>
-</li>
-</ul>
-</div>
 </li>
 <li>
 <p><strong>List</strong><br></p>
@@ -1477,4 +1447,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 12:41:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 12:42:14 UTC</div></div></div></body></html>
