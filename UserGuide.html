@@ -1130,13 +1130,60 @@ Format: <code>redo</code></p>
 <p>Generates the statistics with no date input.<br>
 Used for calculating <code>total profit</code> , <code>total Revenue</code> and <code>total Cost</code>.<br>
 Format: <code>generate-s s/stat</code><br>
-Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br></p>
+Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br>
+The argument must match this three words perfectly.</p>
+</div>
+<div class="paragraph">
+<p>Shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/docs/images/StatsExampleDefault.png" alt="StatsExampleDefault" width="600">
+</div>
 </div>
 <div class="paragraph">
 <p>Generates the statistics with date input in chart format (in pop-up modal dialog).<br>
 Format: <code>generate-s s/stat d1/YYYY.MM.DD d2/YYYY.MM.DD</code><br>
 Example: <code>generate-s s/revenue d1/2019.10.16 d2/2019.11.21</code><br>
 Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
+</div>
+<div class="paragraph">
+<p>Shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/docs/images/StatsExampleGraph.png" alt="StatsExampleGraph" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Range of dates affecting chart display:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The chart is able to accept a large range of dates, but take note that above a
+certain threshold the gap between the months will change, depending on how large of a range you are calculating.
+This behaviour is intentional and not a bug.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Load time:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Do not be alarmed if the window does not pop up immediately upon click. For larger data sets
+we estimate at least a few seconds before the window will be loaded.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -1407,4 +1454,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 07:25:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 07:41:37 UTC</div></div></div></body></html>
