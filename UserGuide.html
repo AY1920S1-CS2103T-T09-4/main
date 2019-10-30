@@ -10,25 +10,38 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
-<li><a href="#Features">3. Features</a>
+<li><a href="#quick-start">2. Quick Start</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#phone-commands">3.2. Phone Commands</a></li>
-<li><a href="#order-commands">3.3. Order Commands</a></li>
-<li><a href="#customer-commands">3.4. Customer Commands</a></li>
-<li><a href="#schedule-commands">3.5. Schedule Commands</a></li>
-<li><a href="#utility-commands">3.6. Utility Commands</a></li>
-<li><a href="#import-export-data-code-import-export-code">3.7. Import/export data : <code>import / export</code></a></li>
-<li><a href="#saving-the-data">3.8. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.9. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#autocomplete-code-coming-in-v2-0-code">3.10. Autocomplete  <code>[coming in v2.0]</code></a></li>
-<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">3.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
-<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">3.12. Export data to PDF  <code>[coming in v2.0]</code></a></li>
+<li><a href="#installation">2.1. Installation</a></li>
+<li><a href="#user-interface">2.2. User Interface</a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#Features">3. Features</a>
+<ul class="sectlevel2">
+<li><a href="#overview">3.1. Overview</a></li>
+<li><a href="#glossary">3.2. Glossary</a></li>
+<li><a href="#sml-specific-terms">3.3. SML-specific Terms</a></li>
+</ul>
+</li>
+<li><a href="#TabPanels">4. Tab Panels</a></li>
+<li><a href="#Commands">5. Commands</a>
+<ul class="sectlevel2">
+<li><a href="#viewing-help-code-help-code">5.1. Viewing help : <code>help</code></a></li>
+<li><a href="#customer-commands">5.2. Customer Commands</a></li>
+<li><a href="#phone-commands">5.3. Phone Commands</a></li>
+<li><a href="#order-commands">5.4. Order Commands</a></li>
+<li><a href="#schedule-commands">5.5. Schedule Commands</a></li>
+<li><a href="#utility-commands">5.6. Utility Commands</a></li>
+<li><a href="#import-export-data-code-import-export-code">5.7. Import/export data : <code>import / export</code></a></li>
+<li><a href="#saving-the-data">5.8. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.9. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#autocomplete-code-coming-in-v2-0-code">5.10. Autocomplete  <code>[coming in v2.0]</code></a></li>
+<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.12. Export data to PDF  <code>[coming in v2.0]</code></a></li>
+</ul>
+</li>
+<li><a href="#faq">6. FAQ</a></li>
+<li><a href="#command-summary">7. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -43,6 +56,11 @@
 <div class="sect1">
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Get started on this journey by installing SML and take a quick tour of our main features.</p>
+</div>
+<div class="sect2">
+<h3 id="installation"><a class="link" href="#installation">2.1. Installation</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -56,44 +74,238 @@
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-interface"><a class="link" href="#user-interface">2.2. User Interface</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
 </div>
-</li>
-<li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
-</li>
-<li>
-<p>Some example commands you can try:</p>
+<div class="paragraph">
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.
+.  Some example commands you can try:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list -c</code></strong> : lists all customer contacts</p>
+<p><strong><code>list-c</code></strong> : lists all customer contacts</p>
 </li>
 <li>
-<p><strong><code>add -c</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a customer named <code>John Doe</code> to SML.</p>
+<p><strong><code>add-c</code></strong><code>n/John Doe c/98765432 e/johnd@example.com</code> : adds a customer named <code>John Doe</code> to SML.</p>
 </li>
 <li>
-<p><strong><code>delete -c</code></strong><code>3</code> : deletes the 3rd customer shown in the current list</p>
+<p><strong><code>delete-c</code></strong><code>1</code> : deletes the 1st customer shown in the current list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
+<div class="literalblock">
+<div class="content">
+<pre>Refer to &lt;&lt;Features&gt;&gt; for details of each command.</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
-</li>
-</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="overview"><a class="link" href="#overview">3.1. Overview</a></h3>
+<div class="sect3">
+<h4 id="clutter-free"><a class="link" href="#clutter-free">3.1.1. Clutter-free</a></h4>
+<div class="paragraph">
+<p>SML helps you to organize your customers, phones and orders without clutter.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use our smart tab view to toggle between customers, phones, orders, schedules and archives.</p>
+</li>
+<li>
+<p>Search for the customer, phone and order you want with our find function.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="save-time"><a class="link" href="#save-time">3.1.2. Save Time</a></h4>
+<div class="paragraph">
+<p>SML allows you to save time by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>allowing you to export to Microsoft Excel</p>
+</li>
+<li>
+<p>update your inventory with a single command.</p>
+</li>
+<li>
+<p>find and copy information easily</p>
+</li>
+<li>
+<p>undo and redo when you make mistakes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="track-your-sales-performance"><a class="link" href="#track-your-sales-performance">3.1.3. Track your sales performance</a></h4>
+<div class="paragraph">
+<p>SML generates real-time sales charts for you:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Revenue</p>
+</li>
+<li>
+<p>Profit</p>
+</li>
+<li>
+<p>Cost</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="glossary"><a class="link" href="#glossary">3.2. Glossary</a></h3>
+<div class="sect3">
+<h4 id="common-terms"><a class="link" href="#common-terms">3.2.1. Common Terms</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>SML</strong><br>
+Initialism for our application, Seller Manager Lite.</p>
+</li>
+<li>
+<p><strong>Customer</strong><br>
+A person who buys from the seller.</p>
+</li>
+<li>
+<p><strong>Phone</strong><br>
+Multi-purpose mobile computing device. Also known as smartphones.</p>
+</li>
+<li>
+<p><strong>Order</strong><br>
+A request for goods.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sml-specific-terms"><a class="link" href="#sml-specific-terms">3.3. SML-specific Terms</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Command</strong><br>
+An instruction that will produce an output once entered in SML.</p>
+</li>
+<li>
+<p><strong>CustomerBook</strong><br>
+A CustomerBook is a list that stores Customer(s) that has been added into SML.
+Each customer entry comprises of CustomerName, ContactNumber and Email fields and others.</p>
+</li>
+<li>
+<p><strong>PhoneBook</strong><br>
+A PhoneBook is a list that stores Phone(s) that has been added in SML.
+Each phone entry comprises of IdentityNumber, SerialNumber, Brand, PhoneName, Colour, Cost and Capacity.</p>
+</li>
+<li>
+<p><strong>OrderBook</strong><br>
+A OrderBook is a list that stores Order(s) that has been added in SML.
+Each order entry comprises of a customer, a phone, OrderID, Price and OrderStatus.</p>
+</li>
+<li>
+<p><strong>Archived</strong><br>
+Archived is a list that stores Completed or Cancelled orders ONLY.</p>
+</li>
+<li>
+<p><strong>TabPanel</strong><br>
+A view that is similar to web browser Tabs.</p>
+</li>
+<li>
+<p><strong>Add</strong><br>
+The action of putting an entry into CustomerBook, PhoneBook, OrderBook or ScheduleBook.</p>
+</li>
+<li>
+<p><strong>Edit</strong><br>
+If you want to make changes to any entry, you can do so with this command.</p>
+</li>
+<li>
+<p><strong>Delete</strong><br>
+Remove an entry from CustomerBook, PhoneBook or ScheduleBook.</p>
+</li>
+<li>
+<p><strong>Find</strong><br>
+The action of searching for customers, phones or orders that contains the keywords that you specify.</p>
+</li>
+<li>
+<p><strong>Switch</strong><br>
+Change the Tab Panel to Customer, Phone, Order, Schedule or Archived.</p>
+</li>
+<li>
+<p><strong>Undo</strong><br>
+If you&#8217;ve made a mistake, you can simply revert to the previous command.</p>
+</li>
+<li>
+<p><strong>Redo</strong><br>
+Opposite of undo.</p>
+</li>
+<li>
+<p><strong>Copy</strong><br>
+Action of copying an entry into clipboard.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="TabPanels"><a class="link" href="#TabPanels">4. Tab Panels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To ensure that users wouldn&#8217;t suffer from information overload,
+we have divided the user interface into 5 partitions</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Customer</p>
+</li>
+<li>
+<p>Phone</p>
+</li>
+<li>
+<p>Order</p>
+</li>
+<li>
+<p>Schedule</p>
+</li>
+<li>
+<p>Archived</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use our <a href="#Switch">[Switch]</a> commands to toggle between the tab panels!
+The cool thing about our commands is that it will automatically
+toggle to the Tab Panel that it belongs to.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Commands"><a class="link" href="#Commands">5. Commands</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -112,132 +324,41 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME c/CONTACT_NUMBER</code>, <code>c/CONTACT_NUMBER n/NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">5.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Lists out the commands you need to navigate SML.<br>
 Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="phone-commands"><a class="link" href="#phone-commands">3.2. Phone Commands</a></h3>
+<h3 id="customer-commands"><a class="link" href="#customer-commands">5.2. Customer Commands</a></h3>
 <div class="paragraph">
-<p>Commands that work on phones that you have in your inventory.</p>
+<p>Commands that work on customers in SML.</p>
 </div>
 <div class="sect3">
-<h4 id="add-a-phone-code-add-p-code"><a class="link" href="#add-a-phone-code-add-p-code">3.2.1. Add a phone : <code>add-p</code></a></h4>
+<h4 id="switch-to-customer-tab-panel-code-switch-c-code"><a class="link" href="#switch-to-customer-tab-panel-code-switch-c-code">5.2.1. Switch to Customer Tab Panel : <code>switch-c</code></a></h4>
 <div class="paragraph">
-<p>Adds a phone or updates the inventory.<br>
-Format: <code>add-p n/NAME q/QUANTITY [p/PRICE] [t/TAG]…​</code></p>
+<p>Switches to Customer Tab Panel.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="delete-a-phone-code-delete-p-code"><a class="link" href="#delete-a-phone-code-delete-p-code">3.2.2. Delete a phone : <code>delete-p</code></a></h4>
 <div class="paragraph">
-<p>Deletes a phone from the inventory.<br>
-Format: <code>delete-p INDEX</code></p>
+<p><span class="underline">Format</span>: <code>switch-c</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-a-phone-code-find-p-code"><a class="link" href="#find-a-phone-code-find-p-code">3.2.3. Find a phone : <code>find-p</code></a></h4>
+<h4 id="add-a-customer-code-add-c-code"><a class="link" href="#add-a-customer-code-add-c-code">5.2.2. Add a customer : <code>add-c</code></a></h4>
 <div class="paragraph">
-<p>Returns all the information pertaining to phone with matching name.<br>
-Format: <code>find-p p/PHONE</code></p>
+<p>Adds a Customer to the CustomerBook.<br>
+This can be done in any Tab Panel.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="list-the-phones-code-list-p-code"><a class="link" href="#list-the-phones-code-list-p-code">3.2.4. List the phones : <code>list-p</code></a></h4>
 <div class="paragraph">
-<p>List all the phones in lexicographical order.<br>
-Format: <code>list-p</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="edit-a-phone-code-edit-p-code"><a class="link" href="#edit-a-phone-code-edit-p-code">3.2.5. Edit a phone : <code>edit-p</code></a></h4>
-<div class="paragraph">
-<p>Edits the appropriate fields of a phone.<br>
-Format: <code>edit-p n/NAME [p/PRICE] [q/QUANTITY] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="copy-phone-field-code-copy-p-code"><a class="link" href="#copy-phone-field-code-copy-p-code">3.2.6. Copy phone field : <code>copy-p</code></a></h4>
-<div class="paragraph">
-<p>Copies a phone field to clipboard.<br>
-Format: <code>copy-p &lt;field&gt;</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="order-commands"><a class="link" href="#order-commands">3.3. Order Commands</a></h3>
-<div class="paragraph">
-<p>Commands that work on orders that you have.</p>
-</div>
-<div class="sect3">
-<h4 id="add-an-order-code-add-o-code"><a class="link" href="#add-an-order-code-add-o-code">3.3.1. Add an order : <code>add-o</code></a></h4>
-<div class="paragraph">
-<p>Adds an order to the list of orders.<br>
-Format: <code>add-o p/PHONE_NUMBER i/ITEM&#8230;&#8203;</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="find-an-order-code-find-o-code"><a class="link" href="#find-an-order-code-find-o-code">3.3.2. Find an order : <code>find-o</code></a></h4>
-<div class="paragraph">
-<p>Returns all the information pertaining to the order.<br>
-Format: <code>find-o INDEX</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="complete-an-order-code-complete-o-code"><a class="link" href="#complete-an-order-code-complete-o-code">3.3.3. Complete an order : <code>complete-o</code></a></h4>
-<div class="paragraph">
-<p>Completes the order, order status changed to <code>COMPLETED</code>.<br>
-Format: <code>complete-o INDEX</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="cancel-an-order-code-cancel-o-code"><a class="link" href="#cancel-an-order-code-cancel-o-code">3.3.4. Cancel an order : <code>cancel-o</code></a></h4>
-<div class="paragraph">
-<p>Cancels the order at the specified index.<br>
-Format: <code>cancel-o INDEX</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-the-orders-code-list-o-code"><a class="link" href="#list-the-orders-code-list-o-code">3.3.5. List the orders : <code>list-o</code></a></h4>
-<div class="paragraph">
-<p>List all the orders in the list.<br>
-Format: <code>list-o</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">3.3.6. Copy order field : <code>copy-o</code></a></h4>
-<div class="paragraph">
-<p>Copies an order field to clipboard.<br>
-Format: <code>copy-o &lt;field&gt;</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="duplicate-an-order-code-duplicate-o-code"><a class="link" href="#duplicate-an-order-code-duplicate-o-code">3.3.7. Duplicate an order : <code>duplicate-o</code></a></h4>
-<div class="paragraph">
-<p>Duplicate an order of the specified index.<br>
-Format: <code>duplicate-o INDEX</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="customer-commands"><a class="link" href="#customer-commands">3.4. Customer Commands</a></h3>
-<div class="paragraph">
-<p>Commands that work on customers in your list.</p>
-</div>
-<div class="sect3">
-<h4 id="add-a-customer-code-add-c-code"><a class="link" href="#add-a-customer-code-add-c-code">3.4.1. Add a customer : <code>add-c</code></a></h4>
-<div class="paragraph">
-<p>Adds a customer to the address book.<br>
-Format: <code>add-c n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</code></p>
+<p><span class="underline">Format</span>: <code>add-c n/NAME c/CONTACT_NUMBER e/EMAIL [t/TAG]…</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -246,73 +367,738 @@ Format: <code>add-c n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</code></p
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A person can have any number of tags, including 0.
+Contact numbers should be 8-digits long.
 </td>
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A customer can have any number of tags, including 0.
+</td>
+</tr>
+</table>
 </div>
-<div class="sect3">
-<h4 id="delete-a-customer-code-delete-c-code"><a class="link" href="#delete-a-customer-code-delete-c-code">3.4.2. Delete a customer : <code>delete-c</code></a></h4>
 <div class="paragraph">
-<p>Deletes a customer in the address book.<br>
-Format: <code>delete-c INDEX</code></p>
+<p><span class="underline">Examples</span>:
+* Adds a single customer
+. <code>add-c n/Steve Jobs c/12345678 e/stevejobs@apple.com [t/TAG]…</code></p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-add-c.png" alt="ug add c" width="900">
 </div>
-<div class="sect3">
-<h4 id="find-a-customer-code-find-c-code"><a class="link" href="#find-a-customer-code-find-c-code">3.4.3. Find a customer : <code>find-c</code></a></h4>
-<div class="paragraph">
-<p>Finds customers whose names contain any of the given keywords.<br>
-Format: <code>find-c KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-the-customers-code-list-c-code"><a class="link" href="#list-the-customers-code-list-c-code">3.4.4. List the customers : <code>list-c</code></a></h4>
-<div class="paragraph">
-<p>List every single customer in SML.<br>
-Format: <code>list-c</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="edit-a-customer-code-edit-c-code"><a class="link" href="#edit-a-customer-code-edit-c-code">3.4.5. Edit a customer : <code>edit-c</code></a></h4>
-<div class="paragraph">
-<p>Edits an existing customer.<br>
-Format: <code>edit-c INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="copy-customer-field-code-copy-c-code"><a class="link" href="#copy-customer-field-code-copy-c-code">3.4.6. Copy customer field : <code>copy-c</code></a></h4>
+<h4 id="delete-a-customer-code-delete-c-code"><a class="link" href="#delete-a-customer-code-delete-c-code">5.2.3. Delete a customer : <code>delete-c</code></a></h4>
 <div class="paragraph">
-<p>Copies a customer field to clipboard.<br>
-Format: <code>copy-c &lt;field&gt;</code></p>
+<p>Deletes a customer in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>delete-c INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the customer at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed customer list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the 2nd customer.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>list-c</code><br></p>
+</li>
+<li>
+<p><code>delete-c 2</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Delete the 1st customer after performing a find customer command.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c alice</code><br></p>
+</li>
+<li>
+<p><code>delete-c 1</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-a-customer-code-find-c-code"><a class="link" href="#find-a-customer-code-find-c-code">5.2.4. Find a customer : <code>find-c</code></a></h4>
+<div class="paragraph">
+<p>Finds customers whose fields contain any of the given keywords.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>find KEYWORD [MORE_KEYWORDS]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The search matches anywhere for name, contact number, email and tags.</p>
+</li>
+<li>
+<p>Entries matching at least one field will be returned (i.e. <code>OR</code> search).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. <code>find-c aaa bbb</code> will match a customer with name <code>Aaah</code> and a customer with tag <code>bbb</code>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find customers with keyword <code>colleague</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c colleague</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-find-c-1.png" alt="ug find c 1" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find customers with keywords <code>roy</code> <code>bernice</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c charlotte david</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-find-c-2.png" alt="ug find c 2" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-the-customers-code-list-c-code"><a class="link" href="#list-the-customers-code-list-c-code">5.2.5. List the customers : <code>list-c</code></a></h4>
+<div class="paragraph">
+<p>List every customer in SML. Acts as a switch customer command as well.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>list-c</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-c</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-customer-code-edit-c-code"><a class="link" href="#edit-a-customer-code-edit-c-code">5.2.6. Edit a customer : <code>edit-c</code></a></h4>
+<div class="paragraph">
+<p>Edits an existing customer in CustomerBook.<br>
+Format: <code>edit-c INDEX [n/NAME] [c/CONTACT_NUMBER] [e/EMAIL] [t/TAG]…</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the customer at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed customer list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the customer  will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the customer&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the contact number and email of the 1st customer.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 1 c/98721928 e/happygolucky@gmail.com</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Clear all existing tags from the 2nd customer.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 2 t/</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="copy-customer-code-copy-c-code"><a class="link" href="#copy-customer-code-copy-c-code">5.2.7. Copy customer : <code>copy-c</code></a></h4>
+<div class="paragraph">
+<p>Copies a customer in SML to clipboard<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>copy-c INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Copies the customer at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed customer list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Copy the 1st customer</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>copy-c 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Copy the 1st customer after performing find.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c Lee</code></p>
+</li>
+<li>
+<p><code>copy-c 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="schedule-commands"><a class="link" href="#schedule-commands">3.5. Schedule Commands</a></h3>
+<h3 id="phone-commands"><a class="link" href="#phone-commands">5.3. Phone Commands</a></h3>
+<div class="paragraph">
+<p>Commands that work on phones that you have in SML.</p>
+</div>
 <div class="sect3">
-<h4 id="go-to-specific-date-in-calendar-code-schedule-code"><a class="link" href="#go-to-specific-date-in-calendar-code-schedule-code">3.5.1. Go to specific date in calendar : <code>schedule</code></a></h4>
+<h4 id="switch-to-phone-tab-panel-code-switch-p-code"><a class="link" href="#switch-to-phone-tab-panel-code-switch-p-code">5.3.1. Switch to Phone Tab Panel : <code>switch-p</code></a></h4>
+<div class="paragraph">
+<p>Switches to Phone Tab Panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>switch-p</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-a-phone-code-add-p-code"><a class="link" href="#add-a-phone-code-add-p-code">5.3.2. Add a phone : <code>add-p</code></a></h4>
+<div class="paragraph">
+<p>Adds a phone. Similar to add customer.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>add-p i/IDENTITY NUMBER (IMEI) s/SERIAL NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+IMEI Number should be 15 digits long.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Capacity can be 8GB, 16GB, 32GB, 64GB, 128GB, 256GB, 512GB or 1024GB.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Cost must start with $ and can only have a maximum of 2 decimal place.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A customer can have any number of tags, including 0.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a single phone</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>add-p i/543407158585522 s/A123bcfe29 n/iPhone 11 b/Apple cp/128 cl/Purple $/$900 t/NEW t/Cool</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-add-p.png" alt="ug add p" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-phone-code-delete-p-code"><a class="link" href="#delete-a-phone-code-delete-p-code">5.3.3. Delete a phone : <code>delete-p</code></a></h4>
+<div class="paragraph">
+<p>Deletes a phone in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>delete-p INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the phone at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed phone list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the 2nd phone.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>list-p</code><br></p>
+</li>
+<li>
+<p><code>delete-p 2</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Delete the 1st phone after performing a find phone command.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p alice</code><br></p>
+</li>
+<li>
+<p><code>delete-p 1</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-a-phone-code-find-p-code"><a class="link" href="#find-a-phone-code-find-p-code">5.3.4. Find a phone : <code>find-p</code></a></h4>
+<div class="paragraph">
+<p>Finds phones whose fields contain any of the given keywords.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>find KEYWORD [MORE_KEYWORDS]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The search matches anywhere for name, contact number, email and tags.</p>
+</li>
+<li>
+<p>Entries matching at least one field will be returned (i.e. <code>OR</code> search).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. <code>find-c aaa bbb</code> will match a customer with name <code>Aaah</code> and a customer with tag <code>bbb</code>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find phones with keyword <code>apple</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p apple</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-find-p-1.png" alt="ug find p 1" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find phones with keywords <code>128</code> <code>iphone</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p 128 iphone</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-find-p-2.png" alt="ug find p 2" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-the-phones-code-list-p-code"><a class="link" href="#list-the-phones-code-list-p-code">5.3.5. List the phones : <code>list-p</code></a></h4>
+<div class="paragraph">
+<p>List every phone in SML. Acts as a switch phone command as well.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>list-p</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-p</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-phone-code-edit-p-code"><a class="link" href="#edit-a-phone-code-edit-p-code">5.3.6. Edit a phone : <code>edit-p</code></a></h4>
+<div class="paragraph">
+<p>Edits the data fields of a phone.<br>
+<span class="underline">Format</span>: <code>edit-p INDEX [i/IMEI] [s/SERIAL NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the phone at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed customer list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the phone  will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the phones&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the phone name and colour of the 1st phone.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 1 n/iPhone 11 cl/Green</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Clear all existing tags from the 2nd phone.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 2 t/</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="copy-phone-code-copy-p-code"><a class="link" href="#copy-phone-code-copy-p-code">5.3.7. Copy phone : <code>copy-p</code></a></h4>
+<div class="paragraph">
+<p>Copies a phone in SML to clipboard<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>copy-p INDEX</code></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Copies the phone at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed phone list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Copy the 1st phone</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>copy-p 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Copy the 1st phone after performing find.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p apple</code></p>
+</li>
+<li>
+<p><code>copy-p 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="order-commands"><a class="link" href="#order-commands">5.4. Order Commands</a></h3>
+<div class="paragraph">
+<p>Commands that work on orders that you have.</p>
+</div>
+<div class="sect3">
+<h4 id="add-an-order-code-add-o-code"><a class="link" href="#add-an-order-code-add-o-code">5.4.1. Add an order : <code>add-o</code></a></h4>
+<div class="paragraph">
+<p>Adds an order to the list of orders.<br>
+Format: <code>add-o p/PHONE_NUMBER i/ITEM&#8230;&#8203;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-an-order-code-find-o-code"><a class="link" href="#find-an-order-code-find-o-code">5.4.2. Find an order : <code>find-o</code></a></h4>
+<div class="paragraph">
+<p>Returns all the information pertaining to the order.<br>
+Format: <code>find-o INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="complete-an-order-code-complete-o-code"><a class="link" href="#complete-an-order-code-complete-o-code">5.4.3. Complete an order : <code>complete-o</code></a></h4>
+<div class="paragraph">
+<p>Completes the order, order status changed to <code>COMPLETED</code>.<br>
+Format: <code>complete-o INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cancel-an-order-code-cancel-o-code"><a class="link" href="#cancel-an-order-code-cancel-o-code">5.4.4. Cancel an order : <code>cancel-o</code></a></h4>
+<div class="paragraph">
+<p>Cancels the order at the specified index.<br>
+Format: <code>cancel-o INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-the-orders-code-list-o-code"><a class="link" href="#list-the-orders-code-list-o-code">5.4.5. List the orders : <code>list-o</code></a></h4>
+<div class="paragraph">
+<p>List all the orders in the list.<br>
+Format: <code>list-o</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">5.4.6. Copy order field : <code>copy-o</code></a></h4>
+<div class="paragraph">
+<p>Copies an order field to clipboard.<br>
+Format: <code>copy-o &lt;field&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="duplicate-an-order-code-duplicate-o-code"><a class="link" href="#duplicate-an-order-code-duplicate-o-code">5.4.7. Duplicate an order : <code>duplicate-o</code></a></h4>
+<div class="paragraph">
+<p>Duplicate an order of the specified index.<br>
+Format: <code>duplicate-o INDEX</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="schedule-commands"><a class="link" href="#schedule-commands">5.5. Schedule Commands</a></h3>
+<div class="sect3">
+<h4 id="go-to-specific-date-in-calendar-code-schedule-code"><a class="link" href="#go-to-specific-date-in-calendar-code-schedule-code">5.5.1. Go to specific date in calendar : <code>schedule</code></a></h4>
 <div class="paragraph">
 <p>Shows the week of the date specified by the user.<br>
 Format: <code>schedule cd/DATE</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">3.5.2. Add a schedule : <code>add-s</code></a></h4>
+<h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">5.5.2. Add a schedule : <code>add-s</code></a></h4>
 <div class="paragraph">
 <p>Adds a schedule to the address book.<br>
 Format: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]…</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-a-schedule-code-delete-s-code"><a class="link" href="#delete-a-schedule-code-delete-s-code">3.5.3. Delete a schedule : <code>delete-s</code></a></h4>
+<h4 id="delete-a-schedule-code-delete-s-code"><a class="link" href="#delete-a-schedule-code-delete-s-code">5.5.3. Delete a schedule : <code>delete-s</code></a></h4>
 <div class="paragraph">
 <p>Deletes a schedule in the address book.<br>
 Format: <code>delete-s ORDER_INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-a-schedule-code-edit-s-code"><a class="link" href="#edit-a-schedule-code-edit-s-code">3.5.4. Edit a schedule : <code>edit-s</code></a></h4>
+<h4 id="edit-a-schedule-code-edit-s-code"><a class="link" href="#edit-a-schedule-code-edit-s-code">5.5.4. Edit a schedule : <code>edit-s</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing schedule.<br>
 Format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]…</code></p>
@@ -320,23 +1106,23 @@ Format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]…</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="utility-commands"><a class="link" href="#utility-commands">3.6. Utility Commands</a></h3>
+<h3 id="utility-commands"><a class="link" href="#utility-commands">5.6. Utility Commands</a></h3>
 <div class="sect3">
-<h4 id="undo-code-undo-code"><a class="link" href="#undo-code-undo-code">3.6.1. Undo : <code>undo</code></a></h4>
+<h4 id="undo-code-undo-code"><a class="link" href="#undo-code-undo-code">5.6.1. Undo : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Undo the previous command. <br>
 Format: <code>undo</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo-code-redo-code"><a class="link" href="#redo-code-redo-code">3.6.2. Redo : <code>redo</code></a></h4>
+<h4 id="redo-code-redo-code"><a class="link" href="#redo-code-redo-code">5.6.2. Redo : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>redo the previous command. <br>
 Format: <code>redo</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">3.6.3. Generate stats : <code>generate-s</code></a></h4>
+<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.6.3. Generate stats : <code>generate-s</code></a></h4>
 <div class="paragraph">
 <p>Accepts two types of input: Without date input and with date input<br></p>
 </div>
@@ -354,7 +1140,7 @@ Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="check-code-check-code"><a class="link" href="#check-code-check-code">3.6.4. Check : <code>check</code></a></h4>
+<h4 id="check-code-check-code"><a class="link" href="#check-code-check-code">5.6.4. Check : <code>check</code></a></h4>
 <div class="paragraph">
 <p>Check for stock etc. For stock, see the phones that have &lt; threshold quantity.  <br>
 Format: <code>check &lt;flag&gt;</code><br>
@@ -362,14 +1148,14 @@ Possible flag: <code>-p</code> for phone stock, <code>check -p &lt;threshold&gt;
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.6.5. Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">5.6.5. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clears all entries of items, orders and customers.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.6.6. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.6.6. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
@@ -377,7 +1163,7 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-export-data-code-import-export-code"><a class="link" href="#import-export-data-code-import-export-code">3.7. Import/export data : <code>import / export</code></a></h3>
+<h3 id="import-export-data-code-import-export-code"><a class="link" href="#import-export-data-code-import-export-code">5.7. Import/export data : <code>import / export</code></a></h3>
 <div class="paragraph">
 <p>Import csv file into the application.<br>
 Export application data into csv file.<br>
@@ -387,32 +1173,32 @@ Possible flag: <code>-p</code> for phone, <code>-c</code> for customer, <code>-o
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.8. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">5.8. Saving the data</a></h3>
 <div class="paragraph">
 <p>SML data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.9. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.9. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Explain how the user can enable/disable data encryption</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">3.10. Autocomplete  <code>[coming in v2.0]</code></a></h3>
+<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">5.10. Autocomplete  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Press <kbd>Tab</kbd> to autocomplete the line. (like in command line)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">3.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
+<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Notification page to show any notifications of reminders or alerts.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">3.12. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
+<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.12. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Export any of the data in SML to PDF format.</p>
 </div>
@@ -420,7 +1206,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<h2 id="faq"><a class="link" href="#faq">6. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
@@ -429,7 +1215,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">7. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -621,4 +1407,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 07:10:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 07:13:19 UTC</div></div></div></body></html>
