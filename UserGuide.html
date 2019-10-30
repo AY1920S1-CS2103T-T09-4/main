@@ -1028,25 +1028,25 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 <h4 id="add-an-order-code-add-o-code"><a class="link" href="#add-an-order-code-add-o-code">5.4.1. Add an order : <code>add-o</code></a></h4>
 <div class="paragraph">
 <p>Adds an order to the list of orders.<br>
-Format: <code>add-o p/PHONE_NUMBER i/ITEM&#8230;&#8203;</code></p>
+Format: <code>add-o c/CUSTOMER_INDEX p/PHONE_INDEX $/PRICE [t/TAG]&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="find-an-order-code-find-o-code"><a class="link" href="#find-an-order-code-find-o-code">5.4.2. Find an order : <code>find-o</code></a></h4>
 <div class="paragraph">
 <p>Returns all the information pertaining to the order.<br>
-Format: <code>find-o INDEX</code></p>
+Format: <code>find-o KEYWORD [KEYWORD]&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="complete-an-order-code-complete-o-code"><a class="link" href="#complete-an-order-code-complete-o-code">5.4.3. Complete an order : <code>complete-o</code></a></h4>
+<h4 id="complete-an-order-code-complete-code"><a class="link" href="#complete-an-order-code-complete-code">5.4.3. Complete an order : <code>complete</code></a></h4>
 <div class="paragraph">
 <p>Completes the order, order status changed to <code>COMPLETED</code>.<br>
 Format: <code>complete-o INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="cancel-an-order-code-cancel-o-code"><a class="link" href="#cancel-an-order-code-cancel-o-code">5.4.4. Cancel an order : <code>cancel-o</code></a></h4>
+<h4 id="cancel-an-order-code-cancel-code"><a class="link" href="#cancel-an-order-code-cancel-code">5.4.4. Cancel an order : <code>cancel</code></a></h4>
 <div class="paragraph">
 <p>Cancels the order at the specified index.<br>
 Format: <code>cancel-o INDEX</code></p>
@@ -1057,20 +1057,6 @@ Format: <code>cancel-o INDEX</code></p>
 <div class="paragraph">
 <p>List all the orders in the list.<br>
 Format: <code>list-o</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">5.4.6. Copy order field : <code>copy-o</code></a></h4>
-<div class="paragraph">
-<p>Copies an order field to clipboard.<br>
-Format: <code>copy-o &lt;field&gt;</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="duplicate-an-order-code-duplicate-o-code"><a class="link" href="#duplicate-an-order-code-duplicate-o-code">5.4.7. Duplicate an order : <code>duplicate-o</code></a></h4>
-<div class="paragraph">
-<p>Duplicate an order of the specified index.<br>
-Format: <code>duplicate-o INDEX</code></p>
 </div>
 </div>
 </div>
@@ -1179,6 +1165,43 @@ This behaviour is intentional and not a bug.</p>
 <li>
 <p>Do not be alarmed if the window does not pop up immediately upon click. For larger data sets
 we estimate at least a few seconds before the window will be loaded.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Coming in <code>V2.0</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Average Statistics</p>
+<div class="ulist">
+<ul>
+<li>
+<p>More advanced commands like <code>average profit</code> etc</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Different Charts</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Instead of just being able to display via a line chart, users will be able to select the type of chart</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Export Chart to PDF</p>
+<div class="ulist">
+<ul>
+<li>
+<p>User will be able to export their charts to pdf with a click of a button.</p>
 </li>
 </ul>
 </div>
@@ -1454,4 +1477,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 07:41:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 12:41:51 UTC</div></div></div></body></html>
