@@ -31,13 +31,14 @@
 <li><a href="#phone-commands">5.3. Phone Commands</a></li>
 <li><a href="#order-commands">5.4. Order Commands</a></li>
 <li><a href="#schedule-commands">5.5. Schedule Commands</a></li>
-<li><a href="#utility-commands">5.6. Utility Commands</a></li>
-<li><a href="#export-data-code-export-code">5.7. Export data : <code>export</code></a></li>
-<li><a href="#saving-the-data">5.8. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.9. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#autocomplete-code-coming-in-v2-0-code">5.10. Autocomplete  <code>[coming in v2.0]</code></a></li>
-<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
-<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.12. Export data to PDF  <code>[coming in v2.0]</code></a></li>
+<li><a href="#general-commands">5.6. General Commands</a></li>
+<li><a href="#history-code-history-code">5.7. History: <code>history</code></a></li>
+<li><a href="#export-data-code-export-code">5.8. Export data : <code>export</code></a></li>
+<li><a href="#saving-the-data">5.9. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#autocomplete-code-coming-in-v2-0-code">5.11. Autocomplete  <code>[coming in v2.0]</code></a></li>
+<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.12. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.13. Export data to PDF  <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">6. FAQ</a></li>
@@ -269,7 +270,7 @@ If you&#8217;ve made a mistake, you can simply revert to the previous command.</
 </li>
 <li>
 <p><strong>Redo</strong><br>
-Opposite of undo.</p>
+Inverse of undo.</p>
 </li>
 <li>
 <p><strong>Copy</strong><br>
@@ -482,11 +483,11 @@ A customer can have any number of tags, including 0.
 <p>The search matches anywhere for name, contact number, email and tags.</p>
 </li>
 <li>
-<p>Entries matching at least one field will be returned (i.e. <code>OR</code> search).</p>
+<p>Entries matching ALL fields will be returned (i.e. <code>AND</code> search).</p>
 <div class="ulist">
 <ul>
 <li>
-<p>e.g. <code>find-c aaa bbb</code> will match a customer with name <code>Aaah</code> and a customer with tag <code>bbb</code>;</p>
+<p>e.g. <code>find-c aaa bbb</code> will match a customer with name <code>Aaah</code> and with tag <code>bbb</code>;</p>
 </li>
 </ul>
 </div>
@@ -520,11 +521,11 @@ A customer can have any number of tags, including 0.
 <div class="ulist">
 <ul>
 <li>
-<p>Find customers with keywords <code>roy</code> <code>bernice</code><br></p>
+<p>Find customers with keywords <code>charlotte</code> <code>oliveiro</code><br></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>find-c charlotte david</code><br></p>
+<p><code>find-c charlotte oliveiro</code><br></p>
 </li>
 </ol>
 </div>
@@ -554,7 +555,23 @@ A customer can have any number of tags, including 0.
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-a-customer-code-edit-c-code"><a class="link" href="#edit-a-customer-code-edit-c-code">5.2.6. Edit a customer : <code>edit-c</code></a></h4>
+<h4 id="clear-the-customers-code-clear-c-code"><a class="link" href="#clear-the-customers-code-clear-c-code">5.2.6. Clear the customers : <code>clear-c</code></a></h4>
+<div class="paragraph">
+<p>Clears every customer in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>clear-c</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clear-c</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-customer-code-edit-c-code"><a class="link" href="#edit-a-customer-code-edit-c-code">5.2.7. Edit a customer : <code>edit-c</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing customer in CustomerBook.<br>
 Format: <code>edit-c INDEX [n/NAME] [c/CONTACT_NUMBER] [e/EMAIL] [t/TAG]…</code></p>
@@ -612,7 +629,7 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="copy-customer-code-copy-c-code"><a class="link" href="#copy-customer-code-copy-c-code">5.2.7. Copy customer : <code>copy-c</code></a></h4>
+<h4 id="copy-customer-code-copy-c-code"><a class="link" href="#copy-customer-code-copy-c-code">5.2.8. Copy customer : <code>copy-c</code></a></h4>
 <div class="paragraph">
 <p>Copies a customer in SML to clipboard<br></p>
 </div>
@@ -839,11 +856,11 @@ A customer can have any number of tags, including 0.
 <p>The search matches anywhere for name, contact number, email and tags.</p>
 </li>
 <li>
-<p>Entries matching at least one field will be returned (i.e. <code>OR</code> search).</p>
+<p>Entries matching ALL field will be returned (i.e. <code>AND</code> search).</p>
 <div class="ulist">
 <ul>
 <li>
-<p>e.g. <code>find-c aaa bbb</code> will match a customer with name <code>Aaah</code> and a customer with tag <code>bbb</code>;</p>
+<p>e.g. <code>find-c aaa bbb</code> will match a phone with name <code>Aaah</code> and with tag <code>bbb</code>;</p>
 </li>
 </ul>
 </div>
@@ -911,7 +928,23 @@ A customer can have any number of tags, including 0.
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-a-phone-code-edit-p-code"><a class="link" href="#edit-a-phone-code-edit-p-code">5.3.6. Edit a phone : <code>edit-p</code></a></h4>
+<h4 id="clear-the-phones-code-clear-p-code"><a class="link" href="#clear-the-phones-code-clear-p-code">5.3.6. Clear the phones : <code>clear-p</code></a></h4>
+<div class="paragraph">
+<p>Clears every phone in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>clear-p</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clear-p</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-phone-code-edit-p-code"><a class="link" href="#edit-a-phone-code-edit-p-code">5.3.7. Edit a phone : <code>edit-p</code></a></h4>
 <div class="paragraph">
 <p>Edits the data fields of a phone.<br>
 <span class="underline">Format</span>: <code>edit-p INDEX [i/IMEI] [s/SERIAL NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p>
@@ -969,7 +1002,7 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="copy-phone-code-copy-p-code"><a class="link" href="#copy-phone-code-copy-p-code">5.3.7. Copy phone : <code>copy-p</code></a></h4>
+<h4 id="copy-phone-code-copy-p-code"><a class="link" href="#copy-phone-code-copy-p-code">5.3.8. Copy phone : <code>copy-p</code></a></h4>
 <div class="paragraph">
 <p>Copies a phone in SML to clipboard<br></p>
 </div>
@@ -1066,6 +1099,13 @@ Format: <code>cancel-o INDEX</code></p>
 <div class="paragraph">
 <p>List all the orders in the list.<br>
 Format: <code>list-o</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="copy-order-field-code-copy-o-code"><a class="link" href="#copy-order-field-code-copy-o-code">5.4.6. Copy order field : <code>copy-o</code></a></h4>
+<div class="paragraph">
+<p>Copies an order field to clipboard.<br>
+Format: <code>copy-o &lt;field&gt;</code></p>
 </div>
 </div>
 </div>
@@ -1254,23 +1294,181 @@ If there are conflicts with the existing schedules, use the <code>-allow</code> 
 </div>
 </div>
 <div class="sect2">
-<h3 id="utility-commands"><a class="link" href="#utility-commands">5.6. Utility Commands</a></h3>
+<h3 id="general-commands"><a class="link" href="#general-commands">5.6. General Commands</a></h3>
 <div class="sect3">
 <h4 id="undo-code-undo-code"><a class="link" href="#undo-code-undo-code">5.6.1. Undo : <code>undo</code></a></h4>
 <div class="paragraph">
-<p>Undo the previous command. <br>
-Format: <code>undo</code></p>
+<p>Undo the previous command.<br>
+Currently, the following commands are undoable and redoable.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add Customer</p>
+</li>
+<li>
+<p>Edit Customer</p>
+</li>
+<li>
+<p>Delete Customer</p>
+</li>
+<li>
+<p>Clear Customer</p>
+</li>
+<li>
+<p>Add Order</p>
+</li>
+<li>
+<p>Edit Order</p>
+</li>
+<li>
+<p>Complete Order</p>
+</li>
+<li>
+<p>Cancel Order</p>
+</li>
+<li>
+<p>Add Phone</p>
+</li>
+<li>
+<p>Edit Phone</p>
+</li>
+<li>
+<p>Delete Phone</p>
+</li>
+<li>
+<p>Clear Phone</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>undo</code></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Undo clear Customer Book</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>clear-c</code></p>
+</li>
+<li>
+<p><code>undo</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-undo.png" alt="ug undo" width="800">
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="redo-code-redo-code"><a class="link" href="#redo-code-redo-code">5.6.2. Redo : <code>redo</code></a></h4>
 <div class="paragraph">
-<p>redo the previous command. <br>
-Format: <code>redo</code></p>
+<p>Redo the previous undone command. Inverse of undo. <br></p>
+</div>
+<div class="paragraph">
+<p>Currently, the following commands are undoable and redoable.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add Customer</p>
+</li>
+<li>
+<p>Edit Customer</p>
+</li>
+<li>
+<p>Delete Customer</p>
+</li>
+<li>
+<p>Clear Customer</p>
+</li>
+<li>
+<p>Add Order</p>
+</li>
+<li>
+<p>Edit Order</p>
+</li>
+<li>
+<p>Complete Order</p>
+</li>
+<li>
+<p>Cancel Order</p>
+</li>
+<li>
+<p>Add Phone</p>
+</li>
+<li>
+<p>Edit Phone</p>
+</li>
+<li>
+<p>Delete Phone</p>
+</li>
+<li>
+<p>Clear Phone</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>undo</code></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Redo clear Customer Book</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>clear-c</code></p>
+</li>
+<li>
+<p><code>undo</code></p>
+</li>
+<li>
+<p><code>redo</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-redo.png" alt="ug redo" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="history-code-history-code"><a class="link" href="#history-code-history-code">5.7. History: <code>history</code></a></h3>
+<div class="paragraph">
+<p>Views the command history of all your previous commands.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>history</code></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Example</span>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-history.png" alt="ug history" width="800">
 </div>
 </div>
 <div class="sect3">
-<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.6.3. Generate stats : <code>generate-s</code></a></h4>
+<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.7.1. Generate stats : <code>generate-s</code></a></h4>
 <div class="paragraph">
 <p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and calculates the three type of
 statistics as shown below.</p>
@@ -1290,7 +1488,7 @@ The argument must match this three words perfectly.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/images/StatsExampleDefault.png" alt="StatsExampleDefault" width="600">
+<img src="images/StatsExampleDefault.png" alt="StatsExampleDefault" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -1304,7 +1502,7 @@ Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/images/StatsExampleGraph.png" alt="StatsExampleGraph" width="600">
+<img src="images/StatsExampleGraph.png" alt="StatsExampleGraph" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -1376,14 +1574,14 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">5.6.4. Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">5.7.2. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clears all entries of items, orders and customers.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.6.5. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.7.3. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
@@ -1391,7 +1589,7 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.7. Export data : <code>export</code></a></h3>
+<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.8. Export data : <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports application data into csv file.<br>
 If csv file of the input file name exists, the application data will be exported to the existing file.<br>
@@ -1400,32 +1598,32 @@ Format: <code>export &lt;file name&gt;</code><br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">5.8. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">5.9. Saving the data</a></h3>
 <div class="paragraph">
 <p>SML data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.9. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Explain how the user can enable/disable data encryption</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">5.10. Autocomplete  <code>[coming in v2.0]</code></a></h3>
+<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">5.11. Autocomplete  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Press <kbd>Tab</kbd> to autocomplete the line. (like in command line)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.11. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
+<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.12. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Notification page to show any notifications of reminders or alerts.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.12. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
+<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.13. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Export any of the data in SML to PDF format.</p>
 </div>
@@ -1477,6 +1675,19 @@ There is no need to save manually.</p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>customer : <code>clear-c</code></p>
+</li>
+<li>
+<p>phone : <code>clear-p</code></p>
+</li>
+<li>
+<p>order : <code>clear-o</code></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Complete</strong><br></p>
@@ -1521,11 +1732,11 @@ There is no need to save manually.</p>
 </div>
 </li>
 <li>
-<p><strong>Duplicate</strong><br></p>
+<p><strong>History</strong><br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>order : <code>duplicate-o INDEX</code></p>
+<p>history : <code>history</code></p>
 </li>
 </ul>
 </div>
@@ -1605,4 +1816,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 13:32:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 13:37:30 UTC</div></div></div></body></html>
