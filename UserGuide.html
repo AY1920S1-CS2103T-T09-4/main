@@ -202,7 +202,7 @@ A request for goods.</p>
 </li>
 <li>
 <p><strong>Schedule</strong><br>
-A meetup with buyer to pass the goods.</p>
+A meetup with buyer to pass the goods. There can only be 1 schedule associated with an order at any one time.</p>
 </li>
 </ol>
 </div>
@@ -1098,7 +1098,7 @@ Format: <code>complete-o INDEX</code></p>
 <h4 id="cancel-an-order-code-cancel-code"><a class="link" href="#cancel-an-order-code-cancel-code">5.4.5. Cancel an order : <code>cancel</code></a></h4>
 <div class="paragraph">
 <p>Cancels the order at the specified index.<br>
-Format: <code>cancel-o INDEX</code></p>
+Format: <code>cancel INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -1208,7 +1208,7 @@ Format: <code>copy-o &lt;field&gt;</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Date should be in the format YYYY.MM.DD with valid year, month and date.
+Date should be in the format YYYY.MM.DD with valid year, month and date. Only dates from year 1970 onwards are valid.
 </td>
 </tr>
 </table>
@@ -1218,7 +1218,7 @@ Date should be in the format YYYY.MM.DD with valid year, month and date.
 <h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">5.5.3. Add a schedule : <code>add-s</code></a></h4>
 <div class="paragraph">
 <p>Adds a schedule.<br>
-If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules, or change the time.<br>
+If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules.<br>
 <strong>Note</strong>: You can add multiple schedules at the same time slot but it will affect the visibility of the order index on the schedule.<br></p>
 </div>
 <div class="paragraph">
@@ -1256,7 +1256,7 @@ Order index should be a positive integer and must exist in the order list.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Date should be in the format YYYY.MM.DD with valid year, month and date.
+Date should be in the format YYYY.MM.DD with valid year, month and date. Only dates from year 1970 onwards are valid.
 </td>
 </tr>
 </table>
@@ -1428,6 +1428,18 @@ Currently, the following commands are undoable and redoable.<br></p>
 <li>
 <p>Clear Phone</p>
 </li>
+<li>
+<p>Add Schedule</p>
+</li>
+<li>
+<p>Edit Schedule</p>
+</li>
+<li>
+<p>Delete Schedule</p>
+</li>
+<li>
+<p>Clear Schedule</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -1505,10 +1517,22 @@ Currently, the following commands are undoable and redoable.<br></p>
 <li>
 <p>Clear Phone</p>
 </li>
+<li>
+<p>Add Schedule</p>
+</li>
+<li>
+<p>Edit Schedule</p>
+</li>
+<li>
+<p>Delete Schedule</p>
+</li>
+<li>
+<p>Clear Schedule</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
-<p><span class="underline">Format</span>: <code>undo</code></p>
+<p><span class="underline">Format</span>: <code>redo</code></p>
 </div>
 <div class="paragraph">
 <p><span class="underline">Examples</span>:</p>
@@ -1932,4 +1956,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 10:10:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 14:07:37 UTC</div></div></div></body></html>
