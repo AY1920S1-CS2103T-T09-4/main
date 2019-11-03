@@ -664,10 +664,10 @@ To set the display information of the <code>Schedule</code> object, we will find
 <div class="ulist">
 <ul>
 <li>
-<p>Add&#8201;&#8212;&#8201;adds a new schedule into SML, command will be in this format: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAGS]</code></p>
+<p>Add&#8201;&#8212;&#8201;adds a new schedule into SML, command will be in this format: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAGS] [-allow]</code></p>
 </li>
 <li>
-<p>Edit&#8201;&#8212;&#8201;edits an existing schedule in SML, command will be in this format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAGS]</code></p>
+<p>Edit&#8201;&#8212;&#8201;edits an existing schedule in SML, command will be in this format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAGS] [-allow]</code></p>
 </li>
 <li>
 <p>Delete&#8201;&#8212;&#8201;delete an existing schedule in SML, command will be in this format: <code>delete-s ORDER_INDEX</code></p>
@@ -716,10 +716,6 @@ When any of the schedule commands are executed, the model will edit the <code>Ca
 </div>
 <div class="paragraph">
 <p>Basically, after the setCalendarDate(calendar) method in <code>Model</code> is executed, <code>CalendarPanel</code> listens to it and make the necessary changes to the agenda view by calling its setAgendaView(calendar) method.</p>
-</div>
-<div class="paragraph">
-<p>Adding on, we will be adding an additional feature to check for clashing schedules.
-In the case of a clash, users will be given a choice to allow clashing schedules, or to just change to timing to avoid the clashes.</p>
 </div>
 <div class="sect4">
 <h5 id="design-considerations-alternative-designs-considered-2"><a class="link" href="#design-considerations-alternative-designs-considered-2">Design Considerations / Alternative designs considered</a></h5>
@@ -1934,4 +1930,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 14:42:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 15:05:03 UTC</div></div></div></body></html>
