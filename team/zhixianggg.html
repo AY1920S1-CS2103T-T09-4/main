@@ -1,0 +1,1601 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Oon Zhi Xiang - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Oon Zhi Xiang - Project Portfolio</h1></div><div id="content"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hi! I am Zhi Xiang, a Year 2 Computer Science student at National University of Singapore (NUS).
+Below is a summary of my contributions for this project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-seller-manager-lite"><a class="link" href="#project-seller-manager-lite">PROJECT: Seller Manager Lite</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For our module CS2103T: Software Engineering, my team and I were tasked to enhance a desktop address book application called AddressBook.</p>
+</div>
+<div class="paragraph">
+<p>We eventually turned it into a product called Seller Manager Lite (SML), which aims to help small-scale handphone resellers manage their sales and inventory with ease.
+Users interact with it using a Command Line Interface (CLI) and it has a Graphical User Interface (GUI) created with JavaFX. It is written in Java, and has about 10,000 lines of code.</p>
+</div>
+<div class="paragraph">
+<p>My role was being in charge of the Logic Component, implementing the commands and parsers for Customer, Phone and Order data.
+Additionally, I was tasked to implement an undo/redo feature, find feature and copy feature.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: I added <strong>the ability to undo/redo previous commands</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+</li>
+<li>
+<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+</li>
+<li>
+<p>Credits: <a href="https://github.com/yamgent">yamgent</a> - I re-used some of his code to implement the UndoRedoStack. Other than that,</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: I added <strong>the ability to create/read/update/delete customer, phone and order</strong></p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: I added find command(s) that allows the user to search for customer, phone or order that matches certain keywords.
+This required enhancing the existing find command.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: I added copy command(s) that allows the user to copy the data that they want onto their clipboard.
+This would make it convenient for them to copy data out of the application.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>:</p>
+</li>
+<li>
+<p>Functional</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Undo/Redo: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/161">#161</a></p>
+</li>
+<li>
+<p>Find: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/124">#124</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/165">#165</a></p>
+</li>
+<li>
+<p>CRUD: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/80">#80</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/102">#102</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/119">#119</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/124">#124</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/183">#183</a></p>
+</li>
+<li>
+<p>DevOps: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/120">#120</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/123">#123</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Test</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Order: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/168">#168</a></p>
+</li>
+<li>
+<p>Model Manager: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/106">#106</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Created an Archived Order Tab Panel (backend) as we realise that there was too much clutter in the order tab. <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/148">#148</a></p>
+</li>
+<li>
+<p>Added a history command to allow forgetful users to remember what they typed in. <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/154">#154</a></p>
+</li>
+<li>
+<p>Helped to implement Model Manager <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/75">#75</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Restructured User Guide to make it more reader-friendly: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/168/files">#168</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/258">#258</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/137">#137</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class: #</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set-up Netlify</p>
+</li>
+<li>
+<p>Set-up Codacy <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/123">#123</a></p>
+</li>
+<li>
+<p>Added reposense config.json file <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/120">#120</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="glossary"><a class="link" href="#glossary">Glossary</a></h3>
+<div class="sect3">
+<h4 id="common-terms"><a class="link" href="#common-terms">Common Terms</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>SML</strong><br>
+Initialism for our application, Seller Manager Lite.</p>
+</li>
+<li>
+<p><strong>Customer</strong><br>
+A person who buys from the seller.</p>
+</li>
+<li>
+<p><strong>Phone</strong><br>
+Multi-purpose mobile computing device. Also known as smartphones.</p>
+</li>
+<li>
+<p><strong>Order</strong><br>
+A request for goods.</p>
+</li>
+<li>
+<p><strong>Schedule</strong><br>
+A meetup with buyer to pass the goods. There can only be 1 schedule associated with an order at any one time.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sml-specific-terms"><a class="link" href="#sml-specific-terms">SML-specific Terms</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Command</strong><br>
+An instruction that will produce an output once entered in SML.</p>
+</li>
+<li>
+<p><strong>CustomerBook</strong><br>
+A CustomerBook is a list that stores Customer(s) that has been added into SML.
+Each customer entry comprises of CustomerName, ContactNumber and Email fields and others.</p>
+</li>
+<li>
+<p><strong>PhoneBook</strong><br>
+A PhoneBook is a list that stores Phone(s) that has been added in SML.
+Each phone entry comprises of IdentityNumber, SerialNumber, Brand, PhoneName, Colour, Cost and Capacity.</p>
+</li>
+<li>
+<p><strong>OrderBook</strong><br>
+A OrderBook is a list that stores Order(s) that has been added in SML.
+Each order entry comprises of a customer, a phone, OrderID, Price and OrderStatus.</p>
+</li>
+<li>
+<p><strong>ScheduleBook</strong><br>
+A ScheduleBook is a list that stores Schedules(s) that has been added in SML.
+Each schedule entry comprises a Venue and Calendar with date and time.</p>
+</li>
+<li>
+<p><strong>Archived</strong><br>
+Archived is a list that stores Completed or Cancelled orders ONLY.</p>
+</li>
+<li>
+<p><strong>TabPanel</strong><br>
+A view that is similar to web browser Tabs.</p>
+</li>
+<li>
+<p><strong>Add</strong><br>
+The action of putting an entry into CustomerBook, PhoneBook, OrderBook or ScheduleBook.</p>
+</li>
+<li>
+<p><strong>Edit</strong><br>
+If you want to make changes to any entry, you can do so with this command.</p>
+</li>
+<li>
+<p><strong>Delete</strong><br>
+Remove an entry from CustomerBook, PhoneBook or ScheduleBook.</p>
+</li>
+<li>
+<p><strong>Find</strong><br>
+The action of searching for customers, phones or orders that contains the keywords that you specify.</p>
+</li>
+<li>
+<p><strong>Switch</strong><br>
+Change the Tab Panel to Customer, Phone, Order, Schedule or Archived.</p>
+</li>
+<li>
+<p><strong>Undo</strong><br>
+If you&#8217;ve made a mistake, you can simply revert to the previous command.</p>
+</li>
+<li>
+<p><strong>Redo</strong><br>
+Inverse of undo.</p>
+</li>
+<li>
+<p><strong>Copy</strong><br>
+Action of copying an entry into clipboard.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="customer-commands"><a class="link" href="#customer-commands">Customer Commands</a></h3>
+<div class="paragraph">
+<p>Commands that work on customers in SML.</p>
+</div>
+<div class="sect3">
+<h4 id="switch-to-customer-tab-panel-code-switch-c-code"><a class="link" href="#switch-to-customer-tab-panel-code-switch-c-code">Switch to Customer Tab Panel : <code>switch-c</code></a></h4>
+<div class="paragraph">
+<p>Switches to Customer Tab Panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>switch-c</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-a-customer-code-add-c-code"><a class="link" href="#add-a-customer-code-add-c-code">Add a customer : <code>add-c</code></a></h4>
+<div class="paragraph">
+<p>Adds a Customer to the CustomerBook.<br>
+This can be done in any Tab Panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>add-c n/NAME c/CONTACT_NUMBER e/EMAIL [t/TAG]…</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Contact numbers should be 8-digits long.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A customer can have any number of tags, including 0.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Customers can share the same name.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Customers cannot share the same contact number or email.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:
+* Adds a single customer
+. <code>add-c n/Steve Jobs c/12345678 e/stevejobs@apple.com</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ug-command/ug-add-c.png" alt="ug add c" width="900">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-customer-code-delete-c-code"><a class="link" href="#delete-a-customer-code-delete-c-code">Delete a customer : <code>delete-c</code></a></h4>
+<div class="paragraph">
+<p>Deletes a customer in SML. Note that deleting a customer will also delete the orders and schedules associated with the customer.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>delete-c INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the customer at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed customer list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the 2nd customer.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>list-c</code><br></p>
+</li>
+<li>
+<p><code>delete-c 2</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Delete the 1st customer after performing a find customer command.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c alice</code><br></p>
+</li>
+<li>
+<p><code>delete-c 1</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-a-customer-code-find-c-code"><a class="link" href="#find-a-customer-code-find-c-code">Find a customer : <code>find-c</code></a></h4>
+<div class="paragraph">
+<p>Finds customers whose fields contain any of the given keywords.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>find KEYWORD [MORE_KEYWORDS]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The search matches anywhere for name, contact number, email and tags.</p>
+</li>
+<li>
+<p>The search looks for partial matches e.g. <code>ha</code> will match <code>hans</code>.</p>
+</li>
+<li>
+<p>Entries matching ALL fields will be returned (i.e. <code>AND</code> search).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. <code>find-c aaa bbb</code> will match a customer with name <code>Aaah</code> and with tag <code>bbb</code>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find customers with keyword <code>colleague</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c colleague</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ug-command/ug-find-c-1.png" alt="ug find c 1" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find customers with keywords <code>charlotte</code> <code>oliveiro</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c charlotte oliveiro</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ug-command/ug-find-c-2.png" alt="ug find c 2" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-the-customers-code-list-c-code"><a class="link" href="#list-the-customers-code-list-c-code">List the customers : <code>list-c</code></a></h4>
+<div class="paragraph">
+<p>List every customer in SML. Acts as a switch customer command as well.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>list-c</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-c</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-the-customers-code-clear-c-code"><a class="link" href="#clear-the-customers-code-clear-c-code">Clear the customers : <code>clear-c</code></a></h4>
+<div class="paragraph">
+<p>Clears every customer in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>clear-c</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clear-c</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-customer-code-edit-c-code"><a class="link" href="#edit-a-customer-code-edit-c-code">Edit a customer : <code>edit-c</code></a></h4>
+<div class="paragraph">
+<p>Edits an existing customer in CustomerBook.<br>
+Format: <code>edit-c INDEX [n/NAME] [c/CONTACT_NUMBER] [e/EMAIL] [t/TAG]…</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the customer at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed customer list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the customer  will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the customer&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the contact number and email of the 1st customer.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 1 c/98721928 e/happygolucky@gmail.com</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Clear all existing tags from the 2nd customer.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 2 t/</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="copy-customer-code-copy-c-code"><a class="link" href="#copy-customer-code-copy-c-code">Copy customer : <code>copy-c</code></a></h4>
+<div class="paragraph">
+<p>Copies a customer in SML to clipboard<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>copy-c INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Copies the customer at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed customer list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Copy the 1st customer</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>copy-c 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Copy the 1st customer after performing find.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-c Lee</code></p>
+</li>
+<li>
+<p><code>copy-c 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="phone-commands"><a class="link" href="#phone-commands">Phone Commands</a></h3>
+<div class="paragraph">
+<p>Commands that work on phones that you have in SML.</p>
+</div>
+<div class="sect3">
+<h4 id="switch-to-phone-tab-panel-code-switch-p-code"><a class="link" href="#switch-to-phone-tab-panel-code-switch-p-code">Switch to Phone Tab Panel : <code>switch-p</code></a></h4>
+<div class="paragraph">
+<p>Switches to Phone Tab Panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>switch-p</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-a-phone-code-add-p-code"><a class="link" href="#add-a-phone-code-add-p-code">Add a phone : <code>add-p</code></a></h4>
+<div class="paragraph">
+<p>Adds a phone. Similar to add customer.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>add-p i/IDENTITY NUMBER (IMEI) s/SERIAL NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+IMEI Number should be 15 digits long.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Capacity can be 8GB, 16GB, 32GB, 64GB, 128GB, 256GB, 512GB or 1024GB. You do not need to type GB after the prefix cp/.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Cost must start with $ and can only have a maximum of 2 decimal place.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A customer can have any number of tags, including 0.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a single phone</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>add-p i/543407158585522 s/A123bcfe29 n/iPhone 11 b/Apple cp/128 cl/Purple $/$900 t/NEW t/Cool</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ug-command/ug-add-p.png" alt="ug add p" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-phone-code-delete-p-code"><a class="link" href="#delete-a-phone-code-delete-p-code">Delete a phone : <code>delete-p</code></a></h4>
+<div class="paragraph">
+<p>Deletes a phone in SML. Note that deleting a phone will also delete the orders and schedules associated with the phone.+</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>delete-p INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the phone at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed phone list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the 2nd phone.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>list-p</code><br></p>
+</li>
+<li>
+<p><code>delete-p 2</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Delete the 1st phone after performing a find phone command.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p alice</code><br></p>
+</li>
+<li>
+<p><code>delete-p 1</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-a-phone-code-find-p-code"><a class="link" href="#find-a-phone-code-find-p-code">Find a phone : <code>find-p</code></a></h4>
+<div class="paragraph">
+<p>Finds phones whose fields contain any of the given keywords.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>find KEYWORD [MORE_KEYWORDS]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The search looks for partial matches e.g. <code>ha</code> will match <code>hans</code>.</p>
+</li>
+<li>
+<p>The search matches anywhere for name, contact number, email and tags.</p>
+</li>
+<li>
+<p>Entries matching ALL field will be returned (i.e. <code>AND</code> search).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. <code>find-c aaa bbb</code> will match a phone with name <code>Aaah</code> and with tag <code>bbb</code>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find phones with keyword <code>apple</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p apple</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ug-command/ug-find-p-1.png" alt="ug find p 1" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find phones with keywords <code>128</code> <code>iphone</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p 128 iphone</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ug-command/ug-find-p-2.png" alt="ug find p 2" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-the-phones-code-list-p-code"><a class="link" href="#list-the-phones-code-list-p-code">List the phones : <code>list-p</code></a></h4>
+<div class="paragraph">
+<p>List every phone in SML. Acts as a switch phone command as well.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>list-p</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-p</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-the-phones-code-clear-p-code"><a class="link" href="#clear-the-phones-code-clear-p-code">Clear the phones : <code>clear-p</code></a></h4>
+<div class="paragraph">
+<p>Clears every phone in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>clear-p</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clear-p</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-phone-code-edit-p-code"><a class="link" href="#edit-a-phone-code-edit-p-code">Edit a phone : <code>edit-p</code></a></h4>
+<div class="paragraph">
+<p>Edits the data fields of a phone.<br>
+<span class="underline">Format</span>: <code>edit-p INDEX [i/IMEI] [s/SERIAL NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the phone at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed customer list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the phone  will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the phones&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the phone name and colour of the 1st phone.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 1 n/iPhone 11 cl/Green</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Clear all existing tags from the 2nd phone.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>edit-c 2 t/</code><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="copy-phone-code-copy-p-code"><a class="link" href="#copy-phone-code-copy-p-code">Copy phone : <code>copy-p</code></a></h4>
+<div class="paragraph">
+<p>Copies a phone in SML to clipboard<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>copy-p INDEX</code></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Copies the phone at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed phone list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Copy the 1st phone</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>copy-p 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Copy the 1st phone after performing find.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find-p apple</code></p>
+</li>
+<li>
+<p><code>copy-p 1</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-photo-to-phone-code-addphoto-phone_index-fc-code-code-coming-in-v2-0-code"><a class="link" href="#add-photo-to-phone-code-addphoto-phone_index-fc-code-code-coming-in-v2-0-code">Add Photo to phone : <code>addphoto PHONE_INDEX fc/</code> <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>Adds a photo to a phone in the database using the system&#8217;s user interface dialog.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="customer-commands-2"><a class="link" href="#customer-commands-2">Customer Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to customer tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-c n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new customer into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`edit-c INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​ `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing customer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-c INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a customer and its associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all customers and their associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-c KEYWORD [MORE_KEYWORDS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds the customers that contains the keywords in its field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy-c INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copies a customer into clipboard</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="phone-commands-2"><a class="link" href="#phone-commands-2">Phone Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to phone tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-p i/IDENTITY NUMBER (IMEI) s/SERIAL NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new phone into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-p INDEX [i/IMEI] [s/SERIAL NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing phone.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-p INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a phone and its associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all phones and their associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-p KEYWORD [MORE_KEYWORDS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds the phones that contains the keywords in its field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy-p INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copies a phone into clipboard</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="order-commands"><a class="link" href="#order-commands">Order Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to order tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-o c/CUSTOMER_INDEX p/PHONE_INDEX $/PRICE [t/TAG]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new order into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-o INDEX [c/CUSTOMER_INDEX] [p/PHONE_INDEX] [$/PRICE] [t/TAG]…</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>complete INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completes an order and shift it into Archived Order Tab. Also deletes the associated phone.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cancel INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cancels an order and shift it into Archived Order Tab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all orders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-o KEYWORD [MORE_KEYWORDS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds the orders that contains the keywords in its field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy-o INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copies an order into clipboard</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="schedule-commands"><a class="link" href="#schedule-commands">Schedule Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to schedule tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schedule cd/DATE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows the week of the date specified by the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new schedule into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]… [-allow]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing schedule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-s ORDER_INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a schedule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all schedules.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="archived-order-commands"><a class="link" href="#archived-order-commands">Archived Order Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to archived order tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all archived orders.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="general-commands"><a class="link" href="#general-commands">General Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-s s/stat d1/YYYY.MM.DD d2/YYYY.MM.DD</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates the statistics with date input in chart format (in pop-up modal dialog).<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-s s/stat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates the statistics with no date input.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>undo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo the last undoable command.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>redo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo the undone command.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>history</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Views command history.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export &lt;file name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exports application data into csv file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pops up a help window.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quits the application.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="find-customer-phone-order-feature"><a class="link" href="#find-customer-phone-order-feature">Find Customer/Phone/Order feature</a></h3>
+<div class="paragraph">
+<p>The find feature allows the user to find the customer/phone/order with matching keywords.
+We wanted to implement an AND search and so long as the customer/phone/order contained the keyword
+in its data, it would be shown to the user.
+For simplicity&#8217;s sake, we will only focus on Customer in this section.</p>
+</div>
+<div class="paragraph">
+<p>The command that we wanted to implement is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. <code>find-c Alice</code>&#8201;&#8212;&#8201;would allow the user to find the customer with any data field that matches "Alice".</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>In order to implement this feature, we decided to introduce a new predicate, <code>CustomerContainsKeywordsPredicate</code>.
+Similar to AddressBook3&#8217;s <code>NameContainsKeywordsPredicate</code>, the customer predicate tests that all keyword matches at least 1 data field of Customer.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/CustomerPredicateClassDiagram.png" alt="CustomerPredicateClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Below is a diagram to show you how <code>find-c Alice</code> runs in the program.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/FindCustomerCommandSequenceDiagram1.png" alt="FindCustomerCommandSequenceDiagram1">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-alternative-designs-considered"><a class="link" href="#design-considerations-alternative-designs-considered">Design Considerations / Alternative designs considered</a></h4>
+<div class="paragraph">
+<p>Alternative 2: The other alternative that we considered in implementing the find feature was allowing the user to specify which field to check for.
+First, we create a <code>FindCustomerDescriptor</code> that would store all the strings that were to be searched under the various data fields.
+e.g. The <code>a/</code> prefix would mean to search for all the data fields of Customer. The <code>n/</code> prefix would mean to search for the name of Customers only.
+The <code>FindCustomerCommandParser</code> would store the relevant key-phrases in the FindCustomerDescriptor and generate a different predicate,
+<code>CustomerContainsKeyPhrasesPredicate</code>, using the FindCustomerDescriptor and pass it to <code>FindCustomerCommand</code>. <code>FindCustomerCommand</code> would then be executed.</p>
+</div>
+<div class="paragraph">
+<p>However, the predicate <code>CustomerContainsKeyPhrasesPredicate</code> would do the heavy lifting by doing further parsing of the keywords
+and test whether Customer contains the relevant keywords.</p>
+</div>
+<div class="paragraph">
+<p>We did not implement this as <code>CustomerContainsKeyPhrasesPredicate</code> violated the Single-Responsibility Principle.
+It had to do further parsing of the keywords instead of simply testing whether the Customer contains the keywords.
+Also, if there was a change to the <code>Customer</code> class, it would be less intuitive to modify <code>CustomerContainsKeywordsPredicate</code>
+as one would need to understand the parsing.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> <code>CustomerContainsKeywordsPredicate</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Cannot search based on the exact data field.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> <code>CustomerContainsKeyPhrasesPredicate</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code written in total.</p>
+</li>
+<li>
+<p>Cons: Harder to maintain.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The undo/redo mechanism is facilitated by <code>UndoRedoStack</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>UndoRedoStack</code> contains 2 stacks, <code>undoStack</code> and <code>redoStack</code>.
+<code>undoStack</code> and <code>redoStack</code> contains commands that are of type <code>UndoableCommand</code>.
+<code>UndoableCommand</code> extends Command and has the following attributes and methods.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>When an UndoableCommand is being executed, the methods <code>saveCustomerBookSnapshot(Model model)</code>, <code>savePhoneBookSnapshot(Model model)</code>, <code>saveOrderBookSnapshot(Model model)</code>, <code>saveScheduleBookSnapshot(Model model)</code>
+and <code>saveArchivedOrderBookSnapshot(Model model)</code> will be called. This ensures that the states of all 5 books are being stored.</p>
+</div>
+<div class="paragraph">
+<p>After a command is executed, <code>LogicManager</code> will add it into the <code>UndoRedoStack</code>.
+This will be explained in the activity diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoRedoStackPushActivityDiagram.png" alt="UndoRedoStackPushActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Next, when <code>UndoCommand</code> is being performed, <code>UndoStack</code> will remove the first command in its stack and add it to <code>RedoStack</code>.
+It will then call <code>UndoableCommand#undo()</code> of the command that is removed.
+The <code>undo()</code> method will then set the model to the previous snapshots of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.
+Afterwhich, it will save the original state of the model (e.g. before Undo took place) by calling <code>UndoableCommand#save(Model model)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Likewise, when <code>RedoCommand</code> is being performed, <code>RedoStack</code> will remove the first command in its stack and add it to <code>UndoStack</code>.
+It will then call <code>UndoableCommand#redo()</code> of the command that is removed.
+The <code>redo()</code> method will then set the model to the previous snapshots of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>UndoRedoStack</code> will be initialized.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram0.png" alt="UndoRedoStackObjectDiagram0">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>delete-c 5</code> command to delete the 5th customer. The <code>delete-c 5</code> command will be pushed into the <code>UndoRedoStack</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram1.png" alt="UndoRedoStackObjectDiagram1">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 3. The user executes <code>add-c n/David &#8230;&#8203;</code> to add a new person. The <code>add-c</code> command will save all states of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram2.png" alt="UndoRedoStackObjectDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 4. The user now decides that adding the customer was a mistake, and decides to undo that action by executing the <code>undo</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram3.png" alt="UndoRedoStackObjectDiagram3">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+UndoCommand will check whether if there is any command to be undone by calling the <code>UndoRedoStack#canUndo()</code> method.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the undo operation works:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>UndoableCommand#redo()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The user then decides to execute the command <code>list-c</code>. Commands that do not modify the 5 books (Customer, Phone, Order, Schedule and Archived Order), such as <code>list-c</code>, do not extend UndoableCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram4.png" alt="UndoRedoStackObjectDiagram4">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6. The user executes <code>clear-c</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram5.png" alt="UndoRedoStackObjectDiagram5">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire mdodel.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will use less memory (e.g. for <code>delete-c</code>, just save the customer being deleted).</p>
+</li>
+<li>
+<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use 2 stacks to store the history of the Models.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Logic is duplicated twice. For example, when a command is undone, we must remember to save the previous model state to the command.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
+</li>
+<li>
+<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 13:50:33 UTC</div></div></div></body></html>

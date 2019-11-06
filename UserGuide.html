@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Seller Manager Lite - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Seller Manager Lite - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Seller Manager Lite - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team T09-4</code>      Since: <code>Sep 2019</code>      Licence: <code>MIT</code></p>
@@ -18,8 +18,18 @@
 </li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#overview">3.1. Overview</a></li>
-<li><a href="#glossary">3.2. Glossary</a></li>
+<li><a href="#overview">3.1. Overview</a>
+<ul class="sectlevel3">
+<li><a href="#clutter-free">3.1.1. Clutter-free</a></li>
+<li><a href="#save-time">3.1.2. Save Time</a></li>
+<li><a href="#track-your-sales-performance">3.1.3. Track your sales performance</a></li>
+</ul>
+</li>
+<li><a href="#glossary">3.2. Glossary</a>
+<ul class="sectlevel3">
+<li><a href="#common-terms">3.2.1. Common Terms</a></li>
+</ul>
+</li>
 <li><a href="#sml-specific-terms">3.3. SML-specific Terms</a></li>
 </ul>
 </li>
@@ -27,22 +37,92 @@
 <li><a href="#Commands">5. Commands</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">5.1. Viewing help : <code>help</code></a></li>
-<li><a href="#customer-commands">5.2. Customer Commands</a></li>
-<li><a href="#phone-commands">5.3. Phone Commands</a></li>
-<li><a href="#order-commands">5.4. Order Commands</a></li>
-<li><a href="#schedule-commands">5.5. Schedule Commands</a></li>
-<li><a href="#general-commands">5.6. General Commands</a></li>
-<li><a href="#history-code-history-code">5.7. History: <code>history</code></a></li>
-<li><a href="#export-data-code-export-code">5.8. Export data : <code>export</code></a></li>
-<li><a href="#saving-the-data">5.9. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#autocomplete-code-coming-in-v2-0-code">5.11. Autocomplete  <code>[coming in v2.0]</code></a></li>
-<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.12. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
-<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.13. Export data to PDF  <code>[coming in v2.0]</code></a></li>
+<li><a href="#customer-commands">5.2. Customer Commands</a>
+<ul class="sectlevel3">
+<li><a href="#switch-to-customer-tab-panel-code-switch-c-code">5.2.1. Switch to Customer Tab Panel : <code>switch-c</code></a></li>
+<li><a href="#add-a-customer-code-add-c-code">5.2.2. Add a customer : <code>add-c</code></a></li>
+<li><a href="#delete-a-customer-code-delete-c-code">5.2.3. Delete a customer : <code>delete-c</code></a></li>
+<li><a href="#find-a-customer-code-find-c-code">5.2.4. Find a customer : <code>find-c</code></a></li>
+<li><a href="#list-the-customers-code-list-c-code">5.2.5. List the customers : <code>list-c</code></a></li>
+<li><a href="#clear-the-customers-code-clear-c-code">5.2.6. Clear the customers : <code>clear-c</code></a></li>
+<li><a href="#edit-a-customer-code-edit-c-code">5.2.7. Edit a customer : <code>edit-c</code></a></li>
+<li><a href="#copy-customer-code-copy-c-code">5.2.8. Copy customer : <code>copy-c</code></a></li>
+</ul>
+</li>
+<li><a href="#phone-commands">5.3. Phone Commands</a>
+<ul class="sectlevel3">
+<li><a href="#switch-to-phone-tab-panel-code-switch-p-code">5.3.1. Switch to Phone Tab Panel : <code>switch-p</code></a></li>
+<li><a href="#add-a-phone-code-add-p-code">5.3.2. Add a phone : <code>add-p</code></a></li>
+<li><a href="#delete-a-phone-code-delete-p-code">5.3.3. Delete a phone : <code>delete-p</code></a></li>
+<li><a href="#find-a-phone-code-find-p-code">5.3.4. Find a phone : <code>find-p</code></a></li>
+<li><a href="#list-the-phones-code-list-p-code">5.3.5. List the phones : <code>list-p</code></a></li>
+<li><a href="#clear-the-phones-code-clear-p-code">5.3.6. Clear the phones : <code>clear-p</code></a></li>
+<li><a href="#edit-a-phone-code-edit-p-code">5.3.7. Edit a phone : <code>edit-p</code></a></li>
+<li><a href="#copy-phone-code-copy-p-code">5.3.8. Copy phone : <code>copy-p</code></a></li>
+<li><a href="#add-photo-to-phone-code-addphoto-phone_index-fc-code-code-coming-in-v2-0-code">5.3.9. Add Photo to phone : <code>addphoto PHONE_INDEX fc/</code> <code>[coming in v2.0]</code></a></li>
+</ul>
+</li>
+<li><a href="#order-commands">5.4. Order Commands</a>
+<ul class="sectlevel3">
+<li><a href="#switch-to-order-tab-panel-code-switch-o-code">5.4.1. Switch to Order Tab Panel : <code>switch-o</code></a></li>
+<li><a href="#add-an-order-code-add-o-code">5.4.2. Add an order : <code>add-o</code></a></li>
+<li><a href="#find-an-order-code-find-o-code">5.4.3. Find an order : <code>find-o</code></a></li>
+<li><a href="#complete-an-order-code-complete-code">5.4.4. Complete an order : <code>complete</code></a></li>
+<li><a href="#cancel-an-order-code-cancel-code">5.4.5. Cancel an order : <code>cancel</code></a></li>
+<li><a href="#list-the-orders-code-list-o-code">5.4.6. List the orders : <code>list-o</code></a></li>
+<li><a href="#clear-the-orders-code-clear-o-code">5.4.7. Clear the orders : <code>clear-o</code></a></li>
+<li><a href="#edit-an-order-code-edit-o-code">5.4.8. Edit an order : <code>edit-o</code></a></li>
+<li><a href="#copy-order-field-code-copy-o-code">5.4.9. Copy order field : <code>copy-o</code></a></li>
+</ul>
+</li>
+<li><a href="#schedule-commands">5.5. Schedule Commands</a>
+<ul class="sectlevel3">
+<li><a href="#switch-to-schedule-tab-panel-code-switch-s-code">5.5.1. Switch to Schedule Tab Panel : <code>switch-s</code></a></li>
+<li><a href="#go-to-specific-date-in-calendar-code-schedule-code">5.5.2. Go to specific date in calendar : <code>schedule</code></a></li>
+<li><a href="#add-a-schedule-code-add-s-code">5.5.3. Add a schedule : <code>add-s</code></a></li>
+<li><a href="#delete-a-schedule-code-delete-s-code">5.5.4. Delete a schedule : <code>delete-s</code></a></li>
+<li><a href="#edit-a-schedule-code-edit-s-code">5.5.5. Edit a schedule : <code>edit-s</code></a></li>
+<li><a href="#clear-the-schedules-code-clear-s-code">5.5.6. Clear the schedules : <code>clear-s</code></a></li>
+</ul>
+</li>
+<li><a href="#archived-orders-commands">5.6. Archived Orders Commands:</a>
+<ul class="sectlevel3">
+<li><a href="#switch-to-archived-tab-panel-code-switch-a-code">5.6.1. Switch to Archived Tab Panel : <code>switch-a</code></a></li>
+<li><a href="#clear-the-archived-orders-code-clear-a-code">5.6.2. Clear the archived orders : <code>clear-a</code></a></li>
+<li><a href="#find-archived-order-code-find-a-code-coming-in-v2-0">5.6.3. Find Archived Order: <code>find-a</code> [coming in v2.0]</a></li>
+<li><a href="#list-archived-order-code-list-a-code-coming-in-v2-0">5.6.4. List Archived Order: <code>list-a</code> [coming in v2.0]</a></li>
+<li><a href="#delete-archived-order-code-delete-a-code-coming-in-v2-0">5.6.5. Delete Archived Order: <code>delete-a</code> [coming in v2.0]</a></li>
+</ul>
+</li>
+<li><a href="#copy-archived-order-code-copy-a-code-coming-in-v2-0">5.7. Copy Archived Order: <code>copy-a</code> [coming in v2.0]</a></li>
+<li><a href="#general-commands">5.8. General Commands</a>
+<ul class="sectlevel3">
+<li><a href="#undo-code-undo-code">5.8.1. Undo : <code>undo</code></a></li>
+<li><a href="#redo-code-redo-code">5.8.2. Redo : <code>redo</code></a></li>
+<li><a href="#history-code-history-code">5.8.3. History: <code>history</code></a></li>
+<li><a href="#generate-stats-code-generate-s-code">5.8.4. Generate stats : <code>generate-s</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">5.8.5. Exiting the program : <code>exit</code></a></li>
+</ul>
+</li>
+<li><a href="#export-data-code-export-code">5.9. Export data : <code>export</code></a></li>
+<li><a href="#saving-the-data">5.10. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.11. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#autocomplete-code-coming-in-v2-0-code">5.12. Autocomplete  <code>[coming in v2.0]</code></a></li>
+<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.13. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.14. Export data to PDF  <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">6. FAQ</a></li>
-<li><a href="#command-summary">7. Command Summary</a></li>
+<li><a href="#command-summary">7. Command Summary</a>
+<ul class="sectlevel2">
+<li><a href="#customer-commands-2">7.1. Customer Commands</a></li>
+<li><a href="#phone-commands-2">7.2. Phone Commands</a></li>
+<li><a href="#order-commands-2">7.3. Order Commands</a></li>
+<li><a href="#schedule-commands-2">7.4. Schedule Commands</a></li>
+<li><a href="#archived-order-commands">7.5. Archived Order Commands</a></li>
+<li><a href="#general-commands-2">7.6. General Commands</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -425,7 +505,7 @@ Customers cannot share the same contact number or email.
 <div class="paragraph">
 <p><span class="underline">Examples</span>:
 * Adds a single customer
-. <code>add-c n/Steve Jobs c/12345678 e/stevejobs@apple.com [t/TAG]…</code></p>
+. <code>add-c n/Steve Jobs c/12345678 e/stevejobs@apple.com</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -509,6 +589,9 @@ Customers cannot share the same contact number or email.
 </li>
 <li>
 <p>The search matches anywhere for name, contact number, email and tags.</p>
+</li>
+<li>
+<p>The search looks for partial matches e.g. <code>ha</code> will match <code>hans</code>.</p>
 </li>
 <li>
 <p>Entries matching ALL fields will be returned (i.e. <code>AND</code> search).</p>
@@ -754,7 +837,7 @@ IMEI Number should be 15 digits long.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Capacity can be 8GB, 16GB, 32GB, 64GB, 128GB, 256GB, 512GB or 1024GB.
+Capacity can be 8GB, 16GB, 32GB, 64GB, 128GB, 256GB, 512GB or 1024GB. You do not need to type GB after the prefix cp/.
 </td>
 </tr>
 </table>
@@ -879,6 +962,9 @@ A customer can have any number of tags, including 0.
 <ul>
 <li>
 <p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The search looks for partial matches e.g. <code>ha</code> will match <code>hans</code>.</p>
 </li>
 <li>
 <p>The search matches anywhere for name, contact number, email and tags.</p>
@@ -1088,6 +1174,12 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="add-photo-to-phone-code-addphoto-phone_index-fc-code-code-coming-in-v2-0-code"><a class="link" href="#add-photo-to-phone-code-addphoto-phone_index-fc-code-code-coming-in-v2-0-code">5.3.9. Add Photo to phone : <code>addphoto PHONE_INDEX fc/</code> <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>Adds a photo to a phone in the database using the system&#8217;s user interface dialog.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="order-commands"><a class="link" href="#order-commands">5.4. Order Commands</a></h3>
@@ -1137,7 +1229,7 @@ Format: <code>find-o KEYWORD [KEYWORD]&#8230;&#8203;</code></p>
 <div class="sect3">
 <h4 id="complete-an-order-code-complete-code"><a class="link" href="#complete-an-order-code-complete-code">5.4.4. Complete an order : <code>complete</code></a></h4>
 <div class="paragraph">
-<p>Completes the order, order status changed to <code>COMPLETED</code>.<br>
+<p>Completes the order, order status changed to <code>COMPLETED</code>. Phone associated with order will also be deleted.<br>
 Format: <code>complete INDEX</code></p>
 </div>
 </div>
@@ -1168,7 +1260,7 @@ Format: <code>list-o</code></p>
 <h4 id="edit-an-order-code-edit-o-code"><a class="link" href="#edit-an-order-code-edit-o-code">5.4.8. Edit an order : <code>edit-o</code></a></h4>
 <div class="paragraph">
 <p>Edits the data fields of an order.<br>
-<span class="underline">Format</span>: <code>edit-o INDEX [c/CUSTOMER] [p/PHONE] [$/PRICE] [t/TAG]…</code></p>
+<span class="underline">Format</span>: <code>edit-o INDEX [c/CUSTOMER_INDEX] [p/PHONE_INDEX] [$/PRICE] [t/TAG]…</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1430,9 +1522,71 @@ If there are conflicts with the existing schedules, use the <code>-allow</code> 
 </div>
 </div>
 <div class="sect2">
-<h3 id="general-commands"><a class="link" href="#general-commands">5.6. General Commands</a></h3>
+<h3 id="archived-orders-commands"><a class="link" href="#archived-orders-commands">5.6. Archived Orders Commands:</a></h3>
 <div class="sect3">
-<h4 id="undo-code-undo-code"><a class="link" href="#undo-code-undo-code">5.6.1. Undo : <code>undo</code></a></h4>
+<h4 id="switch-to-archived-tab-panel-code-switch-a-code"><a class="link" href="#switch-to-archived-tab-panel-code-switch-a-code">5.6.1. Switch to Archived Tab Panel : <code>switch-a</code></a></h4>
+<div class="paragraph">
+<p>Switches to Archived Order Tab Panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>switch-a</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-the-archived-orders-code-clear-a-code"><a class="link" href="#clear-the-archived-orders-code-clear-a-code">5.6.2. Clear the archived orders : <code>clear-a</code></a></h4>
+<div class="paragraph">
+<p>Clears every archived order in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>clear-a</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-archived-order-code-find-a-code-coming-in-v2-0"><a class="link" href="#find-archived-order-code-find-a-code-coming-in-v2-0">5.6.3. Find Archived Order: <code>find-a</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Finds archived orders whose fields contain any of the given keywords.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>find-a KEYWORD [MORE_KEYWORDS]&#8230;&#8203;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-archived-order-code-list-a-code-coming-in-v2-0"><a class="link" href="#list-archived-order-code-list-a-code-coming-in-v2-0">5.6.4. List Archived Order: <code>list-a</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>List every archived order in SML. Acts as a switch archived order command as well.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>list-a</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-a</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-archived-order-code-delete-a-code-coming-in-v2-0"><a class="link" href="#delete-archived-order-code-delete-a-code-coming-in-v2-0">5.6.5. Delete Archived Order: <code>delete-a</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Deletes an archived order in SML.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>delete-c INDEX</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="copy-archived-order-code-copy-a-code-coming-in-v2-0"><a class="link" href="#copy-archived-order-code-copy-a-code-coming-in-v2-0">5.7. Copy Archived Order: <code>copy-a</code> [coming in v2.0]</a></h3>
+<div class="paragraph">
+<p>Copies an archived order field to clipboard.<br>
+Format: <code>copy-a INDEX</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="general-commands"><a class="link" href="#general-commands">5.8. General Commands</a></h3>
+<div class="sect3">
+<h4 id="undo-code-undo-code"><a class="link" href="#undo-code-undo-code">5.8.1. Undo : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Undo the previous command.<br>
 Currently, the following commands are undoable and redoable.<br></p>
@@ -1462,6 +1616,9 @@ Currently, the following commands are undoable and redoable.<br></p>
 </li>
 <li>
 <p>Cancel Order</p>
+</li>
+<li>
+<p>Clear Order</p>
 </li>
 <li>
 <p>Add Phone</p>
@@ -1519,7 +1676,7 @@ Currently, the following commands are undoable and redoable.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo-code-redo-code"><a class="link" href="#redo-code-redo-code">5.6.2. Redo : <code>redo</code></a></h4>
+<h4 id="redo-code-redo-code"><a class="link" href="#redo-code-redo-code">5.8.2. Redo : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Redo the previous undone command. Inverse of undo. <br></p>
 </div>
@@ -1610,9 +1767,8 @@ Currently, the following commands are undoable and redoable.<br></p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="history-code-history-code"><a class="link" href="#history-code-history-code">5.7. History: <code>history</code></a></h3>
+<div class="sect3">
+<h4 id="history-code-history-code"><a class="link" href="#history-code-history-code">5.8.3. History: <code>history</code></a></h4>
 <div class="paragraph">
 <p>Views the command history of all your previous commands.</p>
 </div>
@@ -1627,8 +1783,9 @@ Currently, the following commands are undoable and redoable.<br></p>
 <img src="images/ug-command/ug-history.png" alt="ug history" width="800">
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.7.1. Generate stats : <code>generate-s</code></a></h4>
+<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.8.4. Generate stats : <code>generate-s</code></a></h4>
 <div class="paragraph">
 <p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code></p>
 </div>
@@ -1745,14 +1902,7 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">5.7.2. Clearing all entries : <code>clear</code></a></h4>
-<div class="paragraph">
-<p>Clears all entries of items, orders and customers.<br>
-Format: <code>clear</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.7.3. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.8.5. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
@@ -1760,7 +1910,7 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.8. Export data : <code>export</code></a></h3>
+<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.9. Export data : <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports application data into csv file.<br>
 If csv file of the input file name exists, the application data will be exported to the existing file.<br>
@@ -1769,32 +1919,32 @@ Format: <code>export &lt;file name&gt;</code><br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">5.9. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">5.10. Saving the data</a></h3>
 <div class="paragraph">
 <p>SML data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.11. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Explain how the user can enable/disable data encryption</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">5.11. Autocomplete  <code>[coming in v2.0]</code></a></h3>
+<h3 id="autocomplete-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-code-coming-in-v2-0-code">5.12. Autocomplete  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Press <kbd>Tab</kbd> to autocomplete the line. (like in command line)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.12. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
+<h3 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.13. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Notification page to show any notifications of reminders or alerts.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.13. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
+<h3 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.14. Export data to PDF  <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Export any of the data in SML to PDF format.</p>
 </div>
@@ -1813,197 +1963,259 @@ There is no need to save manually.</p>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">7. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Switch</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer: <code>switch-c</code></p>
-</li>
-<li>
-<p>phone: <code>switch-p</code></p>
-</li>
-<li>
-<p>order: <code>switch-o</code></p>
-</li>
-<li>
-<p>schedule: <code>switch-s</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="customer-commands-2"><a class="link" href="#customer-commands-2">7.1. Customer Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to customer tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-c n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new customer into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`edit-c INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​ `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing customer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-c INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a customer and its associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all customers and their associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-c KEYWORD [MORE_KEYWORDS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds the customers that contains the keywords in its field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy-c INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copies a customer into clipboard</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</li>
-<li>
-<p><strong>Add</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>add-c n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</code></p>
-</li>
-<li>
-<p>phone : <code>add-p n/NAME q/QUANTITY [p/PRICE] [t/TAG]…</code></p>
-</li>
-<li>
-<p>order : <code>add-o p/PHONE_NUMBER i/ITEM&#8230;&#8203;</code></p>
-</li>
-<li>
-<p>schedule : <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow]</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="phone-commands-2"><a class="link" href="#phone-commands-2">7.2. Phone Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to phone tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-p i/IDENTITY NUMBER (IMEI) s/SERIAL NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new phone into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-p INDEX [i/IMEI] [s/SERIAL NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing phone.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-p INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a phone and its associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all phones and their associated orders and schedules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-p KEYWORD [MORE_KEYWORDS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds the phones that contains the keywords in its field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy-p INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copies a phone into clipboard</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</li>
-<li>
-<p><strong>Cancel</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>order : <code>cancel INDEX</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="order-commands-2"><a class="link" href="#order-commands-2">7.3. Order Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to order tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-o c/CUSTOMER_INDEX p/PHONE_INDEX $/PRICE [t/TAG]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new order into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-o INDEX [c/CUSTOMER_INDEX] [p/PHONE_INDEX] [$/PRICE] [t/TAG]…</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>complete INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completes an order and shift it into Archived Order Tab. Also deletes the associated phone.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cancel INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cancels an order and shift it into Archived Order Tab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all orders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-o KEYWORD [MORE_KEYWORDS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds the orders that contains the keywords in its field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy-o INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copies an order into clipboard</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>clear-c</code></p>
-</li>
-<li>
-<p>phone : <code>clear-p</code></p>
-</li>
-<li>
-<p>order : <code>clear-o</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="schedule-commands-2"><a class="link" href="#schedule-commands-2">7.4. Schedule Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to schedule tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schedule cd/DATE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows the week of the date specified by the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new schedule into SML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]… [-allow]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing schedule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-s ORDER_INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a schedule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all schedules.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</li>
-<li>
-<p><strong>Complete</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>order : <code>complete INDEX</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="archived-order-commands"><a class="link" href="#archived-order-commands">7.5. Archived Order Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to archived order tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all archived orders.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</li>
-<li>
-<p><strong>Copy</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>copy-c &lt;field&gt;</code></p>
-</li>
-<li>
-<p>phone : <code>copy-p &lt;field&gt;</code></p>
-</li>
-<li>
-<p>order : <code>copy-o &lt;field&gt;</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Delete</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>delete-c INDEX</code></p>
-</li>
-<li>
-<p>phone : <code>delete-p INDEX</code></p>
-</li>
-<li>
-<p>schedule : <code>delete-s ORDER_INDEX</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>History</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>history : <code>history</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Edit</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>edit-c INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​</code></p>
-</li>
-<li>
-<p>phone : <code>edit-p INDEX n/NAME [p/PRICE] [q/QUANTITY] [t/TAG]&#8230;&#8203;</code></p>
-</li>
-<li>
-<p>order : <code>edit-o INDEX &#8230;&#8203;</code></p>
-</li>
-<li>
-<p>schedule : <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]… [-allow]</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Exit</strong> : <code>exit</code></p>
-</li>
-<li>
-<p><strong>Export</strong> : <code>export &lt;file name&gt;</code></p>
-</li>
-<li>
-<p><strong>Find</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>find-c KEYWORD [MORE_KEYWORDS]</code></p>
-</li>
-<li>
-<p>phone : <code>find-p p/PHONE</code></p>
-</li>
-<li>
-<p>order : <code>find-o INDEX</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Generate</strong> : <code>generate -s s/STAT -d d/ -t t/TYPE</code></p>
-</li>
-<li>
-<p><strong>List</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>customer : <code>list-c</code></p>
-</li>
-<li>
-<p>phone : <code>list-p</code></p>
-</li>
-<li>
-<p>order : <code>list-o</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
-<li>
-<p><strong>Schedule</strong> : <code>schedule cd/DATE</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="general-commands-2"><a class="link" href="#general-commands-2">7.6. General Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-s s/stat d1/YYYY.MM.DD d2/YYYY.MM.DD</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates the statistics with date input in chart format (in pop-up modal dialog).<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-s s/stat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates the statistics with no date input.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>undo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo the last undoable command.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>redo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo the undone command.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>history</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Views command history.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export &lt;file name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exports application data into csv file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pops up a help window.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quits the application.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 15:49:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 13:50:33 UTC</div></div></div></body></html>
