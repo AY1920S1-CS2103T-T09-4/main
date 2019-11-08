@@ -1,0 +1,922 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Eugene Teu Chu Wei - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Eugene Teu Chu Wei - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-seller-manager-lite-junior"><a class="link" href="#project-seller-manager-lite-junior">PROJECT: Seller Manager Lite Junior</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seller Manager Lite is a desktop application used for managing a business operational and logistical needs.
+The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has &gt;10 kLoC.
+It was written over the span of 2 months and morphed from the original Address-book 3 application</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>ability to generate statistics</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to query total <code>Revenue</code>, <code>Cost</code> and <code>profit</code> on all past orders. Contains 2 types of input mode:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>No date input: This mode is to give users a quick way of obtaining the numbers</p>
+</li>
+<li>
+<p>Date input: This mode is to produce a monthly chart view of the statistics</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Justification: Being business owners, this feature should be very essential for the owners to be able to track their statistics and numbers while running their day to day operations. This allows them to more easily plan and monitor their business while using these numbers.</p>
+</li>
+<li>
+<p>Highlights: This feature cut across several layers in the entire project e.g logic, UI, model and hence designing it in such a way that it was able to work with the existing Model View Controller architecture was a very important albeit tedious step.
+It required an in-depth analysis of design alternatives. This design choice is elaborated below in the developer guide writeup.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The implementation was also challenging as I made very sure no to violate any of the SOLID principles. At the same time, we were also still deciding how to implement the rest of the architecture for the other features.</p>
+</li>
+<li>
+<p>A total of 4 attempts of refactoring was needed for me to reach the current version of the main feature.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Credits: The [apache commons math libraries](<a href="https://commons.apache.org/proper/commons-math/" class="bare">https://commons.apache.org/proper/commons-math/</a>) was used in the actual calculation. However, the main difficulty of this feature does not come from the actual calculation but extracting the correct and appropiate data needed for this in the appropiate manner.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other Major enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>My other contributions to the codebase is as follows:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Complete overhaul of User Interface. This includes generating the FXML files, creating the controller files, importing and GUI tests.</p>
+</li>
+<li>
+<p>UI commands. This includes the command that is directly related to switching of UI e.g <code>switch-o</code> which allows the user to switch their their focused tab panel with a command</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>:</p>
+</li>
+<li>
+<p>contributed total almost 7k LOC:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3k+ functional: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=eugeneteu&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=EugeneTeu&amp;tabRepo=AY1920S1-CS2103T-T09-4%2Fmain%5Bmaster%5D">functional code</a></p>
+</li>
+<li>
+<p>3k+ test code: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=eugeneteu&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=EugeneTeu&amp;tabRepo=AY1920S1-CS2103T-T09-4%2Fmain%5Bmaster%5D">test code</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.35</code> (1 release) on GitHub</p>
+</li>
+<li>
+<p><strong>DevOps and Tools</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set up organization and team repo</p>
+</li>
+<li>
+<p>Managed Milestones deliverables: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/175">#175</a></p>
+</li>
+<li>
+<p>Integrated a third party library (Travis CI) to the project (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/53">#53</a>)</p>
+</li>
+<li>
+<p>Integrated a third party library (AppVeyor) to the team repo  (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/53">#53</a>)</p>
+</li>
+<li>
+<p>Integrated a third party library (Coveralls) to the team repo</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the color scheme and develop first UI prototype along with CSS Changes (Pull Requests: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/66">#66</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/189">#189</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/136">#136</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/129">#129</a>)</p>
+</li>
+<li>
+<p>Add Tabbed panels for UI. This includes writing the FXML files and controllers for the UI elements (Pull Requests: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/72">#72</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/192">#192</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/145">#145</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/169">#169</a> )</p>
+</li>
+<li>
+<p>Add command to interact with Tabbed panels for UI (Pull Requests: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/110">#110</a> , <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/76">#76</a>)</p>
+</li>
+<li>
+<p>Ported GUI tests into code base and added to it (Pull Requests: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/103">#103</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/139">#139</a>)</p>
+</li>
+<li>
+<p>Wrote tests for Statistics Module, Storage Module (Json) (Pull Requests: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/174">#174</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/171">#171</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/160">#160</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/83">#83</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote About us page: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/48">#48</a></p>
+</li>
+<li>
+<p>Tweaked to existing contents of the User Guide: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/140">#140</a></p>
+</li>
+<li>
+<p>Created new UML model diagrams for Developer Guide: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/159">#159</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Participated in PRs review(with non-trivial review comments): ( <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/61">#61</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/62">#62</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/63">#63</a>, <a href="https://github.com">#42</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/66">#66</a> , <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/68">#68</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/72">#72</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/141">#141</a>)</p>
+</li>
+<li>
+<p>Contributed to forum discussions and shared my solution on enabling GUI tests on Travis CI: <a href="https://github.com/nus-cs2103-AY1920S1/forum/issues/141">#141</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples: <a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/207">#207</a>  )</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Summary:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Over 41 <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pulls/EugeneTeu">Pull requests</a> on Github</p>
+</li>
+<li>
+<p>Over 37 <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/issues/created_by/EugeneTeu">issues</a> on Github</p>
+</li>
+<li>
+<p>Complete Contribution <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=eugeneteu&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=false">here</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>=== Generate stats : <code>generate-s</code></p>
+</div>
+<div class="paragraph">
+<p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code></p>
+</div>
+<div class="paragraph">
+<p>This function calculates the three type of
+statistics as shown below.</p>
+</div>
+<div class="paragraph">
+<p>All statistics that are calculated are only on orders in the <code>archived panel</code> that has been <code>completed</code> and with valid <code>schedule</code>.
+Lacking any of this will cause its non-inclusion into the statistics calculation.</p>
+</div>
+<div class="paragraph">
+<p>Accepts two types of input: Without date input and with date input<br></p>
+</div>
+<div class="paragraph">
+<p>Generates the statistics with no date input.<br>
+Used for calculating <code>total profit</code> , <code>total Revenue</code> and <code>total Cost</code>.<br>
+Format: <code>generate-s s/stat</code><br>
+Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br>
+The argument must match this three words perfectly.</p>
+</div>
+<div class="paragraph">
+<p>Shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsExampleDefault.png" alt="StatsExampleDefault" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Generates the statistics with date input in chart format (in pop-up modal dialog).<br>
+Format: <code>generate-s s/stat d1/YYYY.MM.DD d2/YYYY.MM.DD</code><br>
+Example: <code>generate-s s/revenue d1/2019.10.16 d2/2019.11.21</code><br>
+Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
+</div>
+<div class="paragraph">
+<p>Shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsExampleGraph.png" alt="StatsExampleGraph" width="600">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Date should be in the format YYYY.MM.DD with valid year, month and date. Only dates from year 1970 onwards are valid.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For dates in YYYY.MM.DD, the MM and DD argument can omit the leading 0 e.g <code>2019.1.1</code> is valid
+as long as the date is valid
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Accuracy is guaranteed up to $0.01 <strong>only</strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Statistic type argument must match <code>profit</code>, <code>revenue</code>, <code>cost</code> (no upper case)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Range of dates affecting chart display:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The chart is able to accept a large range of dates, but take note that above a
+certain threshold the gap between the months will change, depending on how large of a range you are calculating.
+This behaviour is intentional and not a bug.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Date range starts from 1970 onwards</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date of year input starts from 1970 onwards. This is enough to fit our use case. Anything lower will be rejected.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Auto truncation of labels</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the X-axis labels will adjust automatically based on the range of inputs. This is intended to give users the
+flexibility with regards to the range of dates to be inputted. Above a certain range the interval between x-axis data
+will decrease e.g 2 months</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Stats window data not updating</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you already have a stats window open and you complete an order,
+you will have to re enter the statistic command to update that value in another window.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Manually Close the Statistic window before typing <code>exit</code> on the main app</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you already have a stats window open before you enter the <code>exit</code> command, the application will only stop running
+when the remaining statistic windows are closed manually.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Load time:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Do not be alarmed if the window does not pop up immediately upon click. For larger data sets
+we estimate at least a few seconds before the window will be loaded.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Coming in <code>V2.0</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Average Statistics</p>
+<div class="ulist">
+<ul>
+<li>
+<p>More advanced commands like <code>average profit</code> etc</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Different Charts</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Instead of just being able to display via a line chart, users will be able to select the type of chart</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Export Chart to PDF</p>
+<div class="ulist">
+<ul>
+<li>
+<p>User will be able to export their charts to pdf with a click of a button.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>== Contributions to the Developer Guide</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Created the architecture diagram</p>
+</li>
+</ul>
+</div>
+<div id="Design-Architecture" class="paragraph">
+<p>=== Architecture</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+</div>
+<div class="title">Figure 1. Architecture Diagram</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="{repoURL}/docs/diagrams/">diagrams</a> folder.
+Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>Main</code> has two classes called <a href="{repoURL}/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="{repoURL}/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+</li>
+<li>
+<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
+The following class plays an important role at the architecture level:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the App consists of five components.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+</li>
+<li>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+</li>
+<li>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+</li>
+<li>
+<p><a href="#Design-Statistics"><strong><code>Statistics</code></strong></a>: Generate statistics and charts. (The use of this module is covered in the Statistic Section)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of the five components</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote the User Interface part of the DG</p>
+</li>
+</ul>
+</div>
+<div id="Design-Ui" class="paragraph">
+<p>=== UI component</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UiClassDiagram.png" alt="UiClassDiagram">
+</div>
+<div class="title">Figure 2. Structure of the UI Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts
+e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TabPanel</code> , <code>StatusBarFooter</code> etc.
+<code>TabPanel</code> consists of <code>CustomerListPanel</code> , <code>OrderListPanel</code>, <code>PhoneListPanel</code> , <code>CalendarListPanel</code>
+and <code>ArchivedOrderListPanel</code>
+All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="{repoURL}/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="{repoURL}/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Executes user commands using the <code>Logic</code> component.</p>
+</li>
+<li>
+<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+</li>
+<li>
+<p>Different changes in each tab or panel is controlled via the enum <code>UiChange</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote the Statistic Feature in the DG</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>=== Statistics Calculation and Chart generation feature</p>
+</div>
+<div class="paragraph">
+<p>==== Implementation</p>
+</div>
+<div class="paragraph">
+<p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows seller to quickly
+generate total statistics from their <code>DataBooks</code>, through the use of a <code>statistic</code>
+module that handles this calculation.</p>
+</div>
+<div class="paragraph">
+<p>There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Profit</code></p>
+</li>
+<li>
+<p><code>Cost</code></p>
+</li>
+<li>
+<p><code>Revenue</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It implements the following mode of operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>default mode with no date input: generates on all completed order total <code>profit</code> , <code>cost</code> or <code>revenue</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The command enter by the user will be e.g for profit type <code>generate-s s/PROFIT</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>mode with date input from user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code>
+and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>  each <code>month</code> between this 2 dates.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>command entered by user will be e.g for profit type`generate-s s/PROFIT s1/YYYY.MM.DD s2/YYYY.MM.DD`</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Here is the sequence of steps taken by SMLJ when it receives a <code>StatCommand</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatisticsCalculationAcitvityDiagram.png" alt="StatisticsCalculationAcitvityDiagram">
+</div>
+</div>
+<div id="Design-Statistics" class="paragraph">
+<p>===== Statistic Module
+The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
+analogous to the output mode, there are 2 types of methods in this module, one that returns a
+<code>String</code> and the other and <code>XYChart.Series&lt;String,Number&gt;</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Methods that return a <code>String</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>calculateTotalProfitOnCompleted(&#8230;&#8203;)</code></p>
+</li>
+<li>
+<p><code>calculateTotalRevenueOnCompleted(&#8230;&#8203;)</code></p>
+</li>
+<li>
+<p><code>calculateTotalCostOnCompleted(&#8230;&#8203;)</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Methods that return a <code>XYChart.Series&lt;String,Number&gt;</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>calculateTotalProfitOnCompletedGraph(&#8230;&#8203;)</code></p>
+</li>
+<li>
+<p><code>calculateTotalRevenueOnCompletedGraph(&#8230;&#8203;)</code></p>
+</li>
+<li>
+<p><code>calculateTotalCostOnCompletedGraph(&#8230;&#8203;)</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All methods were written using java8 Stream() feature. This is such that there are no loops in the code to make it
+more readable and maintainable.</p>
+</div>
+<div class="paragraph">
+<p><code>org.apache.commons.math3.stat.StatUtils</code> library is used to calculate the raw data inside a <code>double[]</code>  (primitive double array).
+While the current <code>v1.4</code> only use <code>sum</code> to calculate the exact <code>profit</code> , <code>revenue</code> and <code>cost</code> , <code>v2.0</code> implementation
+will make use of the <code>linear regression</code> / <code>average</code> methods inside the library to generate more advanced statistics.</p>
+</div>
+<div class="paragraph">
+<p>===== Design Considerations / Alternative designs considered</p>
+</div>
+<div class="paragraph">
+<p>Given that the number of orders in a seller database might be scaled to be very large in the future
+the main focus of this feature was to <strong>calculate statistics only when needed</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative design considered :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To implement statistics, maintain a few running statistic
+counter upon loading of the main app, update these counters/values when calculation is needed
+and then display it. This implementation would have been easy to implement within the existing AB3 code
+since it meant extending the <code>Model</code> class with a statistic model, than having the <code>UI</code> class to read from
+this value.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement on top of AB3</p>
+</li>
+<li>
+<p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere, since any change in the database / models will cause the values to change</p>
+</li>
+<li>
+<p>cons: Will bloat the UI since there will be extra details to be displayed</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>====== Design Decision 1:</p>
+</div>
+<div class="paragraph">
+<p>Given that consideration, we decided that it will be the <code>UI</code> to trigger this call to <code>Logic</code> for calculation
+and then display the result of that call. Thus when Statistics need to be shown, the <code>UI</code> module will query the
+<code>Logic</code> for the respective data</p>
+</div>
+<div class="paragraph">
+<p>One of the motivation for this approach was to, as much as possible, maintain the architecture that is already in place in AB3.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, given that this feature requires date input from the user, we will need to find a way to get <code>UI</code> to send
+the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains a feedback to user
+with the actual changes on data done with a call to model during <code>execute(model)</code>.</p>
+</div>
+<div class="paragraph">
+<p>====== Design Decision 2:</p>
+</div>
+<div class="paragraph">
+<p>We decided to extend this command pattern by creating a <code>statsPayload</code> object. This object will hold the user
+queries for the statistic calculation (if there is any) and be bundled along with the <code>CommandResult</code> class to the
+<code>UI</code> to use in its query to logic. When the Ui executes the command to logic, the <code>CommandResult</code> is returned with
+this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>.</p>
+</div>
+<div class="paragraph">
+<p>The resulting change is that the <code>commandResult</code> type will have a slightly different behaviour. *All <code>commands</code> that
+are not <code>statsCommand</code> will call the default constructor of the <code>commandResult</code> class, where there is  an
+<code>Optional.empty()</code> in place of the <code>StatsPayload</code> * .</p>
+</div>
+<div class="paragraph">
+<p>All <code>statsCommand</code> type will have call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.</p>
+</div>
+<div class="paragraph">
+<p>The key motivation behind this idea of a payload was to be able to encapsulate details about the calculation inside a
+single object, passed it to the appropriate place to be "unwrapped" when needed. This unwrapping is done by the
+<code>mainWindow</code> class in the application and subsequently the data is passed to the  <code>statistic</code> module.</p>
+</div>
+<div class="paragraph">
+<p>A high level view of the packages working together:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statsOverallClassDiagram.png" alt="statsOverallClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>==== Current Implementation</p>
+</div>
+<div class="paragraph">
+<p>====== Step-by-step breakdown</p>
+</div>
+<div class="paragraph">
+<p>Below is a more in-depth explanation at each step:</p>
+</div>
+<div class="paragraph">
+<p>step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
+</div>
+<div class="paragraph">
+<p>The commandBox executes it and the <code>MainWindow</code> runs its <code>executeCommand(commandText)</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Referring to the sequence diagram below,this results in <code>logic.execute(commandText)</code> being called and
+the <code>statsCommandParser</code> parses the input from the user, returning a
+<code>Command</code> object</p>
+</div>
+<div class="paragraph">
+<p>step 2: the logic then calls <code>command.execute(command)</code> (refer to the second set of arrow coming out of <code>LogicManager</code>)</p>
+</div>
+<div class="paragraph">
+<p>When this happens, the <code>StatsCommand</code> execute triggering a call to create the new <code>StatsPayload</code>. Then this is used to
+create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is a quick summary of step 1-2:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsCommandSequenceDiagram.png" alt="StatsCommandSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
+<code>performUiChanges</code> that handles the specific <code>UI</code> change.</p>
+</div>
+<div class="paragraph">
+<p>This then results in the <code>statsPayload</code> class being passed to <code>Logic</code> class and subsequently the <code>statistics</code> module,
+where the appropriate calculation will take place.</p>
+</div>
+<div class="paragraph">
+<p>step 4: <code>Statistic Manager</code> calculates the date</p>
+</div>
+<div class="paragraph">
+<p>Depending on the input, the <code>Statistic Manager</code> will calculate the value and return that, either in the form of
+a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
+form or string form. With this the feature has finished executing! Attached below is the summary for step 3-5:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatisticsCalculationUI.png" alt="StatisticsCalculationUI">
+</div>
+</div>
+<div class="paragraph">
+<p>==== Current Version <code>v1.4</code>:</p>
+</div>
+<div class="paragraph">
+<p>Here are some screenshots of the current product:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsExampleGraph.png" alt="StatsExampleGraph" width="600">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsExampleDefault.png" alt="StatsExampleDefault" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>==== Limitations / note to developers:</p>
+</div>
+<div class="paragraph">
+<p>Developers working on adding features to this module should take note of these limitations that we have put in place for <code>v1.4</code> of SMLJ:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Date range starts from 1970 onwards</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date of year input starts from 1970 onwards.
+This is enough to fit our use case.
+Anything lower will be rejected.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Extension of additional Calculation methods</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To easily extend the behaviour with additional
+methods to calculate, reference the current
+implementation in <code>StatisticsManager</code>;
+There are utility methods to help you with
+extracting the relevant information from your data.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>UI Changes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Any additional Ui Changes should be handled by the controllers for the UI classes <code>StatisticWindow</code> and <code>DefaultStatisticWindow</code>
+class.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 10:00:20 UTC</div></div></div></body></html>

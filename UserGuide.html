@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Seller Manager Lite - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Seller Manager Lite - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Seller Manager Lite - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team T09-4</code>      Since: <code>Sep 2019</code>      Licence: <code>MIT</code></p>
@@ -102,21 +102,25 @@
 <li><a href="#undo-code-undo-code">5.7.1. Undo : <code>undo</code></a></li>
 <li><a href="#redo-code-redo-code">5.7.2. Redo : <code>redo</code></a></li>
 <li><a href="#history-code-history-code">5.7.3. History: <code>history</code></a></li>
-<li><a href="#generate-stats-code-generate-s-code">5.7.4. Generate stats : <code>generate-s</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">5.7.5. Exiting the program : <code>exit</code></a></li>
 </ul>
 </li>
-<li><a href="#export-data-code-export-code">5.8. Export data : <code>export</code></a></li>
-<li><a href="#other-commands">5.9. Other commands</a>
+<li><a href="#history-code-history-code-2">5.8. History: <code>history</code></a></li>
+<li><a href="#generate-stats-code-generate-s-code">5.9. Generate stats : <code>generate-s</code></a>
 <ul class="sectlevel3">
-<li><a href="#import-data-code-import-code-code-coming-in-v2-0-code">5.9.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></li>
-<li><a href="#saving-the-data">5.9.2. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.9.3. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#autocomplete-v2-0-code-coming-in-v2-0-code">5.9.4. Autocomplete v2.0  <code>[coming in v2.0]</code></a></li>
-<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.9.5. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
-<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.9.6. Export data to PDF  <code>[coming in v2.0]</code></a></li>
-<li><a href="#add-a-new-product-code-coming-in-v2-0-code">5.9.7. Add a new product <code>[coming in v2.0]</code></a></li>
-<li><a href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.9.8. Add fields to a new product <code>[coming in v2.0]</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">5.9.1. Exiting the program : <code>exit</code></a></li>
+</ul>
+</li>
+<li><a href="#export-data-code-export-code">5.10. Export data : <code>export</code></a></li>
+<li><a href="#other-commands">5.11. Other commands</a>
+<ul class="sectlevel3">
+<li><a href="#import-data-code-import-code-code-coming-in-v2-0-code">5.11.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></li>
+<li><a href="#saving-the-data">5.11.2. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.11.3. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#autocomplete-v2-0-code-coming-in-v2-0-code">5.11.4. Autocomplete v2.0  <code>[coming in v2.0]</code></a></li>
+<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.11.5. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.11.6. Export data to PDF  <code>[coming in v2.0]</code></a></li>
+<li><a href="#add-a-new-product-code-coming-in-v2-0-code">5.11.7. Add a new product <code>[coming in v2.0]</code></a></li>
+<li><a href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.11.8. Add fields to a new product <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 </ul>
@@ -1807,15 +1811,62 @@ Currently, the following commands are undoable and redoable.<br></p>
 <img src="images/ug-command/ug-history.png" alt="ug history" width="800">
 </div>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Redo clear Customer Book</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>clear-c</code></p>
+</li>
+<li>
+<p><code>undo</code></p>
+</li>
+<li>
+<p><code>redo</code></p>
+</li>
+</ol>
 </div>
-<div class="sect3">
-<h4 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.7.4. Generate stats : <code>generate-s</code></a></h4>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-redo.png" alt="ug redo" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="history-code-history-code-2"><a class="link" href="#history-code-history-code-2">5.8. History: <code>history</code></a></h3>
+<div class="paragraph">
+<p>Views the command history of all your previous commands.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>history</code></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Example</span>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug-command/ug-history.png" alt="ug history" width="800">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.9. Generate stats : <code>generate-s</code></a></h3>
 <div class="paragraph">
 <p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code></p>
 </div>
 <div class="paragraph">
 <p>This function calculates the three type of
 statistics as shown below.</p>
+</div>
+<div class="paragraph">
+<p>All statistics that are calculated are only on orders in the <code>archived panel</code> that has been <code>completed</code> and with valid <code>schedule</code>.
+Lacking any of this will cause its non-inclusion into the statistics calculation.</p>
 </div>
 <div class="paragraph">
 <p>Accepts two types of input: Without date input and with date input<br></p>
@@ -1849,6 +1900,55 @@ Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
 <img src="images/StatsExampleGraph.png" alt="StatsExampleGraph" width="600">
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Date should be in the format YYYY.MM.DD with valid year, month and date. Only dates from year 1970 onwards are valid.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For dates in YYYY.MM.DD, the MM and DD argument can omit the leading 0 e.g <code>2019.1.1</code> is valid
+as long as the date is valid
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Accuracy is guaranteed up to $0.01 <strong>only</strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Statistic type argument must match <code>profit</code>, <code>revenue</code>, <code>cost</code> (no upper case)
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Limitations:</p>
 </div>
@@ -1866,14 +1966,50 @@ This behaviour is intentional and not a bug.</p>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Date range starts from 1970 onwards
-*</strong> Date of year input starts from 1970 onwards. This is enough to fit our use case. Anything lower will be rejected.</p>
-</div>
+<li>
+<p>Date range starts from 1970 onwards</p>
 <div class="ulist">
 <ul>
+<li>
+<p>Date of year input starts from 1970 onwards. This is enough to fit our use case. Anything lower will be rejected.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Auto truncation of labels</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the X-axis labels will adjust automatically based on the range of inputs. This is intended to give users the
+flexibility with regards to the range of dates to be inputted. Above a certain range the interval between x-axis data
+will decrease e.g 2 months</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Stats window data not updating</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you already have a stats window open and you complete an order,
+you will have to re enter the statistic command to update that value in another window.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Manually Close the Statistic window before typing <code>exit</code> on the main app</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you already have a stats window open before you enter the <code>exit</code> command, the application will only stop running
+when the remaining statistic windows are closed manually.</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>Load time:</p>
 <div class="ulist">
@@ -1924,9 +2060,8 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-</div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.7.5. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.9.1. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br></p>
 </div>
@@ -1936,7 +2071,7 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.8. Export data : <code>export</code></a></h3>
+<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.10. Export data : <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports application data into csv file.<br>
 If csv file of the input file name exists, the application data will be exported to the existing file.<br>
@@ -1947,9 +2082,9 @@ If csv file of the input file name does not exist, the application data will be 
 </div>
 </div>
 <div class="sect2">
-<h3 id="other-commands"><a class="link" href="#other-commands">5.9. Other commands</a></h3>
+<h3 id="other-commands"><a class="link" href="#other-commands">5.11. Other commands</a></h3>
 <div class="sect3">
-<h4 id="import-data-code-import-code-code-coming-in-v2-0-code"><a class="link" href="#import-data-code-import-code-code-coming-in-v2-0-code">5.9.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></h4>
+<h4 id="import-data-code-import-code-code-coming-in-v2-0-code"><a class="link" href="#import-data-code-import-code-code-coming-in-v2-0-code">5.11.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Imports csv file into application.<br>
 If csv file of the input file exists, the file will be imported.<br>
@@ -1960,14 +2095,14 @@ If csv file of the input file does not exist, command will not be executed.<br><
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">5.9.2. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">5.11.2. Saving the data</a></h4>
 <div class="paragraph">
 <p>SML data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.9.3. Encrypting data files <code>[coming in v2.0]</code></a></h4>
+<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.11.3. Encrypting data files <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>All data files will be password-protected with a unique password of at least 8 characters long.</p>
 </div>
@@ -1976,19 +2111,19 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="autocomplete-v2-0-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-v2-0-code-coming-in-v2-0-code">5.9.4. Autocomplete v2.0  <code>[coming in v2.0]</code></a></h4>
+<h4 id="autocomplete-v2-0-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-v2-0-code-coming-in-v2-0-code">5.11.4. Autocomplete v2.0  <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Press <kbd>Tab</kbd> to autocomplete the line.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.9.5. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h4>
+<h4 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.11.5. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Notification page to show reminders or alerts of upcoming schedules.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.9.6. Export data to PDF  <code>[coming in v2.0]</code></a></h4>
+<h4 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.11.6. Export data to PDF  <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Export the application data in SML to PDF format.</p>
 </div>
@@ -1997,7 +2132,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-a-new-product-code-coming-in-v2-0-code">5.9.7. Add a new product <code>[coming in v2.0]</code></a></h4>
+<h4 id="add-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-a-new-product-code-coming-in-v2-0-code">5.11.7. Add a new product <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>This command is to allow users to define their own product (e.g. Tablet) with its own fields.
 Users have to first key in the primary key name.
@@ -2011,7 +2146,7 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-fields-to-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.9.8. Add fields to a new product <code>[coming in v2.0]</code></a></h4>
+<h4 id="add-fields-to-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.11.8. Add fields to a new product <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>This command is to allow users to add a field to their product.
 Users have to first key in the field name.
@@ -2293,4 +2428,4 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 09:39:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 10:00:20 UTC</div></div></div></body></html>
