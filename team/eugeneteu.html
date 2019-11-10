@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Eugene Teu Chu Wei - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-seller-manager-lite-junior"><a class="link" href="#project-seller-manager-lite-junior">PROJECT: Seller Manager Lite Junior</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
@@ -56,7 +56,7 @@ It required an in-depth analysis of design alternatives. This design choice is e
 </div>
 </li>
 <li>
-<p>Credits: The [apache commons math libraries](<a href="https://commons.apache.org/proper/commons-math/" class="bare">https://commons.apache.org/proper/commons-math/</a>) was used in the actual calculation. However, the main difficulty of this feature does not come from the actual calculation but extracting the correct and appropiate data needed for this in the appropiate manner.</p>
+<p>Credits: The <a href="https://commons.apache.org/proper/commons-math/">apache commons math libraries</a> was used in the actual calculation. However, the main difficulty of this feature does not come from the actual calculation but extracting the correct and appropiate data needed for this in the appropiate manner.</p>
 </li>
 </ul>
 </div>
@@ -89,10 +89,7 @@ It required an in-depth analysis of design alternatives. This design choice is e
 <div class="ulist">
 <ul>
 <li>
-<p>3k+ functional: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=eugeneteu&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=EugeneTeu&amp;tabRepo=AY1920S1-CS2103T-T09-4%2Fmain%5Bmaster%5D">functional code</a></p>
-</li>
-<li>
-<p>3k+ test code: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=eugeneteu&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=EugeneTeu&amp;tabRepo=AY1920S1-CS2103T-T09-4%2Fmain%5Bmaster%5D">test code</a></p>
+<p>3k+ functional &amp; 3k+ test code: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=eugeneteu&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=false">code</a></p>
 </li>
 </ul>
 </div>
@@ -219,8 +216,6 @@ It required an in-depth analysis of design alternatives. This design choice is e
 <div class="sect1">
 <h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
-<div class="sidebarblock">
-<div class="content">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
@@ -231,11 +226,10 @@ It required an in-depth analysis of design alternatives. This design choice is e
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">Generate stats : <code>generate-s</code></a></h3>
 <div class="paragraph">
-<p>=== Generate stats : <code>generate-s</code></p>
-</div>
-<div class="paragraph">
-<p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code></p>
+<p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code>.</p>
 </div>
 <div class="paragraph">
 <p>This function calculates the three type of
@@ -243,16 +237,41 @@ statistics as shown below.</p>
 </div>
 <div class="paragraph">
 <p>All statistics that are calculated are only on orders in the <code>archived panel</code> that has been <code>completed</code> and with valid <code>schedule</code>.
-Lacking any of this will cause its non-inclusion into the statistics calculation.</p>
+Lacking any of this will cause its non-inclusion into the statistics calculation.
+The value calculated is the sum over the total time period within a month, meaning that it will take the date period,
+calculate the statistics for orders within that time period, split it by month and display it.</p>
 </div>
 <div class="paragraph">
-<p>Accepts two types of input: Without date input and with date input<br></p>
+<p>e.g <code>revenue</code> between 2019.11.12 and 2019.11.29 will calculate the order between this 2 dates, sum up the revenue
+(as it falls within a single month) and
+display this value.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Accepts two types of input:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Without date input</p>
+</li>
+<li>
+<p>with date input<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Generates the statistics with no date input.<br>
-Used for calculating <code>total profit</code> , <code>total Revenue</code> and <code>total Cost</code>.<br>
-Format: <code>generate-s s/stat</code><br>
-Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br>
+<p>Generates the statistics with no date input.<br></p>
+</div>
+<div class="paragraph">
+<p>Used for calculating <code>total profit</code> , <code>total Revenue</code> and <code>total Cost</code>.<br>
+Format: <code>generate-s s/stat</code><br></p>
+</div>
+<div class="paragraph">
+<p>Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br>
 The argument must match this three words perfectly.</p>
 </div>
 <div class="paragraph">
@@ -400,13 +419,8 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Coming in <code>V2.0</code>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Average Statistics</p>
+<div class="sect3">
+<h4 id="average-statistics-code-coming-in-v2-0-code"><a class="link" href="#average-statistics-code-coming-in-v2-0-code">Average Statistics <code>[coming in v2.0]</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -414,9 +428,9 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Different Charts</p>
+</div>
+<div class="sect3">
+<h4 id="different-charts-code-coming-in-v2-0-code"><a class="link" href="#different-charts-code-coming-in-v2-0-code">Different Charts <code>[coming in v2.0]</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -424,9 +438,9 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Export Chart to PDF</p>
+</div>
+<div class="sect3">
+<h4 id="export-chart-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-chart-to-pdf-code-coming-in-v2-0-code">Export Chart to PDF <code>[coming in v2.0]</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -434,12 +448,13 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
-<div class="paragraph">
-<p>== Contributions to the Developer Guide</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
@@ -453,107 +468,39 @@ we estimate at least a few seconds before the window will be loaded.</p>
 <div class="ulist">
 <ul>
 <li>
+<p>My Contributions are:</p>
+<div class="ulist">
+<ul>
+<li>
 <p>Created the architecture diagram</p>
 </li>
-</ul>
-</div>
-<div id="Design-Architecture" class="paragraph">
-<p>=== Architecture</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
-</div>
-<div class="title">Figure 1. Architecture Diagram</div>
-</div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="{repoURL}/docs/diagrams/">diagrams</a> folder.
-Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><code>Main</code> has two classes called <a href="{repoURL}/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="{repoURL}/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+<p>Created logic diagram</p>
 </li>
-<li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
-The following class plays an important role at the architecture level:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The rest of the App consists of five components.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
-</li>
-<li>
-<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
-</li>
-<li>
-<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
-</li>
-<li>
-<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
-</li>
-<li>
-<p><a href="#Design-Statistics"><strong><code>Statistics</code></strong></a>: Generate statistics and charts. (The use of this module is covered in the Statistic Section)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Each of the five components</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
-</li>
-<li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
 <p>Wrote the User Interface part of the DG</p>
 </li>
+<li>
+<p>Wrote the Statistic Feature in the DG</p>
+</li>
 </ul>
 </div>
-<div id="Design-Ui" class="paragraph">
-<p>=== UI component</p>
+</li>
+</ul>
 </div>
+<div class="paragraph">
+<p>include::../DeveloperGuide.adoc[tag=architectureDiagram]\
+<strong>*</strong></p>
+</div>
+<div id="fig-LogicClassDiagram" class="imageblock">
+<div class="content">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 1. Structure of the Logic Component</div>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="../images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -586,22 +533,15 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 </li>
 <li>
 <p>Different changes in each tab or panel is controlled via the enum <code>UiChange</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wrote the Statistic Feature in the DG</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+<hr>
 </div>
-<div class="paragraph">
-<p>=== Statistics Calculation and Chart generation feature</p>
-</div>
-<div class="paragraph">
-<p>==== Implementation</p>
-</div>
+<div class="sect2">
+<h3 id="statistics-calculation-and-chart-generation-feature"><a class="link" href="#statistics-calculation-and-chart-generation-feature">Statistics Calculation and Chart generation feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
 <p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows seller to quickly
 generate total statistics from their <code>DataBooks</code>, through the use of a <code>statistic</code>
@@ -659,9 +599,10 @@ and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>
 <img src="../images/StatisticsCalculationAcitvityDiagram.png" alt="StatisticsCalculationAcitvityDiagram">
 </div>
 </div>
-<div id="Design-Statistics" class="paragraph">
-<p>===== Statistic Module
-The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
+<div class="sect4">
+<h5 id="Design-Statistics"><a class="link" href="#Design-Statistics">Statistic Module</a></h5>
+<div class="paragraph">
+<p>The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
 analogous to the output mode, there are 2 types of methods in this module, one that returns a
 <code>String</code> and the other and <code>XYChart.Series&lt;String,Number&gt;</code></p>
 </div>
@@ -710,9 +651,9 @@ more readable and maintainable.</p>
 While the current <code>v1.4</code> only use <code>sum</code> to calculate the exact <code>profit</code> , <code>revenue</code> and <code>cost</code> , <code>v2.0</code> implementation
 will make use of the <code>linear regression</code> / <code>average</code> methods inside the library to generate more advanced statistics.</p>
 </div>
-<div class="paragraph">
-<p>===== Design Considerations / Alternative designs considered</p>
 </div>
+<div class="sect4">
+<h5 id="design-considerations-alternative-designs-considered"><a class="link" href="#design-considerations-alternative-designs-considered">Design Considerations / Alternative designs considered</a></h5>
 <div class="paragraph">
 <p>Given that the number of orders in a seller database might be scaled to be very large in the future
 the main focus of this feature was to <strong>calculate statistics only when needed</strong>.</p>
@@ -720,7 +661,7 @@ the main focus of this feature was to <strong>calculate statistics only when nee
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative design considered :</p>
+<p>Alternative design :</p>
 <div class="ulist">
 <ul>
 <li>
@@ -738,7 +679,31 @@ this value.</p>
 <p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere, since any change in the database / models will cause the values to change</p>
 </li>
 <li>
-<p>cons: Will bloat the UI since there will be extra details to be displayed</p>
+<p>cons: Will bloat the UI since there will be extra details to be displayed and there is an extra panel on screen.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative Design (current design) :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Statistics</code> module will exist outside of the current packages and be standalone. <code>Logic</code> will handle communication with
+this module from <code>UI</code>. Respective Statistics will then be obtained from <code>Logic</code> to be displayed by the <code>StatsWindow</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Ensure that the respective tasks are properly abstracted, adhering to Single Responsibility Principle.</p>
+</li>
+<li>
+<p>Pros: Being standalone means the way of calculating the statistics can be changed without affecting the rest of the codebase</p>
+</li>
+<li>
+<p>Cons: <code>Logic</code> will have to handle more calls and increases its responsibilities</p>
 </li>
 </ul>
 </div>
@@ -748,9 +713,8 @@ this value.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>====== Design Decision 1:</p>
-</div>
+<div class="sect5">
+<h6 id="design-decision-1"><a class="link" href="#design-decision-1">Design Decision 1:</a></h6>
 <div class="paragraph">
 <p>Given that consideration, we decided that it will be the <code>UI</code> to trigger this call to <code>Logic</code> for calculation
 and then display the result of that call. Thus when Statistics need to be shown, the <code>UI</code> module will query the
@@ -764,9 +728,9 @@ and then display the result of that call. Thus when Statistics need to be shown,
 the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains a feedback to user
 with the actual changes on data done with a call to model during <code>execute(model)</code>.</p>
 </div>
-<div class="paragraph">
-<p>====== Design Decision 2:</p>
 </div>
+<div class="sect5">
+<h6 id="design-decision-2"><a class="link" href="#design-decision-2">Design Decision 2:</a></h6>
 <div class="paragraph">
 <p>We decided to extend this command pattern by creating a <code>statsPayload</code> object. This object will hold the user
 queries for the statistic calculation (if there is any) and be bundled along with the <code>CommandResult</code> class to the
@@ -794,17 +758,23 @@ single object, passed it to the appropriate place to be "unwrapped" when needed.
 <img src="../images/statsOverallClassDiagram.png" alt="statsOverallClassDiagram">
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="sect5">
+<h6 id="step-by-step-breakdown"><a class="link" href="#step-by-step-breakdown">Step-by-step breakdown</a></h6>
 <div class="paragraph">
-<p>==== Current Implementation</p>
+<p>Below is a more in-depth explanation at each step.</p>
 </div>
 <div class="paragraph">
-<p>====== Step-by-step breakdown</p>
+<p><strong>Note that this breakdown is for the mode with date input.
+For the default mode with no date, the steps are almost the same, except that
+ <code>DefaultStatisticsWindow</code> is called in place of <code>StatisticsWindow</code></strong></p>
 </div>
 <div class="paragraph">
-<p>Below is a more in-depth explanation at each step:</p>
-</div>
-<div class="paragraph">
-<p>step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
+<p>Step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
 </div>
 <div class="paragraph">
 <p>The commandBox executes it and the <code>MainWindow</code> runs its <code>executeCommand(commandText)</code> method.</p>
@@ -815,14 +785,30 @@ the <code>statsCommandParser</code> parses the input from the user, returning a
 <code>Command</code> object</p>
 </div>
 <div class="paragraph">
-<p>step 2: the logic then calls <code>command.execute(command)</code> (refer to the second set of arrow coming out of <code>LogicManager</code>)</p>
+<p>Seen here is the sequence diagram of the first step</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsCommandSequenceDiagram1.png" alt="StatsCommandSequenceDiagram1">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: the logic then calls <code>command.execute(command)</code> (refer to the second set of arrow coming out of <code>LogicManager</code>)</p>
 </div>
 <div class="paragraph">
 <p>When this happens, the <code>StatsCommand</code> execute triggering a call to create the new <code>StatsPayload</code>. Then this is used to
 create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.</p>
 </div>
 <div class="paragraph">
-<p>Shown below is a quick summary of step 1-2:</p>
+<p>Seen here is the sequence diagram of the second step</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatsCommandSequenceDiagram2.png" alt="StatsCommandSequenceDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p>Shown below is a quick summary of step 1-2 (Full complete diagram):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -830,7 +816,7 @@ create a new <code>CommandResult</code> object and returns that to <code>Logic</
 </div>
 </div>
 <div class="paragraph">
-<p>step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
+<p>Step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
 <code>performUiChanges</code> that handles the specific <code>UI</code> change.</p>
 </div>
 <div class="paragraph">
@@ -838,14 +824,14 @@ create a new <code>CommandResult</code> object and returns that to <code>Logic</
 where the appropriate calculation will take place.</p>
 </div>
 <div class="paragraph">
-<p>step 4: <code>Statistic Manager</code> calculates the date</p>
+<p>Step 4: <code>Statistic Manager</code> calculates the date</p>
 </div>
 <div class="paragraph">
 <p>Depending on the input, the <code>Statistic Manager</code> will calculate the value and return that, either in the form of
 a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code></p>
 </div>
 <div class="paragraph">
-<p>step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
+<p>Step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
 form or string form. With this the feature has finished executing! Attached below is the summary for step 3-5:</p>
 </div>
 <div class="imageblock">
@@ -853,9 +839,10 @@ form or string form. With this the feature has finished executing! Attached belo
 <img src="../images/StatisticsCalculationUI.png" alt="StatisticsCalculationUI">
 </div>
 </div>
-<div class="paragraph">
-<p>==== Current Version <code>v1.4</code>:</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="current-version-code-v1-4-code"><a class="link" href="#current-version-code-v1-4-code">Current Version <code>v1.4</code>:</a></h4>
 <div class="paragraph">
 <p>Here are some screenshots of the current product:</p>
 </div>
@@ -869,9 +856,9 @@ form or string form. With this the feature has finished executing! Attached belo
 <img src="../images/StatsExampleDefault.png" alt="StatsExampleDefault" width="600">
 </div>
 </div>
-<div class="paragraph">
-<p>==== Limitations / note to developers:</p>
 </div>
+<div class="sect3">
+<h4 id="limitations-note-to-developers"><a class="link" href="#limitations-note-to-developers">Limitations / note to developers:</a></h4>
 <div class="paragraph">
 <p>Developers working on adding features to this module should take note of these limitations that we have put in place for <code>v1.4</code> of SMLJ:</p>
 </div>
@@ -919,4 +906,4 @@ class.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 05:44:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 06:52:25 UTC</div></div></div></body></html>

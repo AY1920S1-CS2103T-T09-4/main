@@ -479,7 +479,7 @@ the main focus of this feature was to <strong>calculate statistics only when nee
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative design considered :</p>
+<p>Alternative design :</p>
 <div class="ulist">
 <ul>
 <li>
@@ -497,7 +497,31 @@ this value.</p>
 <p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere, since any change in the database / models will cause the values to change</p>
 </li>
 <li>
-<p>cons: Will bloat the UI since there will be extra details to be displayed</p>
+<p>cons: Will bloat the UI since there will be extra details to be displayed and there is an extra panel on screen.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative Design (current design) :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Statistics</code> module will exist outside of the current packages and be standalone. <code>Logic</code> will handle communication with
+this module from <code>UI</code>. Respective Statistics will then be obtained from <code>Logic</code> to be displayed by the <code>StatsWindow</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Ensure that the respective tasks are properly abstracted, adhering to Single Responsibility Principle.</p>
+</li>
+<li>
+<p>Pros: Being standalone means the way of calculating the statistics can be changed without affecting the rest of the codebase</p>
+</li>
+<li>
+<p>Cons: <code>Logic</code> will have to handle more calls and increases its responsibilities</p>
 </li>
 </ul>
 </div>
@@ -560,10 +584,15 @@ single object, passed it to the appropriate place to be "unwrapped" when needed.
 <div class="sect5">
 <h6 id="step-by-step-breakdown"><a class="link" href="#step-by-step-breakdown">Step-by-step breakdown</a></h6>
 <div class="paragraph">
-<p>Below is a more in-depth explanation at each step:</p>
+<p>Below is a more in-depth explanation at each step.</p>
 </div>
 <div class="paragraph">
-<p>step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
+<p><strong>Note that this breakdown is for the mode with date input.
+For the default mode with no date, the steps are almost the same, except that
+ <code>DefaultStatisticsWindow</code> is called in place of <code>StatisticsWindow</code></strong></p>
+</div>
+<div class="paragraph">
+<p>Step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
 </div>
 <div class="paragraph">
 <p>The commandBox executes it and the <code>MainWindow</code> runs its <code>executeCommand(commandText)</code> method.</p>
@@ -574,14 +603,30 @@ the <code>statsCommandParser</code> parses the input from the user, returning a
 <code>Command</code> object</p>
 </div>
 <div class="paragraph">
-<p>step 2: the logic then calls <code>command.execute(command)</code> (refer to the second set of arrow coming out of <code>LogicManager</code>)</p>
+<p>Seen here is the sequence diagram of the first step</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatsCommandSequenceDiagram1.png" alt="StatsCommandSequenceDiagram1">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: the logic then calls <code>command.execute(command)</code> (refer to the second set of arrow coming out of <code>LogicManager</code>)</p>
 </div>
 <div class="paragraph">
 <p>When this happens, the <code>StatsCommand</code> execute triggering a call to create the new <code>StatsPayload</code>. Then this is used to
 create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.</p>
 </div>
 <div class="paragraph">
-<p>Shown below is a quick summary of step 1-2:</p>
+<p>Seen here is the sequence diagram of the second step</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatsCommandSequenceDiagram2.png" alt="StatsCommandSequenceDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p>Shown below is a quick summary of step 1-2 (Full complete diagram):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -589,7 +634,7 @@ create a new <code>CommandResult</code> object and returns that to <code>Logic</
 </div>
 </div>
 <div class="paragraph">
-<p>step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
+<p>Step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
 <code>performUiChanges</code> that handles the specific <code>UI</code> change.</p>
 </div>
 <div class="paragraph">
@@ -597,14 +642,14 @@ create a new <code>CommandResult</code> object and returns that to <code>Logic</
 where the appropriate calculation will take place.</p>
 </div>
 <div class="paragraph">
-<p>step 4: <code>Statistic Manager</code> calculates the date</p>
+<p>Step 4: <code>Statistic Manager</code> calculates the date</p>
 </div>
 <div class="paragraph">
 <p>Depending on the input, the <code>Statistic Manager</code> will calculate the value and return that, either in the form of
 a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code></p>
 </div>
 <div class="paragraph">
-<p>step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
+<p>Step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
 form or string form. With this the feature has finished executing! Attached below is the summary for step 3-5:</p>
 </div>
 <div class="imageblock">
@@ -1984,4 +2029,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 05:44:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 06:52:25 UTC</div></div></div></body></html>

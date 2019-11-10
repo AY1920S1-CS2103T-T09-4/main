@@ -107,20 +107,23 @@
 <li><a href="#history-code-history-code-2">5.8. History: <code>history</code></a></li>
 <li><a href="#generate-stats-code-generate-s-code">5.9. Generate stats : <code>generate-s</code></a>
 <ul class="sectlevel3">
-<li><a href="#exiting-the-program-code-exit-code">5.9.1. Exiting the program : <code>exit</code></a></li>
+<li><a href="#average-statistics-code-coming-in-v2-0-code">5.9.1. Average Statistics <code>[coming in v2.0]</code></a></li>
+<li><a href="#different-charts-code-coming-in-v2-0-code">5.9.2. Different Charts <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-chart-to-pdf-code-coming-in-v2-0-code">5.9.3. Export Chart to PDF <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
-<li><a href="#export-data-code-export-code">5.10. Export data : <code>export</code></a></li>
-<li><a href="#autocomplete">5.11. Autocomplete</a></li>
-<li><a href="#other-commands">5.12. Other commands</a>
+<li><a href="#exiting-the-program-code-exit-code">5.10. Exiting the program : <code>exit</code></a></li>
+<li><a href="#export-data-code-export-code">5.11. Export data : <code>export</code></a></li>
+<li><a href="#autocomplete">5.12. Autocomplete</a></li>
+<li><a href="#other-commands">5.13. Other commands</a>
 <ul class="sectlevel3">
-<li><a href="#import-data-code-import-code-code-coming-in-v2-0-code">5.12.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></li>
-<li><a href="#saving-the-data">5.12.2. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.12.3. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.12.4. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
-<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.12.5. Export data to PDF  <code>[coming in v2.0]</code></a></li>
-<li><a href="#add-a-new-product-code-coming-in-v2-0-code">5.12.6. Add a new product <code>[coming in v2.0]</code></a></li>
-<li><a href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.12.7. Add fields to a new product <code>[coming in v2.0]</code></a></li>
+<li><a href="#import-data-code-import-code-code-coming-in-v2-0-code">5.13.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></li>
+<li><a href="#saving-the-data">5.13.2. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">5.13.3. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.13.4. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></li>
+<li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.13.5. Export data to PDF  <code>[coming in v2.0]</code></a></li>
+<li><a href="#add-a-new-product-code-coming-in-v2-0-code">5.13.6. Add a new product <code>[coming in v2.0]</code></a></li>
+<li><a href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.13.7. Add fields to a new product <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 </ul>
@@ -133,7 +136,8 @@
 <li><a href="#order-commands-2">7.3. Order Commands</a></li>
 <li><a href="#schedule-commands-2">7.4. Schedule Commands</a></li>
 <li><a href="#archived-order-commands">7.5. Archived Order Commands</a></li>
-<li><a href="#general-commands-2">7.6. General Commands</a></li>
+<li><a href="#Switch">7.6. Switch Commands</a></li>
+<li><a href="#general-commands-2">7.7. General Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -403,7 +407,7 @@ we have divided the user interface into 5 partitions</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Use our <a href="#Switch">[Switch]</a> commands to toggle between the tab panels!
+<p>Use our Switch commands ( refer to  <a href="#Switch">Section 7.6, &#8220;Switch Commands&#8221;</a> ) to toggle between the tab panels!
 The cool thing about our commands is that it will automatically
 toggle to the Tab Panel that it belongs to.</p>
 </div>
@@ -429,7 +433,8 @@ toggle to the Tab Panel that it belongs to.</p>
 <p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME c/CONTACT_NUMBER</code>, <code>c/CONTACT_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME c/CONTACT_NUMBER</code>, <code>c/CONTACT_NUMBER n/NAME</code> is also acceptable.
+<strong>Note that this applies only to Customer, Phone, Order and statistics commands</strong></p>
 </li>
 </ul>
 </div>
@@ -1858,7 +1863,7 @@ Currently, the following commands are undoable and redoable.<br></p>
 <div class="sect2">
 <h3 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">5.9. Generate stats : <code>generate-s</code></a></h3>
 <div class="paragraph">
-<p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code></p>
+<p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code>.</p>
 </div>
 <div class="paragraph">
 <p>This function calculates the three type of
@@ -1866,16 +1871,41 @@ statistics as shown below.</p>
 </div>
 <div class="paragraph">
 <p>All statistics that are calculated are only on orders in the <code>archived panel</code> that has been <code>completed</code> and with valid <code>schedule</code>.
-Lacking any of this will cause its non-inclusion into the statistics calculation.</p>
+Lacking any of this will cause its non-inclusion into the statistics calculation.
+The value calculated is the sum over the total time period within a month, meaning that it will take the date period,
+calculate the statistics for orders within that time period, split it by month and display it.</p>
 </div>
 <div class="paragraph">
-<p>Accepts two types of input: Without date input and with date input<br></p>
+<p>e.g <code>revenue</code> between 2019.11.12 and 2019.11.29 will calculate the order between this 2 dates, sum up the revenue
+(as it falls within a single month) and
+display this value.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Accepts two types of input:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Without date input</p>
+</li>
+<li>
+<p>with date input<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Generates the statistics with no date input.<br>
-Used for calculating <code>total profit</code> , <code>total Revenue</code> and <code>total Cost</code>.<br>
-Format: <code>generate-s s/stat</code><br>
-Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br>
+<p>Generates the statistics with no date input.<br></p>
+</div>
+<div class="paragraph">
+<p>Used for calculating <code>total profit</code> , <code>total Revenue</code> and <code>total Cost</code>.<br>
+Format: <code>generate-s s/stat</code><br></p>
+</div>
+<div class="paragraph">
+<p>Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br>
 The argument must match this three words perfectly.</p>
 </div>
 <div class="paragraph">
@@ -2023,13 +2053,8 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Coming in <code>V2.0</code>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Average Statistics</p>
+<div class="sect3">
+<h4 id="average-statistics-code-coming-in-v2-0-code"><a class="link" href="#average-statistics-code-coming-in-v2-0-code">5.9.1. Average Statistics <code>[coming in v2.0]</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2037,9 +2062,9 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Different Charts</p>
+</div>
+<div class="sect3">
+<h4 id="different-charts-code-coming-in-v2-0-code"><a class="link" href="#different-charts-code-coming-in-v2-0-code">5.9.2. Different Charts <code>[coming in v2.0]</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2047,9 +2072,9 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Export Chart to PDF</p>
+</div>
+<div class="sect3">
+<h4 id="export-chart-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-chart-to-pdf-code-coming-in-v2-0-code">5.9.3. Export Chart to PDF <code>[coming in v2.0]</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2057,21 +2082,22 @@ we estimate at least a few seconds before the window will be loaded.</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
-<div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.9.1. Exiting the program : <code>exit</code></a></h4>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.10. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br></p>
 </div>
 <div class="paragraph">
 <p><span class="underline">Format</span>: <code>exit</code></p>
 </div>
+<div class="paragraph">
+<p>If there are any statistics window open when executing this, the application will not terminate until those windows are closed too</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.10. Export data : <code>export</code></a></h3>
+<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">5.11. Export data : <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports application data into csv file.<br>
 If csv file of the input file name exists, the application data will be exported to the existing file.<br>
@@ -2082,7 +2108,7 @@ If csv file of the input file name does not exist, the application data will be 
 </div>
 </div>
 <div class="sect2">
-<h3 id="autocomplete"><a class="link" href="#autocomplete">5.11. Autocomplete</a></h3>
+<h3 id="autocomplete"><a class="link" href="#autocomplete">5.12. Autocomplete</a></h3>
 <div class="paragraph">
 <p>As you enter characters into the command line, suggestions will appear.</p>
 </div>
@@ -2258,9 +2284,9 @@ dates that already have orders scheduled on them. This is helpful in checking fo
 </div>
 </div>
 <div class="sect2">
-<h3 id="other-commands"><a class="link" href="#other-commands">5.12. Other commands</a></h3>
+<h3 id="other-commands"><a class="link" href="#other-commands">5.13. Other commands</a></h3>
 <div class="sect3">
-<h4 id="import-data-code-import-code-code-coming-in-v2-0-code"><a class="link" href="#import-data-code-import-code-code-coming-in-v2-0-code">5.12.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></h4>
+<h4 id="import-data-code-import-code-code-coming-in-v2-0-code"><a class="link" href="#import-data-code-import-code-code-coming-in-v2-0-code">5.13.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Imports csv file into application.<br>
 If csv file of the input file exists, the file will be imported.<br>
@@ -2271,14 +2297,14 @@ If csv file of the input file does not exist, command will not be executed.<br><
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">5.12.2. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">5.13.2. Saving the data</a></h4>
 <div class="paragraph">
 <p>SML data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.12.3. Encrypting data files <code>[coming in v2.0]</code></a></h4>
+<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">5.13.3. Encrypting data files <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>All data files will be password-protected with a unique password of at least 8 characters long.</p>
 </div>
@@ -2287,13 +2313,13 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.12.4. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h4>
+<h4 id="notification-for-reminders-alerts-code-coming-in-v2-0-code"><a class="link" href="#notification-for-reminders-alerts-code-coming-in-v2-0-code">5.13.4. Notification for reminders/alerts  <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Notification page to show reminders or alerts of upcoming schedules.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.12.5. Export data to PDF  <code>[coming in v2.0]</code></a></h4>
+<h4 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">5.13.5. Export data to PDF  <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Export the application data in SML to PDF format.</p>
 </div>
@@ -2302,7 +2328,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-a-new-product-code-coming-in-v2-0-code">5.12.6. Add a new product <code>[coming in v2.0]</code></a></h4>
+<h4 id="add-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-a-new-product-code-coming-in-v2-0-code">5.13.6. Add a new product <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>This command is to allow users to define their own product (e.g. Tablet) with its own fields.
 Users have to first key in the primary key name.
@@ -2316,7 +2342,7 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-fields-to-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.12.7. Add fields to a new product <code>[coming in v2.0]</code></a></h4>
+<h4 id="add-fields-to-a-new-product-code-coming-in-v2-0-code"><a class="link" href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.13.7. Add fields to a new product <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>This command is to allow users to add a field to their product.
 Users have to first key in the field name.
@@ -2403,10 +2429,6 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-p</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to phone tab panel.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-p i/IDENTITY NUMBER (IMEI) s/SERIAL NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new phone into SML</p></td>
 </tr>
@@ -2447,10 +2469,6 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-o</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to order tab panel.</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-o c/CUSTOMER_INDEX p/PHONE_INDEX $/PRICE [t/TAG]&#8230;&#8203;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new order into SML</p></td>
@@ -2497,10 +2515,6 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-s</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to schedule tab panel.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schedule cd/DATE</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shows the week of the date specified by the user.</p></td>
 </tr>
@@ -2538,10 +2552,6 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-a</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to archived order tab panel.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear-a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Deletes all archived orders.</p></td>
 </tr>
@@ -2549,7 +2559,44 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="general-commands-2"><a class="link" href="#general-commands-2">7.6. General Commands</a></h3>
+<h3 id="Switch"><a class="link" href="#Switch">7.6. Switch Commands</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to archived order tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to schedule tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to order tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to phone tab panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>switch-c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches to customer tab panel.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="general-commands-2"><a class="link" href="#general-commands-2">7.7. General Commands</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 40%;">
@@ -2598,4 +2645,4 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 05:44:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 06:52:25 UTC</div></div></div></body></html>
