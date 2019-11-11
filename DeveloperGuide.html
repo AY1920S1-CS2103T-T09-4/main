@@ -196,7 +196,7 @@ and <code>ArchivedOrderListPanel</code>
 All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFX UI framework. The layout of these UI parts is defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFX UI framework. The layout of these UI parts is defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a>.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -210,7 +210,7 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 <p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
 </li>
 <li>
-<p>Different changes in each tab or panel are controlled via the enum <code>UiChange</code></p>
+<p>Different changes in each tab or panel are controlled via the enum <code>UiChange</code>.</p>
 </li>
 </ul>
 </div>
@@ -294,10 +294,10 @@ The lifeline for <code>DeleteCustomerCommandParser</code> should end at the dest
 <p>stores <code>Customer</code>, <code>Phone</code>, <code>Order</code> and <code>Schedule</code> data in a <code>DataBook</code> each.</p>
 </li>
 <li>
-<p>a <code>DataBook</code> is backed by an underlying <code>UniqueList</code> which stores subclasses of <code>Identifiable</code></p>
+<p>a <code>DataBook</code> is backed by an underlying <code>UniqueList</code> which stores subclasses of <code>Identifiable</code>.</p>
 </li>
 <li>
-<p>the <code>Identifiable</code> interfaces exposes an <code>isSameAs</code> method which is used to determine if two objects have the same identity</p>
+<p>the <code>Identifiable</code> interfaces exposes an <code>isSameAs</code> method which is used to determine if two objects have the same identity.</p>
 </li>
 <li>
 <p>exposes 4 unmodifiable <code>ObservableList&lt;Identifiable&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
@@ -421,7 +421,7 @@ and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>
 <div class="paragraph">
 <p>The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
 analogous to the output mode, there are 2 types of methods in this module, one that returns a
-<code>String</code> and the other a <code>XYChart.Series&lt;String, Number&gt;</code></p>
+<code>String</code> and the other a <code>XYChart.Series&lt;String, Number&gt;</code>.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -490,10 +490,10 @@ this value.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement on top of AB3</p>
+<p>Pros: Easy to implement on top of AB3.</p>
 </li>
 <li>
-<p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere since any change in the database/models will cause the values to change</p>
+<p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere since any change in the database/models will cause the values to change.</p>
 </li>
 </ul>
 </div>
@@ -514,10 +514,10 @@ this module from <code>UI</code>. Respective Statistics will then be obtained fr
 <p>Pros: Ensure that the respective tasks are properly abstracted, adhering to the Single Responsibility Principle.</p>
 </li>
 <li>
-<p>Pros: Being standalone means the way of calculating the statistics can be changed without affecting the rest of the codebase</p>
+<p>Pros: Being standalone means the way of calculating the statistics can be changed without affecting the rest of the codebase.</p>
 </li>
 <li>
-<p>Cons: <code>Logic</code> will have to handle more calls and increases its responsibilities</p>
+<p>Cons: <code>Logic</code> will have to handle more calls and increases its responsibilities.</p>
 </li>
 </ul>
 </div>
@@ -580,7 +580,7 @@ single object, passed it to the appropriate place to be "unwrapped" when needed.
 <div class="paragraph">
 <p><strong>Note that this breakdown is for the mode with date input.
 For the default mode with no date, the steps are almost the same, except that
- <code>DefaultStatisticsWindow</code> is called in place of <code>StatisticsWindow</code>.</strong></p>
+<code>DefaultStatisticsWindow</code> is called in place of <code>StatisticsWindow</code>.</strong></p>
 </div>
 <div class="paragraph">
 <p>Step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
@@ -2336,4 +2336,4 @@ Expected: Chart is displayed in popup window</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:09:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:30:03 UTC</div></div></div></body></html>
