@@ -53,6 +53,7 @@
 <li><a href="#deleting-a-customer">G.3. Deleting a customer</a></li>
 <li><a href="#editing-an-order">G.4. Editing an order</a></li>
 <li><a href="#saving-data">G.5. Saving data</a></li>
+<li><a href="#testing-statistics">G.6. Testing Statistics</a></li>
 </ul>
 </li>
 </ul>
@@ -179,7 +180,7 @@ The following class plays an important role at the architecture level:</p>
 <h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/UiClassDiagram.png" alt="UiClassDiagram">
+<img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="400">
 </div>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
@@ -369,21 +370,12 @@ back.</p>
 <div class="paragraph">
 <p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows seller to quickly
 generate total statistics from their <code>DataBooks</code>, through the use of a <code>statistic</code>
-module that handles this calculation.</p>
-</div>
-<div class="paragraph">
-<p>There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
+module that handles this calculation. There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Profit</code></p>
-</li>
-<li>
-<p><code>Cost</code></p>
-</li>
-<li>
-<p><code>Revenue</code></p>
+<p><code>Profit</code>  <code>Cost</code> <code>Revenue</code></p>
 </li>
 </ul>
 </div>
@@ -502,9 +494,6 @@ this value.</p>
 <li>
 <p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere, since any change in the database / models will cause the values to change</p>
 </li>
-<li>
-<p>cons: Will bloat the UI since there will be extra details to be displayed and there is an extra panel on screen.</p>
-</li>
 </ul>
 </div>
 </li>
@@ -542,13 +531,9 @@ this module from <code>UI</code>. Respective Statistics will then be obtained fr
 <div class="paragraph">
 <p>Given that consideration, we decided that it will be the <code>UI</code> to trigger this call to <code>Logic</code> for calculation
 and then display the result of that call. Thus when Statistics need to be shown, the <code>UI</code> module will query the
-<code>Logic</code> for the respective data</p>
-</div>
-<div class="paragraph">
-<p>One of the motivation for this approach was to, as much as possible, maintain the architecture that is already in place in AB3.</p>
-</div>
-<div class="paragraph">
-<p>Furthermore, given that this feature requires date input from the user, we will need to find a way to get <code>UI</code> to send
+<code>Logic</code> for the respective data One of the motivation for this approach was to,
+as much as possible, maintain the architecture that is already in place in AB3.
+Furthermore, given that this feature requires date input from the user, we will need to find a way to get <code>UI</code> to send
 the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains a feedback to user
 with the actual changes on data done with a call to model during <code>execute(model)</code>.</p>
 </div>
@@ -559,27 +544,26 @@ with the actual changes on data done with a call to model during <code>execute(m
 <p>We decided to extend this command pattern by creating a <code>statsPayload</code> object. This object will hold the user
 queries for the statistic calculation (if there is any) and be bundled along with the <code>CommandResult</code> class to the
 <code>UI</code> to use in its query to logic. When the Ui executes the command to logic, the <code>CommandResult</code> is returned with
-this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>.</p>
+this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>.The resulting change
+is that the <code>commandResult</code> type will have a slightly different behaviour.</p>
 </div>
 <div class="paragraph">
-<p>The resulting change is that the <code>commandResult</code> type will have a slightly different behaviour. *All <code>commands</code> that
+<p><strong>All <code>commands</code> that
 are not <code>statsCommand</code> will call the default constructor of the <code>commandResult</code> class, where there is  an
-<code>Optional.empty()</code> in place of the <code>StatsPayload</code> * .</p>
+<code>Optional.empty()</code> in place of the <code>StatsPayload</code></strong> .</p>
 </div>
 <div class="paragraph">
-<p>All <code>statsCommand</code> type will have call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.</p>
-</div>
-<div class="paragraph">
-<p>The key motivation behind this idea of a payload was to be able to encapsulate details about the calculation inside a
+<p>All <code>statsCommand</code> type will have call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.
+The key motivation behind this idea of a payload was to be able to encapsulate details about the calculation inside a
 single object, passed it to the appropriate place to be "unwrapped" when needed. This unwrapping is done by the
 <code>mainWindow</code> class in the application and subsequently the data is passed to the  <code>statistic</code> module.</p>
 </div>
 <div class="paragraph">
 <p>A high level view of the packages working together:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/statsOverallClassDiagram.png" alt="statsOverallClassDiagram">
+<img src="images/statsOverallClassDiagram.png" alt="statsOverallClassDiagram" width="300">
 </div>
 </div>
 </div>
@@ -601,50 +585,44 @@ For the default mode with no date, the steps are almost the same, except that
 <p>Step 1: User inputs a stats command e.g <code>generate-s s/REVENUE d1/2018.12.13 d2/2019.11.13</code>.</p>
 </div>
 <div class="paragraph">
-<p>The commandBox executes it and the <code>MainWindow</code> runs its <code>executeCommand(commandText)</code> method.</p>
-</div>
-<div class="paragraph">
-<p>Referring to the sequence diagram below,this results in <code>logic.execute(commandText)</code> being called and
+<p>The commandBox executes it and the <code>MainWindow</code> runs its <code>executeCommand(commandText)</code> method.
+Referring to the sequence diagram below, this results in <code>logic.execute(commandText)</code> being called and
 the <code>statsCommandParser</code> parses the input from the user, returning a
 <code>Command</code> object</p>
 </div>
 <div class="paragraph">
 <p>Seen here is the sequence diagram of the first step</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/StatsCommandSequenceDiagram1.png" alt="StatsCommandSequenceDiagram1">
+<img src="images/StatsCommandSequenceDiagram1.png" alt="StatsCommandSequenceDiagram1" width="400">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2: the logic then calls <code>command.execute(command)</code> (refer to the second set of arrow coming out of <code>LogicManager</code>)</p>
+<p>Step 2: the logic then calls <code>command.execute(command)</code></p>
 </div>
 <div class="paragraph">
 <p>When this happens, the <code>StatsCommand</code> execute triggering a call to create the new <code>StatsPayload</code>. Then this is used to
-create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.</p>
+create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.
+Seen here is the sequence diagram of the second step</p>
 </div>
-<div class="paragraph">
-<p>Seen here is the sequence diagram of the second step</p>
-</div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/StatsCommandSequenceDiagram2.png" alt="StatsCommandSequenceDiagram2">
+<img src="images/StatsCommandSequenceDiagram2.png" alt="StatsCommandSequenceDiagram2" width="400">
 </div>
 </div>
 <div class="paragraph">
 <p>Shown below is a quick summary of step 1-2 (Full complete diagram):</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/StatsCommandSequenceDiagram.png" alt="StatsCommandSequenceDiagram">
+<img src="images/StatsCommandSequenceDiagram.png" alt="StatsCommandSequenceDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
 <p>Step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
-<code>performUiChanges</code> that handles the specific <code>UI</code> change.</p>
-</div>
-<div class="paragraph">
-<p>This then results in the <code>statsPayload</code> class being passed to <code>Logic</code> class and subsequently the <code>statistics</code> module,
+<code>performUiChanges</code> that handles the specific <code>UI</code> change.This then results in the <code>statsPayload</code> class being
+passed to <code>Logic</code> class and subsequently the <code>statistics</code> module,
 where the appropriate calculation will take place.</p>
 </div>
 <div class="paragraph">
@@ -652,15 +630,15 @@ where the appropriate calculation will take place.</p>
 </div>
 <div class="paragraph">
 <p>Depending on the input, the <code>Statistic Manager</code> will calculate the value and return that, either in the form of
-a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code></p>
+a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
 form or string form. With this the feature has finished executing! Attached below is the summary for step 3-5:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/StatisticsCalculationUI.png" alt="StatisticsCalculationUI">
+<img src="images/StatisticsCalculationUI.png" alt="StatisticsCalculationUI" width="400">
 </div>
 </div>
 </div>
@@ -668,16 +646,11 @@ form or string form. With this the feature has finished executing! Attached belo
 <div class="sect3">
 <h4 id="current-version-code-v1-4-code"><a class="link" href="#current-version-code-v1-4-code">3.1.3. Current Version <code>v1.4</code>:</a></h4>
 <div class="paragraph">
-<p>Here are some screenshots of the current product:</p>
+<p>Here is a screenshot of the current product:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/StatsExampleGraph.png" alt="StatsExampleGraph" width="600">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/StatsExampleDefault.png" alt="StatsExampleDefault" width="600">
+<img src="images/StatsExampleGraph.png" alt="StatsExampleGraph" width="300" height="]">
 </div>
 </div>
 </div>
@@ -2142,5 +2115,27 @@ Any corrupted data in any of the data files (customer, phone, order, schedule, a
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="testing-statistics"><a class="link" href="#testing-statistics">G.6. Testing Statistics</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display statistics between 2 dates</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Ensure that archive order panel has suitable <code>Completed</code> and <code>scheduled</code> orders. Only these orders
+will show up in the calculation</p>
+</li>
+<li>
+<p>Test case: <code>generate-s s/revenue d1/2018.12.13 d2/2019.11.13</code>
+Expeected: Chart is displayed in popup window</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 07:03:21 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 07:14:22 UTC</div></div></div></body></html>
