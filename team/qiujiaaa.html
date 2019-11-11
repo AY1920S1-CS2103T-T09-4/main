@@ -10,8 +10,8 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Seller Manager Lite (SML) is a desktop application used for handphone resellers to manage their customers, phones, orders and schedules.
-The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10+ kLoC.</p>
+<p>Seller Manager Lite (SML) is a desktop application used for handphone resellers to manage their customers, phones, orders and schedules all on one platform..
+The user interacts with it using a Command Line Interface (CLI), and it has a Graphical User Interface (GUI) created with JavaFX. It is written in Java, and has about 10+ kLoC.</p>
 </div>
 </div>
 </div>
@@ -35,7 +35,7 @@ The user interacts with it using a CLI, and it has a GUI created with JavaFX. It
 To make the application more user friendly, the application automatically switches to the calendar panel when any schedule commands are executed. This is to provide users a visual confirmation of the results of their command.</p>
 </li>
 <li>
-<p>Credits: Used <em>JFXtras</em> for Calendar Panel to render schedules visually.</p>
+<p>Credits: Used a third party library <a href="http://jfxtras.org/doc/8.0/jfxtras-agenda/index.html"><em>JFXtras</em></a> in Calendar Panel to render schedules visually.</p>
 </li>
 </ul>
 </div>
@@ -65,7 +65,7 @@ To make the application more user friendly, the application automatically switch
 <p>Calendar GUI (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/105">#105</a>)</p>
 </li>
 <li>
-<p>Logic: Basic CRUD + other Schedule commands (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/115">#115</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/138/files">#138</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/162">#162</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/187">#187</a>)</p>
+<p>Logic: CRUD + other Schedule commands (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/115">#115</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/138/files">#138</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/162">#162</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/187">#187</a>)</p>
 </li>
 <li>
 <p>Model (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/65">#65</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/162">#162</a>)</p>
@@ -225,7 +225,13 @@ If there are conflicts with the existing schedules, use the <code>-allow</code> 
 <p>You can add multiple schedules at the same time slot but it will affect the visibility of the order index on the schedule.</p>
 </li>
 <li>
-<p>Venue that is too long will be truncated / not visible on the calendar schedule. Simple hover your cursor over the schedule, the full venue should appear as a temporary pop-up in a while.</p>
+<p>Venue that is too long will be truncated / not visible on the calendar schedule.</p>
+</li>
+<li>
+<p>If a schedule spans across 2 days, the order index and venue might not be visible.</p>
+</li>
+<li>
+<p>Simple hover your cursor over the schedule (where content is truncated), the full string (order index + venue) should appear as a temporary pop-up in a while.</p>
 </li>
 </ul>
 </div>
@@ -567,8 +573,9 @@ The <code>CalendarDate</code> class uses <code>SimpleObjectProperty</code> to ke
 <p>Basically, after the <code>setCalendarDate()</code> method in <code>Model</code> is executed, <code>CalendarPanel</code> listens to it and make the necessary changes to the agenda view by calling its <code>setAgendaView()</code> method.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="design-considerations-alternative-designs-considered"><a class="link" href="#design-considerations-alternative-designs-considered">Design Considerations / Alternative designs considered</a></h5>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-alternative-designs-considered"><a class="link" href="#design-considerations-alternative-designs-considered">Design Considerations / Alternative designs considered</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -617,5 +624,4 @@ Also, this ensures that <code>CommandResult</code> remains unchanged and kept as
 </div>
 </div>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 09:55:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:19:42 UTC</div></div></div></body></html>
