@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Seller Manager Lite - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Seller Manager Lite - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Seller Manager Lite - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team T09-4</code>      Since: <code>Sep 2019</code>      Licence: <code>MIT</code></p>
@@ -115,12 +115,12 @@
 <li><a href="#export-data-code-export-code">5.9. Export data: <code>export</code></a></li>
 <li><a href="#autocomplete">5.10. Autocomplete</a>
 <ul class="sectlevel3">
-<li><a href="#example-code-add-code">5.10.1. Example: <code>add</code></a></li>
-<li><a href="#example-code-delete-c-code">5.10.2. Example: <code>delete-c</code></a></li>
-<li><a href="#example-code-edit-code">5.10.3. Example: <code>edit</code></a></li>
-<li><a href="#example-code-find-code">5.10.4. Example: <code>find</code></a></li>
-<li><a href="#example-code-switch-code">5.10.5. Example: <code>switch</code></a></li>
-<li><a href="#example-code-schedule-code">5.10.6. Example: <code>schedule</code></a></li>
+<li><a href="#code-add-code">5.10.1. <code>add</code></a></li>
+<li><a href="#code-delete-code">5.10.2. <code>delete</code></a></li>
+<li><a href="#code-edit-code">5.10.3. <code>edit</code></a></li>
+<li><a href="#code-find-code">5.10.4. <code>find</code></a></li>
+<li><a href="#code-switch-code">5.10.5. <code>switch</code></a></li>
+<li><a href="#code-schedule-code">5.10.6. <code>schedule</code></a></li>
 </ul>
 </li>
 <li><a href="#other-commands">5.11. Other commands</a>
@@ -435,7 +435,7 @@ toggle to the Tab Panel that it belongs to.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add -c n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add -c n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add-c n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add-c n/John Doe</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
@@ -866,7 +866,7 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 <p>Adds a phone. Similar to adding a customer.<br></p>
 </div>
 <div class="paragraph">
-<p><span class="underline">Format</span>: <code>add-p i/IDENTITY NUMBER (IMEI) s/SERIAL NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p>
+<p><span class="underline">Format</span>: <code>add-p i/IDENTITY_NUMBER s/SERIAL_NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -875,7 +875,7 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-IMEI Number should be 15 digits long.
+Identity Number (IMEI) should be 15 digits long.
 </td>
 </tr>
 </table>
@@ -900,6 +900,18 @@ Capacity can be 8GB, 16GB, 32GB, 64GB, 128GB, 256GB, 512GB or 1024GB. You do not
 </td>
 <td class="content">
 Cost must start with $ and can only have a maximum of 2 decimal place.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The maximum cost allowed is $999999999.99.
 </td>
 </tr>
 </table>
@@ -1111,7 +1123,7 @@ A customer can have any number of tags, including 0.
 <h4 id="edit-a-phone-code-edit-p-code"><a class="link" href="#edit-a-phone-code-edit-p-code">5.3.7. Edit a phone: <code>edit-p</code></a></h4>
 <div class="paragraph">
 <p>Edits the data fields of a phone. Note that orders in the order tab panel associated with the phone will also be edited.<br>
-<span class="underline">Format</span>: <code>edit-p INDEX [i/IMEI] [s/SERIAL NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p>
+<span class="underline">Format</span>: <code>edit-p INDEX [i/IDENTITY_NUMBER] [s/SERIAL_NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1260,9 +1272,7 @@ Format: <code>add-o c/CUSTOMER_INDEX p/PHONE_INDEX $/PRICE [t/TAG]&#8230;&#8203;
 <p>$0 is accepted to accommodate for free transactions.</p>
 </li>
 <li>
-<p>Prices above 1.7 * 10<sup>308</sup> will not be rejected. However, they will
-<strong>corrupt</strong> the data. There is no practical reason
-for a price to be that high.</p>
+<p>The maximum price allowed is $999999999.99.</p>
 </li>
 </ul>
 </div>
@@ -2070,7 +2080,7 @@ Format for the date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StatsExampleGraph.png" alt="StatsExampleGraph" width="300">
+<img src="images/StatsExampleGraph.png" alt="StatsExampleGraph">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -2333,7 +2343,7 @@ The system is case-sensitive.
 </table>
 </div>
 <div class="sect3">
-<h4 id="example-code-add-code"><a class="link" href="#example-code-add-code">5.10.1. Example: <code>add</code></a></h4>
+<h4 id="code-add-code"><a class="link" href="#code-add-code">5.10.1. <code>add</code></a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/AutoCompleteAddExample.png" alt="AutoCompleteAddExample">
@@ -2384,7 +2394,7 @@ accordingly.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-code-delete-c-code"><a class="link" href="#example-code-delete-c-code">5.10.2. Example: <code>delete-c</code></a></h4>
+<h4 id="code-delete-code"><a class="link" href="#code-delete-code">5.10.2. <code>delete</code></a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/AutoCompleteDeleteExample.png" alt="AutoCompleteDeleteExample">
@@ -2413,7 +2423,7 @@ where <code>N</code> is the largest valid index that can be entered. In this cas
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-code-edit-code"><a class="link" href="#example-code-edit-code">5.10.3. Example: <code>edit</code></a></h4>
+<h4 id="code-edit-code"><a class="link" href="#code-edit-code">5.10.3. <code>edit</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2454,7 +2464,7 @@ the system is designed to always suggest the entire set of possible prefixes.</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-code-find-code"><a class="link" href="#example-code-find-code">5.10.4. Example: <code>find</code></a></h4>
+<h4 id="code-find-code"><a class="link" href="#code-find-code">5.10.4. <code>find</code></a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/AutoCompleteFindExample.png" alt="AutoCompleteFindExample">
@@ -2486,7 +2496,7 @@ entered.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-code-switch-code"><a class="link" href="#example-code-switch-code">5.10.5. Example: <code>switch</code></a></h4>
+<h4 id="code-switch-code"><a class="link" href="#code-switch-code">5.10.5. <code>switch</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2508,7 +2518,7 @@ and nothing else.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-code-schedule-code"><a class="link" href="#example-code-schedule-code">5.10.6. Example: <code>schedule</code></a></h4>
+<h4 id="code-schedule-code"><a class="link" href="#code-schedule-code">5.10.6. <code>schedule</code></a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/AutoCompleteScheduleExample.png" alt="AutoCompleteScheduleExample">
@@ -2686,11 +2696,11 @@ simplified to <code>gp</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-p i/IDENTITY NUMBER (IMEI) s/SERIAL NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-p i/IDENTITY_NUMBER s/SERIAL_NUMBER n/NAME b/BRAND cp/CAPACITY (in GB) cl/COLOUR $/COST [t/TAG]…​</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Adds a new phone into SML.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-p INDEX [i/IMEI] [s/SERIAL NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-p INDEX [i/IDENTITY_NUMBER] [s/SERIAL_NUMBER] [n/NAME] [b/BRAND] [cp/CAPACITY] [cl/COLOUR] [$/COST] [t/TAG]…</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Edits an existing phone.</p></td>
 </tr>
 <tr>
@@ -2902,4 +2912,4 @@ simplified to <code>gp</code>.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:30:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:50:21 UTC</div></div></div></body></html>
