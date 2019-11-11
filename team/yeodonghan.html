@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Yeo Dong Han - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Yeo Dong Han - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-seller-manager-lite"><a class="link" href="#project-seller-manager-lite">PROJECT: Seller Manager Lite</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seller Manager Lite is a desktop application used for managing a business operational and logistical needs. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 28 kLoC. It was morph from the original Address-Book 3 application.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>the export to csv feature</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to export current data into excel readable CSV files. Using export command, user can easily export the current customer and phone data into CSV file available for printing.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because a user seller can easily create a CSV file containing the business data such as the inventory of phones and import into excel to print easily. This allows the seller to easily create a hard copy of the current inventory to do easy stock take in real life.</p>
+</li>
+<li>
+<p>Highlights: I have written the command [Export] that reads present Json files to create JsonObjects. The creation of CSV file using JsonObject uses a third-party library to convert Json string into JsonObjects and then into JsonArray to be finally converted into CSV format string. To make the feature useful for the users, I have designed the printable CSV file to display just the necessary attributes so as to keep the customer list and phone inventory neat and easy to read.</p>
+</li>
+<li>
+<p>Credits: Used org.json library to handle JsonObjects, JsonArrays and support comma delimiter to create CSV.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other Major enhancement</strong>: Designed and implemented the Json saving feature that is used to save data of the different models in our application. The feature is inspired by AB3 use of Json saving feature. This is done by morphing present AB3 saving features to be integrated into our application.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=yeodonghan&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByAuthors&amp;breakdown=false&amp;tabOpen=true&amp;tabType=zoom">Reposense</a>]</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added Customer, Phone, Order and schedule storage. (Pull requests <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/133">#133</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/118">#118</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/121">#121</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/125">#125</a>)</p>
+</li>
+<li>
+<p>Wrote tests for Storage module (Pull request <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/291">#291</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tweaked AB3 user guide to fit our application: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/176">#176</a></p>
+</li>
+<li>
+<p>Edited and added diagrams to Developer Guide: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/157">#157</a> <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/190">#190</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/101">#101</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/119">#119</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="export-data-code-export-code"><a class="link" href="#export-data-code-export-code">Export data: <code>export</code></a></h3>
+<div class="paragraph">
+<p>Exports application data into csv file.<br>
+If csv file of the input file name exists, the application data will be exported to the existing file.<br>
+If csv file of the input file name does not exist, the application data will be exported into a new file.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write the export command: <code>Export FILENAME</code></p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportCommand.png" alt="ExportCommand" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The CSV file of file name "FILENAME" will be created in the data folder.</p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportCSV.png" alt="ExportCSV" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>export FILE_NAME</code><br></p>
+</div>
+<div class="sect3">
+<h4 id="import-data-code-import-code-code-coming-in-v2-0-code"><a class="link" href="#import-data-code-import-code-code-coming-in-v2-0-code">Import data : <code>import</code> <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>Imports csv file into the application.<br>
+If csv file of the input file exists, the file will be imported.<br>
+If csv file of the input file does not exist, command will not be executed.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>import FILE_NAME</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-data-to-pdf-code-coming-in-v2-0-code"><a class="link" href="#export-data-to-pdf-code-coming-in-v2-0-code">Export data to PDF  <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>Export the application data in SML to PDF format.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>export pdf</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
+</div>
+<div class="title">Figure 1. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong>: <a href="{repoURL}/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in JSON format and read it back.</p>
+</li>
+<li>
+<p>can save the Customer Book data, Phone Book data, Order Book data and Schedule Book data in JSON format and read them
+back.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-feature"><a class="link" href="#export-feature">Export feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>The export mechanism is allows user to export current saved Json files into csv files available for import into MSExcel.
+We made use of <code>FileReader</code> to read the Json saved data files. The data is used to create <code>JsonObjects</code> and stored into <code>JsonArray</code> and then CSV formatted string using comma delimiters.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, it implements the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ExportCommand#getCSVString()</code>&#8201;&#8212;&#8201;Returns CSV formatted string containing the customer data, phone data, order data and schedule data.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="how-it-works"><a class="link" href="#how-it-works">How it works.</a></h5>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the export mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>The user executes <code>export filename</code> command to export current data into a CSV file.
+<code>UserPrefs</code> is created and used to get the file path of the data files (i.e. customerbook.json).
+The method getCSVString is executed to create <code>FileReader</code> and <code>BufferedReader</code> to read the data files from each of the path.
+The string is then used to create <code>JsonObject</code> and then converted to CSV formatted string data representation.
+At the end, the strings are appended to get the full CSV file containing the various data.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Converting Json formatted string into CSV formatted string.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Customisation to design CSV layout requires re-formatting of the string.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Creating CSV formatted string straight from the Model.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement on the fly the decided layout of created CSV file.</p>
+</li>
+<li>
+<p>Cons: Harder to maintain. Had to code for the various cases in different data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="sect4">
+<h5 id="break-down-of-the-command"><a class="link" href="#break-down-of-the-command">Break down of the command.</a></h5>
+<div class="paragraph">
+<p>Below is a more in-depth explanation at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: User inputs a the export command e.g <code>Export FILENAME</code></p>
+</div>
+<div class="paragraph">
+<p>The commandBox executes it and the MainWindow runs its executeCommand(commandText) method. Referring to the sequence diagram below, this results in logic.execute(commandText) being called and the ExportParser parses the input from the user, returning a Command object.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: The logic then calls command.execute(command)</p>
+</div>
+<div class="paragraph">
+<p>When this happens the <code>ExportCommand</code> execute creates a new CommandResult object and return that to Logic, completing the execution of the user input command.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: The commandResult executes <code>getCSVString()</code> which accesses JsonFiles in the data folder of Storage to parse the data into CSV strings and returns the data.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: The commandResult creates CSV file in data folder and returns in the end of execution.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is a quick summary of step 1-4 (Full complete diagram):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportSequenceDiagram.png" alt="ExportSequenceDiagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="notes-to-developer"><a class="link" href="#notes-to-developer">Notes to developer</a></h4>
+<div class="paragraph">
+<p>Developers working on adding features to this module should take note of these limitations that we have put in place for <code>v1.4</code> of SML:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>File names are limited to the maximum character limit of Mac and Window users of 255 characters.</p>
+</li>
+<li>
+<p>Simplified handling of file name which only allows file names to be alphanumeric.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Data is automatically saved after every command.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If all files are missing, sample data files will be loaded.</p>
+</li>
+<li>
+<p>Dependency flows from schedulebook to orderbook to phonebook and customerbook.</p>
+</li>
+<li>
+<p>If file "a" has dependency on file "b", and file "a" is missing, both empty file "a" and "b" will be loaded.</p>
+</li>
+<li>
+<p>If file is corrupted i.e. wrong string input, sample file will be loaded.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:24:20 UTC</div></div></div></body></html>
