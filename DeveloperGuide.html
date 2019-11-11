@@ -40,7 +40,11 @@
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
-<li><a href="#glossary">Appendix E: Glossary</a></li>
+<li><a href="#glossary">Appendix E: Glossary</a>
+<ul class="sectlevel2">
+<li><a href="#sml-specific-terms">E.1. SML-specific Terms</a></li>
+</ul>
+</li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
@@ -347,7 +351,7 @@ back.</p>
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>seedu.address.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -1074,7 +1078,7 @@ At the end, the strings are appended to get the full CSV file containing the var
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram">
+<img src="images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram" width="300">
 </div>
 </div>
 <div class="paragraph">
@@ -1087,7 +1091,7 @@ This will be explained in the activity diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoRedoStackPushActivityDiagram.png" alt="UndoRedoStackPushActivityDiagram">
+<img src="images/dg-diagram/UndoRedoStackPushActivityDiagram.png" alt="UndoRedoStackPushActivityDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -1109,7 +1113,7 @@ The <code>redo()</code> method will then set the model to the previous snapshots
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoRedoStackObjectDiagram0.png" alt="UndoRedoStackObjectDiagram0">
+<img src="images/dg-diagram/UndoRedoStackObjectDiagram0.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
@@ -1117,15 +1121,15 @@ The <code>redo()</code> method will then set the model to the previous snapshots
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoRedoStackObjectDiagram1.png" alt="UndoRedoStackObjectDiagram1">
+<img src="images/dg-diagram/UndoRedoStackObjectDiagram1.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add-c n/David &#8230;&#8203;</code> to add a new person. The <code>add-c</code> command will save all states of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.</p>
+<p>Step 3. The user executes <code>add-c n/David &#8230;&#8203;</code> to add a new customer. The <code>add-c</code> command will save all states of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoRedoStackObjectDiagram2.png" alt="UndoRedoStackObjectDiagram2">
+<img src="images/dg-diagram/UndoRedoStackObjectDiagram2.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
@@ -1133,7 +1137,7 @@ The <code>redo()</code> method will then set the model to the previous snapshots
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoRedoStackObjectDiagram3.png" alt="UndoRedoStackObjectDiagram3">
+<img src="images/dg-diagram/UndoRedoStackObjectDiagram3.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1153,7 +1157,7 @@ UndoCommand will check whether if there is any command to be undone by calling t
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
+<img src="images/dg-diagram/UndoSequenceDiagram.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1168,6 +1172,18 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>UndoableCommand#redo()</code>.</p>
 </div>
@@ -1176,7 +1192,7 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoRedoStackObjectDiagram4.png" alt="UndoRedoStackObjectDiagram4">
+<img src="images/dg-diagram/UndoRedoStackObjectDiagram4.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
@@ -1184,7 +1200,7 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoRedoStackObjectDiagram5.png" alt="UndoRedoStackObjectDiagram5">
+<img src="images/dg-diagram/UndoRedoStackObjectDiagram5.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 </div>
@@ -1397,12 +1413,6 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1802,7 +1812,7 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 <p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should be able to hold up to 1000 customers/phones/orders without a noticeable sluggishness in performance for typical usage.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
@@ -1840,20 +1850,103 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
 <dd>
 <p>Windows, Linux, Unix, OS-X</p>
-</dd>
-<dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
-<dd>
-<p>A contact detail that is not meant to be shared with others</p>
-</dd>
-<dt class="hdlist1"><a id="order"></a> Order</dt>
-<dd>
-<p>A order consisting of customer and phone</p>
-</dd>
-<dt class="hdlist1"><a id="Phone"></a> Phone</dt>
-<dd>
-<p>Any mobile device being sold by seller</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>SML</strong><br>
+Initialism for our application, Seller Manager Lite.</p>
+</li>
+<li>
+<p><strong>Customer</strong><br>
+A person who buys from the seller.</p>
+</li>
+<li>
+<p><strong>Phone</strong><br>
+Multi-purpose mobile computing device. Also known as smartphones.</p>
+</li>
+<li>
+<p><strong>Order</strong><br>
+A request for goods.</p>
+</li>
+<li>
+<p><strong>Schedule</strong><br>
+A meetup with buyer to pass the goods. There can only be 1 schedule associated with an order at any one time.</p>
+</li>
+</ol>
+</div>
 </dd>
 </dl>
+</div>
+<div class="sect2">
+<h3 id="sml-specific-terms"><a class="link" href="#sml-specific-terms">E.1. SML-specific Terms</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Command</strong><br>
+An instruction that will produce an output once entered in SML.</p>
+</li>
+<li>
+<p><strong>CustomerBook</strong><br>
+A CustomerBook is a list that stores Customer(s) that has been added into SML.
+Each customer entry comprises of CustomerName, ContactNumber and Email fields and others.</p>
+</li>
+<li>
+<p><strong>PhoneBook</strong><br>
+A PhoneBook is a list that stores Phone(s) that has been added in SML.
+Each phone entry comprises of IdentityNumber, SerialNumber, Brand, PhoneName, Colour, Cost and Capacity.</p>
+</li>
+<li>
+<p><strong>OrderBook</strong><br>
+A OrderBook is a list that stores Order(s) that has been added in SML.
+Each order entry comprises of a customer, a phone, OrderID, Price and OrderStatus.</p>
+</li>
+<li>
+<p><strong>ScheduleBook</strong><br>
+A ScheduleBook is a list that stores Schedules(s) that has been added in SML.
+Each schedule entry comprises a Venue and Calendar with date and time.</p>
+</li>
+<li>
+<p><strong>Archived</strong><br>
+Archived is a list that stores Completed or Cancelled orders ONLY.</p>
+</li>
+<li>
+<p><strong>TabPanel</strong><br>
+A view that is similar to web browser Tabs.</p>
+</li>
+<li>
+<p><strong>Add</strong><br>
+The action of putting an entry into CustomerBook, PhoneBook, OrderBook or ScheduleBook.</p>
+</li>
+<li>
+<p><strong>Edit</strong><br>
+If you want to make changes to any entry, you can do so with this command.</p>
+</li>
+<li>
+<p><strong>Delete</strong><br>
+Remove an entry from CustomerBook, PhoneBook or ScheduleBook.</p>
+</li>
+<li>
+<p><strong>Find</strong><br>
+The action of searching for customers, phones or orders that contains the keywords that you specify.</p>
+</li>
+<li>
+<p><strong>Switch</strong><br>
+Change the Tab Panel to Customer, Phone, Order, Schedule or Archived.</p>
+</li>
+<li>
+<p><strong>Undo</strong><br>
+If you&#8217;ve made a mistake, you can simply revert to the previous command.</p>
+</li>
+<li>
+<p><strong>Redo</strong><br>
+Inverse of undo.</p>
+</li>
+<li>
+<p><strong>Copy</strong><br>
+Action of copying an entry into clipboard.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -1978,7 +2071,7 @@ Expected: Similar to previous.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a customer while all persons are listed</p>
+<p>Deleting a customer while all customers are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2050,4 +2143,4 @@ Any corrupted data in any of the data files (customer, phone, order, schedule, a
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:07:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:55:30 UTC</div></div></div></body></html>

@@ -165,7 +165,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram">
+<img src="../images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram" width="300">
 </div>
 </div>
 <div class="paragraph">
@@ -178,7 +178,7 @@ This will be explained in the activity diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoRedoStackPushActivityDiagram.png" alt="UndoRedoStackPushActivityDiagram">
+<img src="../images/dg-diagram/UndoRedoStackPushActivityDiagram.png" alt="UndoRedoStackPushActivityDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -200,7 +200,7 @@ The <code>redo()</code> method will then set the model to the previous snapshots
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoRedoStackObjectDiagram0.png" alt="UndoRedoStackObjectDiagram0">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram0.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
@@ -208,15 +208,15 @@ The <code>redo()</code> method will then set the model to the previous snapshots
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoRedoStackObjectDiagram1.png" alt="UndoRedoStackObjectDiagram1">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram1.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add-c n/David &#8230;&#8203;</code> to add a new person. The <code>add-c</code> command will save all states of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.</p>
+<p>Step 3. The user executes <code>add-c n/David &#8230;&#8203;</code> to add a new customer. The <code>add-c</code> command will save all states of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoRedoStackObjectDiagram2.png" alt="UndoRedoStackObjectDiagram2">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram2.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
@@ -224,7 +224,7 @@ The <code>redo()</code> method will then set the model to the previous snapshots
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoRedoStackObjectDiagram3.png" alt="UndoRedoStackObjectDiagram3">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram3.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -244,7 +244,7 @@ UndoCommand will check whether if there is any command to be undone by calling t
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
+<img src="../images/dg-diagram/UndoSequenceDiagram.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -259,6 +259,18 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>UndoableCommand#redo()</code>.</p>
 </div>
@@ -267,7 +279,7 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoRedoStackObjectDiagram4.png" alt="UndoRedoStackObjectDiagram4">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram4.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 <div class="paragraph">
@@ -275,7 +287,7 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoRedoStackObjectDiagram5.png" alt="UndoRedoStackObjectDiagram5">
+<img src="../images/dg-diagram/UndoRedoStackObjectDiagram5.png" alt="[width=&quot;450&quot;">
 </div>
 </div>
 </div>
@@ -314,39 +326,6 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use 2 stacks to store the history of the Models.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a command is undone, we must remember to save the previous model state to the command.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -365,4 +344,4 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:07:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:55:30 UTC</div></div></div></body></html>
