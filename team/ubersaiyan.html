@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Yan Wei Liang - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Yan Wei Liang - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-seller-manager-lite-junior"><a class="link" href="#project-seller-manager-lite-junior">PROJECT: Seller Manager Lite Junior</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seller Manager Lite is a desktop application, written in Java, for managing phone sales.
+The user interacts with it using a Command Line Interface, and views data using a Graphical
+User Interface, where data is displayed in the form of lists. As the database was designed
+specifically to support phone sales, database objects such as Customers, Phones and Orders
+have predefined relationships between them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Added the ability to autocomplete commands.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to input commands with ease. As the user types into the
+command line, suggestions will be shown.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because a user does not need
+to remember what commands are available or constantly refer to the user guide. It also allows
+the user to determine if he is entering duplicated data in real time, instead of waiting for
+feedback after entering the command.</p>
+</li>
+<li>
+<p>Highlights: This enhancement supports all existing commands of varying formats and was
+designed to be easily extensible to commands added in future. The autocomplete system is
+contextually aware, by suggesting values catered to each command and prefix
+specifically. The possible values will also automatically update according to changes in the database.</p>
+</li>
+<li>
+<p>Credits: UI code for displaying a dropdown menu was inspired by this StackOverflow post:
+<a href="https://stackoverflow.com/questions/36861056/javafx-textfield-auto-suggestions" class="bare">https://stackoverflow.com/questions/36861056/javafx-textfield-auto-suggestions</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Refactored the Model to use generic DataBook and UniqueList that
+store Identifiable objects.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Implemented the Phone class.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Implemented "cascading" effects for edit and delete for database objects.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>RepoSense:
+<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=ubersaiyan&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">link</a></p>
+</li>
+<li>
+<p>Autocomplete:
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/122">#122</a>
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/143">#143</a>
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/155">#155</a>
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/277">#277</a>
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/262">#262</a></p>
+</li>
+<li>
+<p>Refactor:
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/137">#137</a></p>
+</li>
+<li>
+<p>Phone:
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/62">#62</a>
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/77">#77</a>
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/101">#101</a>
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/111">#111</a></p>
+</li>
+<li>
+<p>Cascading:
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/117">#117</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Released <code>v1.2</code> on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Removed unwanted AB3 code related to Person</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments):
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/141">#141</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/83">#83</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/106">#106</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/203">ExerHealth #203</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/204">ExerHealth #204</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/205">ExerHealth #205</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/206">ExerHealth #206</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/209">ExerHealth #209</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/210">ExerHealth #210</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/219">ExerHealth #219</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/220">ExerHealth #220</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/221">ExerHealth #221</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/222">ExerHealth #222</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/223">ExerHealth #223</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/226">ExerHealth #226</a>,
+<a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/227">ExerHealth #227</a>
+)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="autocomplete"><a class="link" href="#autocomplete">Autocomplete</a></h3>
+<div class="paragraph">
+<p>As you type into the command line, suggestions will appear.</p>
+</div>
+<div class="paragraph">
+<p>A maximum of 8 suggestions will appear in a dropdown menu, sorted by their degree of
+similarity to the entered text.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteCommandExample.png" alt="AutoCompleteCommandExample">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Suggestions in <em>Cyan</em> mean that the entire word is suggested.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Suggestions in <em>Yellow</em> mean that the word is partially matched.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The system may lag and not work if you are typing too fast.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The system is case-sensitive.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-code-add-code"><a class="link" href="#example-code-add-code">Example: <code>add</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteAddExample.png" alt="AutoCompleteAddExample">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you enter <code>add-c</code> followed by a space, the system will suggest
+a list of prefixes you can enter, such as <code>n/</code>.</p>
+</li>
+<li>
+<p>When you enter <code>add-c n/</code>, the system will suggest a list of names that
+belong to existing customers. This is helpful in checking if the data you are
+entering is duplicated.</p>
+</li>
+<li>
+<p>The list of data that is suggested depends on the prefix that is last entered.
+For instance, if the last entered prefix was <code>e/</code>, it would instead suggest a
+list of existing emails.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>As <code>add-c</code>, <code>add-p</code> and <code>add-o</code> commands can accept an unlimited number of tags,
+the system will endlessly suggest <code>t/</code> prefixes and <code>Tag</code> arguments after all
+compulsory arguments are entered.</p>
+</li>
+<li>
+<p>Autocomplete works similarly for all <code>add</code> commands and <code>generate-s</code>.</p>
+</li>
+<li>
+<p>Even though these commands do not require the prefixes and arguments to be in
+any specified order, the autocomplete system enforces an artificial order to reduce
+confusion.</p>
+</li>
+<li>
+<p>When you alter data in the application, the suggestions will be updated
+accordingly.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-code-delete-c-code"><a class="link" href="#example-code-delete-c-code">Example: <code>delete-c</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteDeleteExample.png" alt="AutoCompleteDeleteExample">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For commands such as <code>delete-c</code> which take only a single index and
+no additional arguments, the system will suggest two numbers: <code>1</code> and <code>N</code>,
+where <code>N</code> is the largest valid index that can be entered. In this case,
+<code>N</code> corresponds to the number of customers displayed on the customer panel.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Commands of this type include <code>delete</code>, <code>copy</code>, <code>complete</code>, <code>cancel</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-code-edit-code"><a class="link" href="#example-code-edit-code">Example: <code>edit</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>When you enter <code>edit-c</code> followed by a space, the system will suggest
+two numbers: <code>1</code> and <code>N</code>, where <code>N</code> is the largest valid index that can
+be entered.</p>
+</li>
+<li>
+<p>When you enter <code>edit-c 1</code> followed by a space, the system will
+suggest a list of prefixes you can enter, such as <code>n/</code>, <code>c/</code>, <code>e/</code>.</p>
+</li>
+<li>
+<p>When you enter <code>edit-c 1 c/</code>, the system will suggest a list of
+contact numbers that belong to existing customers.
+This is helpful in checking if the data you are editing to is duplicated.</p>
+</li>
+<li>
+<p>The list of suggestions depends on the prefix that is last
+entered. If the last entered prefix was <code>i/</code>, it would instead suggest a
+list of existing identity numbers.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>As edit commands allow for optional arguments and multiple same arguments,
+the system is designed to always suggest the entire set of possible prefixes.</p>
+</li>
+<li>
+<p>Autocomplete works similarly for all <code>edit</code> commands.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-code-find-code"><a class="link" href="#example-code-find-code">Example: <code>find</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteFindExample.png" alt="AutoCompleteFindExample">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you enter <code>find-c</code> followed by a space, the system will suggest
+values from every attribute of every customer in the database.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>As <code>find</code> commands accept an unlimited number of keywords, the system
+will endlessly suggest the same set of possible keywords when a space is
+entered.</p>
+</li>
+<li>
+<p>Autocomplete works similarly for all <code>find</code> commands.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-code-switch-code"><a class="link" href="#example-code-switch-code">Example: <code>switch</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>For simple commands such as <code>switch-c</code>, the system will suggest the command word
+and nothing else.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Simple commands include <code>switch</code>, <code>export</code>, <code>list</code>, <code>clear</code>, <code>undo</code>, <code>redo</code>, <code>history</code>, <code>exit</code>, <code>help</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-code-schedule-code"><a class="link" href="#example-code-schedule-code">Example: <code>schedule</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteScheduleExample.png" alt="AutoCompleteScheduleExample">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you enter <code>schedule</code> followed by a space, the system will suggest
+dates that already have orders scheduled on them. This is helpful in
+checking for duplicates.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="autocomplete-feature"><a class="link" href="#autocomplete-feature">Autocomplete feature</a></h3>
+<div class="paragraph">
+<p>This feature is visible in the UI as a dropdown menu when the user types
+into the command box.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteAddExample.png" alt="AutoCompleteAddExample">
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="sect4">
+<h5 id="how-the-ui-works"><a class="link" href="#how-the-ui-works">How the UI works</a></h5>
+<div class="paragraph">
+<p>The command box uses a custom <code>AutoCompleteTextField</code> which extends from JavaFX&#8217;s
+<code>TextField</code>. It stores a reference to a <code>SortedSet</code> of strings. When the input is
+changed, it automatically compares the input with this set of suggestions. If any
+suggestion matches some region of the input, it will be further compared with other
+suggestions to determine which suggestion is more similar to the input. The degree of
+similarity is determined by the index of the first character of the matching region.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteCommandExample.png" alt="AutoCompleteCommandExample">
+</div>
+</div>
+<div class="paragraph">
+<p>The smaller the index, the more similar the suggestion is.</p>
+</div>
+<div class="paragraph">
+<p>In order to customize the suggestions to fit different inputs, the <code>CommandBox</code>
+attaches a listener to the <code>AutoCompleteTextField</code>. When the text is changed, the
+<code>CommandBox</code> will extract the entered text and query the <code>LogicManager</code> for a set
+of suggestions. This query process will be explained below.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="underlying-data-structures"><a class="link" href="#underlying-data-structures">Underlying data structures</a></h5>
+<div class="paragraph">
+<p>This feature was designed to display values that are currently in the <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example, the input text <code>add-c n/</code> would display a list of <code>CustomerName</code>
+that already exists in the <code>Customer</code> <code>DataBook</code>.</p>
+</div>
+<div class="sect5">
+<h6 id="directed-graph"><a class="link" href="#directed-graph">Directed Graph</a></h6>
+<div class="paragraph">
+<p>In order to achieve this, one of the data structures used is a directed <code>Graph</code>
+implemented as a list of <code>Edge</code>, each storing references to a source and destination
+<code>Node</code>. Each <code>Node</code> then stores a reference to a <code>List</code> in a <code>DataBook</code>.</p>
+</div>
+<div class="paragraph">
+<p>These were the design considerations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enforcement of artificial prefix order: By storing prefixes as edge weights,
+it is possible to enforce an artificial order. First, initialise a pointer
+to a starting <code>Node</code>. Then for each prefix encountered in the input, attempt to
+traverse an outgoing <code>Edge</code> from this <code>Node</code> by matching the prefix with the
+edge weight. This way, if the prefix is out of order, later prefixes will be
+inaccessible.</p>
+</li>
+<li>
+<p>Dynamically updated: By storing references to a set of values that can be
+backed by <code>ObservableList</code> in the <code>Model</code>, whenever the user alters any data,
+it will automatically be reflected in the displayed values.</p>
+</li>
+<li>
+<p>Supports optional arguments: By storing the possible prefixes as
+edge weights, it is possible to represent an optional argument by
+having an edge to the <code>Node</code> containing its values, as well as an edge to the next <code>Node</code>.</p>
+</li>
+<li>
+<p>Infinite structure: By having a <code>TagNode</code> store a reference to itself, it
+is possible to endlessly display <code>t/</code> as a possible prefix at the end
+of the input text, which is consistent with the unlimited number of
+<code>Tag</code> a <code>Customer</code> can hold.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="wrapper-for-a-pointer"><a class="link" href="#wrapper-for-a-pointer">Wrapper for a pointer</a></h6>
+<div class="paragraph">
+<p>The idea here is similar to the above. It can be thought of as a singular
+<code>Node</code>. This data structure is used for simple commands which require only
+one argument. As there is no need to enforce any order or support an
+infinite structure, a <code>Graph</code> would be overkill.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="specifics"><a class="link" href="#specifics">Specifics</a></h5>
+<div class="paragraph">
+<p>This is an example sequence diagram for <code>add-c n/</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteSequenceDiagram.png" alt="AutoCompleteSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>When the <code>UI</code> queries the <code>LogicManager</code> for suggestions, an <code>AutoCompleteResult</code>
+is returned, which contains a <code>SortedSet</code> of strings and a separate string to match
+with these suggestions.</p>
+</div>
+<div class="paragraph">
+<p>In order to generate this <code>AutoCompleteResult</code>, the <code>LogicManager</code> requests
+a <code>AutoCompleteResultGenerator</code> to process the input.</p>
+</div>
+<div class="paragraph">
+<p><code>AutoCompleteResultGenerator</code> contains references to <code>AutoCompleteResultProvider</code>
+which have the ability to return <code>AutoCompleteResult</code>.</p>
+</div>
+<div class="paragraph">
+<p>An example of a <code>AutoCompleteResultProvider</code> would be <code>AddCustomerGraph</code>, which
+does the heavy lifting in terms of processing the input string and collating values
+from <code>AutoCompleteValueProvider</code> in the form of <code>AutoCompleteNode</code>.</p>
+</div>
+<div class="paragraph">
+<p>For clarity, here are some class diagrams for the AutoComplete package.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoCompleteClassDiagram.png" alt="AutoCompleteClassDiagram">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/GraphsClassDiagram.png" alt="GraphsClassDiagram">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/NodesClassDiagram.png" alt="NodesClassDiagram">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="alternative-designs"><a class="link" href="#alternative-designs">Alternative Designs</a></h5>
+<div class="paragraph">
+<p>An alternative design would be to integrate the system with existing <code>Parser</code>
+by making use of <code>ArgumentTokenizer</code> and <code>ArgumentMultimap</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:14:38 UTC</div></div></div></body></html>

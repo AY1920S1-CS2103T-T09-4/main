@@ -113,7 +113,16 @@
 </ul>
 </li>
 <li><a href="#export-data-code-export-code">5.9. Export data: <code>export</code></a></li>
-<li><a href="#autocomplete">5.10. Autocomplete</a></li>
+<li><a href="#autocomplete">5.10. Autocomplete</a>
+<ul class="sectlevel3">
+<li><a href="#example-code-add-code">5.10.1. Example: <code>add</code></a></li>
+<li><a href="#example-code-delete-c-code">5.10.2. Example: <code>delete-c</code></a></li>
+<li><a href="#example-code-edit-code">5.10.3. Example: <code>edit</code></a></li>
+<li><a href="#example-code-find-code">5.10.4. Example: <code>find</code></a></li>
+<li><a href="#example-code-switch-code">5.10.5. Example: <code>switch</code></a></li>
+<li><a href="#example-code-schedule-code">5.10.6. Example: <code>schedule</code></a></li>
+</ul>
+</li>
 <li><a href="#other-commands">5.11. Other commands</a>
 <ul class="sectlevel3">
 <li><a href="#import-data-code-import-code-code-coming-in-v2-0-code">5.11.1. Import data : <code>import</code> <code>[coming in v2.0]</code></a></li>
@@ -123,7 +132,8 @@
 <li><a href="#export-data-to-pdf-code-coming-in-v2-0-code">5.11.5. Export data to PDF  <code>[coming in v2.0]</code></a></li>
 <li><a href="#add-a-new-product-code-coming-in-v2-0-code">5.11.6. Add a new product <code>[coming in v2.0]</code></a></li>
 <li><a href="#add-fields-to-a-new-product-code-coming-in-v2-0-code">5.11.7. Add fields to a new product <code>[coming in v2.0]</code></a></li>
-<li><a href="#autocorrect-code-coming-in-v2-0-code">5.11.8. Autocorrect <code>[coming in v2.0]</code></a></li>
+<li><a href="#autocomplete-integrated-with-command-history-code-coming-in-v2-0-code">5.11.8. Autocomplete integrated with command history <code>[coming in v2.0]</code></a></li>
+<li><a href="#alias-code-coming-in-v2-0-code">5.11.9. Alias <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 </ul>
@@ -2231,11 +2241,16 @@ If csv file of the input file name does not exist, the application data will be 
 <div class="sect2">
 <h3 id="autocomplete"><a class="link" href="#autocomplete">5.10. Autocomplete</a></h3>
 <div class="paragraph">
-<p>As you enter characters into the command line, suggestions will appear.</p>
+<p>As you type into the command line, suggestions will appear.</p>
 </div>
 <div class="paragraph">
 <p>A maximum of 8 suggestions will appear in a dropdown menu, sorted by their degree of
 similarity to the entered text.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoCompleteCommandExample.png" alt="AutoCompleteCommandExample">
+</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2244,27 +2259,69 @@ similarity to the entered text.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The system might lag and suggest nothing if you are typing too fast.
+Suggestions in <em>Cyan</em> mean that the entire word is suggested.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Example: <code>add</code></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Suggestions in <em>Yellow</em> mean that the word is partially matched.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The system may lag and not work if you are typing too fast.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The system is case-sensitive.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-code-add-code"><a class="link" href="#example-code-add-code">5.10.1. Example: <code>add</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoCompleteAddExample.png" alt="AutoCompleteAddExample">
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you enter <code>add-c</code> followed by a space, the system will suggest
+<p>When you enter <code>add-c</code> followed by a space, the system will suggest
 a list of prefixes you can enter, such as <code>n/</code>.</p>
 </li>
 <li>
-<p>When you enter <code>add-c n/</code>, the system will suggest a list of names that belong to
-existing customers. This helps check if the data you are entering is duplicated.</p>
+<p>When you enter <code>add-c n/</code>, the system will suggest a list of names that
+belong to existing customers. This is helpful in checking if the data you are
+entering is duplicated.</p>
 </li>
 <li>
 <p>The list of data that is suggested depends on the prefix that is last entered.
-If the last entered prefix was <code>e/</code>, it would instead suggest a list of existing emails.</p>
+For instance, if the last entered prefix was <code>e/</code>, it would instead suggest a
+list of existing emails.</p>
 </li>
 </ul>
 </div>
@@ -2274,88 +2331,40 @@ If the last entered prefix was <code>e/</code>, it would instead suggest a list 
 <ul>
 <li>
 <p>As <code>add-c</code>, <code>add-p</code> and <code>add-o</code> commands can accept an unlimited number of tags,
-the system will continuously suggest <code>t/</code> prefixes and <code>Tag</code> arguments after all compulsory arguments
-are entered.</p>
+the system will endlessly suggest <code>t/</code> prefixes and <code>Tag</code> arguments after all
+compulsory arguments are entered.</p>
 </li>
 <li>
-<p>Autocomplete works similarly for all <code>add</code> commands, and <code>generate-s</code>.</p>
+<p>Autocomplete works similarly for all <code>add</code> commands and <code>generate-s</code>.</p>
+</li>
+<li>
+<p>Even though these commands do not require the prefixes and arguments to be in
+any specified order, the autocomplete system enforces an artificial order to reduce
+confusion.</p>
+</li>
+<li>
+<p>When you alter data in the application, the suggestions will be updated
+accordingly.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>Example: <code>edit</code></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>If you enter <code>edit-c</code> followed by a space, the system will suggest two numbers:
-<code>1</code> and <code>N</code>, where <code>N</code> is the largest valid index that can be entered. <code>N</code> corresponds to the number of
-customers in the customer panel.</p>
-</li>
-<li>
-<p>If you enter <code>edit-c 1</code> followed by a space, the system will suggest a list of prefixes you can enter, such as <code>n/</code>, <code>c/</code>, <code>e/</code>.</p>
-</li>
-<li>
-<p>When you enter <code>edit-c 1 c/</code>, the system will suggest a list of contact numbers that belong to existing customers.
-This helps check if the data you are editing to is duplicated.</p>
-</li>
-<li>
-<p>The list of data that is suggested depends on the prefix that is last entered.
-If the last entered prefix was <code>i/</code>, it would instead suggest a list of existing identity numbers.</p>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
+<div class="sect3">
+<h4 id="example-code-delete-c-code"><a class="link" href="#example-code-delete-c-code">5.10.2. Example: <code>delete-c</code></a></h4>
+<div class="imageblock">
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>As edit commands allow for multiple same prefixes, the system is designed to always
-suggest the entire set of possible prefixes.</p>
-</li>
-<li>
-<p>Autocomplete works similarly for all <code>edit</code> commands.</p>
-</li>
-</ul>
+<img src="images/AutoCompleteDeleteExample.png" alt="AutoCompleteDeleteExample">
 </div>
-</div>
-</div>
-<div class="paragraph">
-<p>Example: <code>find</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you enter <code>find-c</code> followed by a space, the system will suggest a list containing every
-piece of data belonging to every customer in the database.</p>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>As <code>find</code> commands accept an unlimited number of keywords, the system will continuously suggest
-the same set of possible keywords when space is entered.</p>
-</li>
-<li>
-<p>Autocomplete works similarly for all <code>find</code> commands.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Example: <code>delete-c</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>For commands such as <code>delete-c</code> which take only a single index and no additional arguments,
-the system will suggest two numbers: <code>1</code> and <code>N</code>, where <code>N</code> is the largest valid index that can be entered.</p>
+<p>For commands such as <code>delete-c</code> which take only a single index and
+no additional arguments, the system will suggest two numbers: <code>1</code> and <code>N</code>,
+where <code>N</code> is the largest valid index that can be entered. In this case,
+<code>N</code> corresponds to the number of customers displayed on the customer panel.</p>
 </li>
 </ul>
 </div>
@@ -2370,9 +2379,82 @@ the system will suggest two numbers: <code>1</code> and <code>N</code>, where <c
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>Example: <code>switch</code></p>
 </div>
+<div class="sect3">
+<h4 id="example-code-edit-code"><a class="link" href="#example-code-edit-code">5.10.3. Example: <code>edit</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>When you enter <code>edit-c</code> followed by a space, the system will suggest
+two numbers: <code>1</code> and <code>N</code>, where <code>N</code> is the largest valid index that can
+be entered.</p>
+</li>
+<li>
+<p>When you enter <code>edit-c 1</code> followed by a space, the system will
+suggest a list of prefixes you can enter, such as <code>n/</code>, <code>c/</code>, <code>e/</code>.</p>
+</li>
+<li>
+<p>When you enter <code>edit-c 1 c/</code>, the system will suggest a list of
+contact numbers that belong to existing customers.
+This is helpful in checking if the data you are editing to is duplicated.</p>
+</li>
+<li>
+<p>The list of suggestions depends on the prefix that is last
+entered. If the last entered prefix was <code>i/</code>, it would instead suggest a
+list of existing identity numbers.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>As edit commands allow for optional arguments and multiple same arguments,
+the system is designed to always suggest the entire set of possible prefixes.</p>
+</li>
+<li>
+<p>Autocomplete works similarly for all <code>edit</code> commands.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-code-find-code"><a class="link" href="#example-code-find-code">5.10.4. Example: <code>find</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoCompleteFindExample.png" alt="AutoCompleteFindExample">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you enter <code>find-c</code> followed by a space, the system will suggest
+values from every attribute of every customer in the database.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>As <code>find</code> commands accept an unlimited number of keywords, the system
+will endlessly suggest the same set of possible keywords when a space is
+entered.</p>
+</li>
+<li>
+<p>Autocomplete works similarly for all <code>find</code> commands.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-code-switch-code"><a class="link" href="#example-code-switch-code">5.10.5. Example: <code>switch</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2392,16 +2474,23 @@ and nothing else.</p>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>Example: <code>schedule</code></p>
+</div>
+<div class="sect3">
+<h4 id="example-code-schedule-code"><a class="link" href="#example-code-schedule-code">5.10.6. Example: <code>schedule</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoCompleteScheduleExample.png" alt="AutoCompleteScheduleExample">
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you enter <code>schedule</code> followed by a space, the system will suggest a list of
-dates that already have orders scheduled on them. This helps check for duplicates.</p>
+<p>When you enter <code>schedule</code> followed by a space, the system will suggest
+dates that already have orders scheduled on them. This is helpful in
+checking for duplicates.</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2476,9 +2565,18 @@ The hashtag represents the length of the valid input for the primary key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="autocorrect-code-coming-in-v2-0-code"><a class="link" href="#autocorrect-code-coming-in-v2-0-code">5.11.8. Autocorrect <code>[coming in v2.0]</code></a></h4>
+<h4 id="autocomplete-integrated-with-command-history-code-coming-in-v2-0-code"><a class="link" href="#autocomplete-integrated-with-command-history-code-coming-in-v2-0-code">5.11.8. Autocomplete integrated with command history <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
-<p>Corrects any typos that you may have while typing the commands.</p>
+<p>This extension of the autocomplete feature is to allow users to receive
+suggestions based on past inputs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="alias-code-coming-in-v2-0-code"><a class="link" href="#alias-code-coming-in-v2-0-code">5.11.9. Alias <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>This feature is to allow users to define customized command words to
+simplify long commands. For example, <code>generate-s s/profit</code> can be
+simplified to <code>gp</code>.</p>
 </div>
 </div>
 </div>
@@ -2772,4 +2870,4 @@ The hashtag represents the length of the valid input for the primary key.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:05:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:14:38 UTC</div></div></div></body></html>

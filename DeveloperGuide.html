@@ -45,16 +45,16 @@
 <li><a href="#sml-specific-terms">E.1. SML-specific Terms</a></li>
 </ul>
 </li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#adding-a-phone">G.2. Adding a phone</a></li>
-<li><a href="#deleting-a-customer">G.3. Deleting a customer</a></li>
-<li><a href="#editing-an-order">G.4. Editing an order</a></li>
-<li><a href="#undo-code-clear-c-code">G.5. Undo <code>clear-c</code></a></li>
-<li><a href="#saving-data">G.6. Saving data</a></li>
-<li><a href="#testing-statistics">G.7. Testing Statistics</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#adding-a-phone">F.2. Adding a phone</a></li>
+<li><a href="#deleting-a-customer">F.3. Deleting a customer</a></li>
+<li><a href="#editing-an-order">F.4. Editing an order</a></li>
+<li><a href="#undo-code-clear-c-code">F.5. Undo <code>clear-c</code></a></li>
+<li><a href="#saving-data">F.6. Saving data</a></li>
+<li><a href="#testing-statistics">F.7. Testing Statistics</a></li>
+<li><a href="#autocomplete">F.8. Autocomplete</a></li>
 </ul>
 </li>
 </ul>
@@ -705,52 +705,152 @@ class.</p>
 </div>
 <div class="sect2">
 <h3 id="autocomplete-feature"><a class="link" href="#autocomplete-feature">3.2. Autocomplete feature</a></h3>
+<div class="paragraph">
+<p>This feature is visible in the UI as a dropdown menu when the user types
+into the command box.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoCompleteAddExample.png" alt="AutoCompleteAddExample">
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
+<div class="sect4">
+<h5 id="how-the-ui-works"><a class="link" href="#how-the-ui-works">How the UI works</a></h5>
+<div class="paragraph">
+<p>The command box uses a custom <code>AutoCompleteTextField</code> which extends from JavaFX&#8217;s
+<code>TextField</code>. It stores a reference to a <code>SortedSet</code> of strings. When the input is
+changed, it automatically compares the input with this set of suggestions. If any
+suggestion matches some region of the input, it will be further compared with other
+suggestions to determine which suggestion is more similar to the input. The degree of
+similarity is determined by the index of the first character of the matching region.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoCompleteCommandExample.png" alt="AutoCompleteCommandExample">
+</div>
+</div>
+<div class="paragraph">
+<p>The smaller the index, the more similar the suggestion is.</p>
+</div>
+<div class="paragraph">
+<p>In order to customize the suggestions to fit different inputs, the <code>CommandBox</code>
+attaches a listener to the <code>AutoCompleteTextField</code>. When the text is changed, the
+<code>CommandBox</code> will extract the entered text and query the <code>LogicManager</code> for a set
+of suggestions. This query process will be explained below.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="underlying-data-structures"><a class="link" href="#underlying-data-structures">Underlying data structures</a></h5>
+<div class="paragraph">
+<p>This feature was designed to display values that are currently in the <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example, the input text <code>add-c n/</code> would display a list of <code>CustomerName</code>
+that already exists in the <code>Customer</code> <code>DataBook</code>.</p>
+</div>
+<div class="sect5">
+<h6 id="directed-graph"><a class="link" href="#directed-graph">Directed Graph</a></h6>
+<div class="paragraph">
+<p>In order to achieve this, one of the data structures used is a directed <code>Graph</code>
+implemented as a list of <code>Edge</code>, each storing references to a source and destination
+<code>Node</code>. Each <code>Node</code> then stores a reference to a <code>List</code> in a <code>DataBook</code>.</p>
+</div>
+<div class="paragraph">
+<p>These were the design considerations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enforcement of artificial prefix order: By storing prefixes as edge weights,
+it is possible to enforce an artificial order. First, initialise a pointer
+to a starting <code>Node</code>. Then for each prefix encountered in the input, attempt to
+traverse an outgoing <code>Edge</code> from this <code>Node</code> by matching the prefix with the
+edge weight. This way, if the prefix is out of order, later prefixes will be
+inaccessible.</p>
+</li>
+<li>
+<p>Dynamically updated: By storing references to a set of values that can be
+backed by <code>ObservableList</code> in the <code>Model</code>, whenever the user alters any data,
+it will automatically be reflected in the displayed values.</p>
+</li>
+<li>
+<p>Supports optional arguments: By storing the possible prefixes as
+edge weights, it is possible to represent an optional argument by
+having an edge to the <code>Node</code> containing its values, as well as an edge to the next <code>Node</code>.</p>
+</li>
+<li>
+<p>Infinite structure: By having a <code>TagNode</code> store a reference to itself, it
+is possible to endlessly display <code>t/</code> as a possible prefix at the end
+of the input text, which is consistent with the unlimited number of
+<code>Tag</code> a <code>Customer</code> can hold.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="wrapper-for-a-pointer"><a class="link" href="#wrapper-for-a-pointer">Wrapper for a pointer</a></h6>
+<div class="paragraph">
+<p>The idea here is similar to the above. It can be thought of as a singular
+<code>Node</code>. This data structure is used for simple commands which require only
+one argument. As there is no need to enforce any order or support an
+infinite structure, a <code>Graph</code> would be overkill.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="specifics"><a class="link" href="#specifics">Specifics</a></h5>
+<div class="paragraph">
+<p>This is an example sequence diagram for <code>add-c n/</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoCompleteSequenceDiagram.png" alt="AutoCompleteSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>When the <code>UI</code> queries the <code>LogicManager</code> for suggestions, an <code>AutoCompleteResult</code>
+is returned, which contains a <code>SortedSet</code> of strings and a separate string to match
+with these suggestions.</p>
+</div>
+<div class="paragraph">
+<p>In order to generate this <code>AutoCompleteResult</code>, the <code>LogicManager</code> requests
+a <code>AutoCompleteResultGenerator</code> to process the input.</p>
+</div>
+<div class="paragraph">
+<p><code>AutoCompleteResultGenerator</code> contains references to <code>AutoCompleteResultProvider</code>
+which have the ability to return <code>AutoCompleteResult</code>.</p>
+</div>
+<div class="paragraph">
+<p>An example of a <code>AutoCompleteResultProvider</code> would be <code>AddCustomerGraph</code>, which
+does the heavy lifting in terms of processing the input string and collating values
+from <code>AutoCompleteValueProvider</code> in the form of <code>AutoCompleteNode</code>.</p>
+</div>
+<div class="paragraph">
+<p>For clarity, here are some class diagrams for the AutoComplete package.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AutoCompleteClassDiagram.png" alt="AutoCompleteClassDiagram">
 </div>
 </div>
-<div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
-<div class="paragraph">
-<p>This feature is visible in the UI as a dropdown menu when the user enters input into the command box.</p>
-</div>
-<div class="sect4">
-<h5 id="how-the-ui-works"><a class="link" href="#how-the-ui-works">How the UI works</a></h5>
-<div class="paragraph">
-<p>The command box uses a custom <code>AutoCompleteTextField</code> which extends from JavaFX&#8217;s <code>TextField</code>, which adds an additional listener for changes in the input text.
-This listener reads the entire input text on each character change and performs comparisons with a predefined set of strings.
-For all predefined strings that match the input text, they are sorted according to their "closeness", and a maximum of 5 is displayed.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/GraphsClassDiagram.png" alt="GraphsClassDiagram">
 </div>
 </div>
-<div class="sect4">
-<h5 id="the-underlying-data-structures"><a class="link" href="#the-underlying-data-structures">The underlying data structures</a></h5>
-<div class="paragraph">
-<p>This feature was designed to display values that are currently in the <code>Model</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/NodesClassDiagram.png" alt="NodesClassDiagram">
 </div>
-<div class="paragraph">
-<p>For example, the input text <code>add-c n/</code> would display a list of <code>CustomerName</code> that already exists in the <code>Customer</code> <code>DataBook</code>.</p>
-</div>
-<div class="paragraph">
-<p>To achieve this, the underlying data structure used is a directed <code>Graph</code> with every <code>Node</code> storing a reference to a set of values,
-and a <code>Map&lt;String, Node&gt;</code> to represent outgoing edges. The keys of this map represent the possible prefixes for the next argument of the input text, such as <code>c/</code> or <code>e/</code>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Dynamically updated: By storing references to a set of values that can be backed by <code>ObservableList</code> in the <code>Model</code>, whenever the user alters any data, it will be reflected in the displayed values.</p>
-</li>
-<li>
-<p>Supports optional arguments: By storing the possible prefixes as "edge weights", it is possible to represent an optional argument by having an edge to the <code>Node</code> containing its values, as well as an edge to the next <code>Node</code>.</p>
-</li>
-<li>
-<p>Infinite structure: By having a <code>TagNode</code> store a reference to itself, it is possible to endlessly display <code>t/</code> as a possible argument at the end of the input text,
-which is consistent with the unlimited number of <code>Tag</code> a <code>Customer</code> can hold.</p>
-</li>
-</ul>
+<h5 id="alternative-designs"><a class="link" href="#alternative-designs">Alternative Designs</a></h5>
+<div class="paragraph">
+<p>An alternative design would be to integrate the system with existing <code>Parser</code>
+by making use of <code>ArgumentTokenizer</code> and <code>ArgumentMultimap</code>.</p>
 </div>
 </div>
 </div>
@@ -1037,7 +1137,7 @@ At the end, the strings are appended to get the full CSV file containing the var
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.5.2. Design Considerations</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1211,7 +1311,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1951,44 +2051,7 @@ The action of copying an entry into the clipboard.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -2006,7 +2069,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2041,7 +2104,7 @@ Expected: The most recent window size and the location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-phone"><a class="link" href="#adding-a-phone">G.2. Adding a phone</a></h3>
+<h3 id="adding-a-phone"><a class="link" href="#adding-a-phone">F.2. Adding a phone</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2067,7 +2130,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-customer"><a class="link" href="#deleting-a-customer">G.3. Deleting a customer</a></h3>
+<h3 id="deleting-a-customer"><a class="link" href="#deleting-a-customer">F.3. Deleting a customer</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2096,7 +2159,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-an-order"><a class="link" href="#editing-an-order">G.4. Editing an order</a></h3>
+<h3 id="editing-an-order"><a class="link" href="#editing-an-order">F.4. Editing an order</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2125,7 +2188,7 @@ Expected: Error message shown due to erroneous input.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-code-clear-c-code"><a class="link" href="#undo-code-clear-c-code">G.5. Undo <code>clear-c</code></a></h3>
+<h3 id="undo-code-clear-c-code"><a class="link" href="#undo-code-clear-c-code">F.5. Undo <code>clear-c</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2146,7 +2209,7 @@ Expected: All the orders that were in the OrderBook will be shown.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.6. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">F.6. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2164,7 +2227,7 @@ Any corrupted data in any of the data files (customer, phone, order, schedule, a
 </div>
 </div>
 <div class="sect2">
-<h3 id="testing-statistics"><a class="link" href="#testing-statistics">G.7. Testing Statistics</a></h3>
+<h3 id="testing-statistics"><a class="link" href="#testing-statistics">F.7. Testing Statistics</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2185,5 +2248,30 @@ Expected: Chart is displayed in popup window</p>
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="autocomplete"><a class="link" href="#autocomplete">F.8. Autocomplete</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>add-c</code></p>
+</li>
+<li>
+<p><code>edit-c</code></p>
+</li>
+<li>
+<p><code>schedule</code></p>
+</li>
+<li>
+<p><code>delete-c</code></p>
+</li>
+<li>
+<p><code>find-c</code></p>
+</li>
+<li>
+<p><code>export</code></p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:05:31 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:14:38 UTC</div></div></div></body></html>
