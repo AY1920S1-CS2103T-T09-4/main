@@ -209,7 +209,7 @@ There was a very strong and conscientious effort to make the code easily extenda
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">Generate stats : <code>generate-s</code></a></h3>
+<h3 id="generate-stats-code-generate-s-code"><a class="link" href="#generate-stats-code-generate-s-code">Generate stats: <code>generate-s</code></a></h3>
 <div class="paragraph">
 <p><code>v1.4</code> only allows statistics on orders marked as <code>Completed</code> and has a  <code>Schedule</code>.</p>
 </div>
@@ -218,13 +218,13 @@ There was a very strong and conscientious effort to make the code easily extenda
 statistics as shown below.</p>
 </div>
 <div class="paragraph">
-<p>All statistics that are calculated are only on orders in the <code>archived panel</code> that has been <code>completed</code> and with valid <code>schedule</code>.
+<p>All statistics that are calculated are only on orders in the <code>archived panel</code> that has been <code>completed</code> and with a valid <code>schedule</code>.
 Lacking any of this will cause its non-inclusion into the statistics calculation.
 The value calculated is the sum over the total time period within a month, meaning that it will take the date period,
 calculate the statistics for orders within that time period, split it by month and display it.</p>
 </div>
 <div class="paragraph">
-<p>e.g Total <code>revenue</code> between 2019.11.12 and 2019.11.29 will calculate the order between this 2 dates, sum up the revenue
+<p>e.g Total <code>revenue</code> between 2019.11.12 and 2019.11.29 will calculate the order between these 2 dates, sum up the revenue
 (as it falls within a single month) and
 display this value.</p>
 </div>
@@ -249,12 +249,12 @@ display this value.</p>
 <p>Generates the statistics with no date input.<br></p>
 </div>
 <div class="paragraph">
-<p>Used for calculating <code>total profit</code> , <code>total Revenue</code> and <code>total Cost</code>.<br>
+<p>Used for calculating <code>total profit</code>, <code>total revenue</code> and <code>total cost</code>.<br>
 Format: <code>generate-s s/stat</code><br></p>
 </div>
 <div class="paragraph">
 <p>Type for <code>stat</code> includes: <code>profit</code>, <code>revenue</code>, <code>cost</code><br>
-The argument must match this three words perfectly.</p>
+The argument must match these three words perfectly.</p>
 </div>
 <div class="paragraph">
 <p>Shown below:</p>
@@ -265,10 +265,10 @@ The argument must match this three words perfectly.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Generates the statistics with date input in chart format (in pop-up modal dialog).<br>
+<p>Generates the statistics with date input in chart format (in pop-up modal dialogue).<br>
 Format: <code>generate-s s/stat d1/YYYY.MM.DD d2/YYYY.MM.DD</code><br>
 Example: <code>generate-s s/revenue d1/2019.10.16 d2/2019.11.21</code><br>
-Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
+Format for the date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
 </div>
 <div class="paragraph">
 <p>Shown below:</p>
@@ -322,17 +322,17 @@ Format for date is in YYYY.MM.DD e.g <code>2019.05.12</code></p>
 <div class="title">Figure 1. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong>: <a href="{repoURL}/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts
-e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TabPanel</code> , <code>StatusBarFooter</code> etc.
-<code>TabPanel</code> consists of <code>CustomerListPanel</code> , <code>OrderListPanel</code>, <code>PhoneListPanel</code> , <code>CalendarListPanel</code>
+e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TabPanel</code>, <code>StatusBarFooter</code> etc.
+<code>TabPanel</code> consists of <code>CustomerListPanel</code>, <code>OrderListPanel</code>, <code>PhoneListPanel</code>, <code>CalendarListPanel</code>
 and <code>ArchivedOrderListPanel</code>
 All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="{repoURL}/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="{repoURL}/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFX UI framework. The layout of these UI parts is defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="{repoURL}/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="{repoURL}/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -346,7 +346,7 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 <p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
 </li>
 <li>
-<p>Different changes in each tab or panel is controlled via the enum <code>UiChange</code></p>
+<p>Different changes in each tab or panel are controlled via the enum <code>UiChange</code></p>
 </li>
 </ul>
 </div>
@@ -356,9 +356,9 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows seller to quickly
+<p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows sellers to quickly
 generate total statistics from their <code>DataBooks</code>, through the use of a <code>statistic</code>
-module that handles this calculation. There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
+module that handles this calculation. There are three type of statistic to be calculated and only on <code>completed orders</code>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -373,7 +373,7 @@ module that handles this calculation. There is three type of statistic to be cal
 <div class="ulist">
 <ul>
 <li>
-<p>default mode with no date input: generates on all completed order total <code>profit</code> , <code>cost</code> or <code>revenue</code></p>
+<p>default mode with no date input: generates on all completed order total <code>profit</code>, <code>cost</code> or <code>revenue</code></p>
 <div class="ulist">
 <ul>
 <li>
@@ -383,12 +383,12 @@ module that handles this calculation. There is three type of statistic to be cal
 </div>
 </li>
 <li>
-<p>mode with date input from user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code>
+<p>mode with date input from the user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code>
 and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>  each <code>month</code> between this 2 dates.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>command entered by user will be e.g for profit type`generate-s s/PROFIT s1/YYYY.MM.DD s2/YYYY.MM.DD`</p>
+<p>command entered by the user will be e.g for profit type`generate-s s/PROFIT s1/YYYY.MM.DD s2/YYYY.MM.DD`</p>
 </li>
 </ul>
 </div>
@@ -396,7 +396,7 @@ and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>
 </ul>
 </div>
 <div class="paragraph">
-<p>Here is the sequence of steps taken by SMLJ when it receives a <code>StatCommand</code>:</p>
+<p>Here is the sequence of steps taken by SML when it receives a <code>StatCommand</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -408,7 +408,7 @@ and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>
 <div class="paragraph">
 <p>The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
 analogous to the output mode, there are 2 types of methods in this module, one that returns a
-<code>String</code> and the other and <code>XYChart.Series&lt;String,Number&gt;</code></p>
+<code>String</code> and the other and <code>XYChart.Series&lt;String, Number&gt;</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -429,7 +429,7 @@ analogous to the output mode, there are 2 types of methods in this module, one t
 </div>
 </li>
 <li>
-<p>Methods that return a <code>XYChart.Series&lt;String,Number&gt;</code>:</p>
+<p>Methods that return a <code>XYChart.Series&lt;String, Number&gt;</code>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -452,7 +452,7 @@ more readable and maintainable.</p>
 </div>
 <div class="paragraph">
 <p><code>org.apache.commons.math3.stat.StatUtils</code> library is used to calculate the raw data inside a <code>double[]</code>  (primitive double array).
-While the current <code>v1.4</code> only use <code>sum</code> to calculate the exact <code>profit</code> , <code>revenue</code> and <code>cost</code> , <code>v2.0</code> implementation
+While the current <code>v1.4</code> only use the <code>sum</code> to calculate the exact <code>profit</code>, <code>revenue</code> and <code>cost</code>, <code>v2.0</code> implementation
 will make use of the <code>linear regression</code> / <code>average</code> methods inside the library to generate more advanced statistics.</p>
 </div>
 </div>
@@ -470,9 +470,9 @@ the main focus of this feature was to <strong>calculate statistics only when nee
 <ul>
 <li>
 <p>To implement statistics, maintain a few running statistic
-counter upon loading of the main app, update these counters/values when calculation is needed
+counters upon loading of the main app, update these counters/values when the calculation is needed
 and then display it. This implementation would have been easy to implement within the existing AB3 code
-since it meant extending the <code>Model</code> class with a statistic model, than having the <code>UI</code> class to read from
+since it meant extending the <code>Model</code> class with a statistic model as compared to having the <code>UI</code> class to read from
 this value.</p>
 <div class="ulist">
 <ul>
@@ -480,7 +480,7 @@ this value.</p>
 <p>Pros: Easy to implement on top of AB3</p>
 </li>
 <li>
-<p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere, since any change in the database / models will cause the values to change</p>
+<p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere since any change in the database/models will cause the values to change</p>
 </li>
 </ul>
 </div>
@@ -498,7 +498,7 @@ this module from <code>UI</code>. Respective Statistics will then be obtained fr
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Ensure that the respective tasks are properly abstracted, adhering to Single Responsibility Principle.</p>
+<p>Pros: Ensure that the respective tasks are properly abstracted, adhering to the Single Responsibility Principle.</p>
 </li>
 <li>
 <p>Pros: Being standalone means the way of calculating the statistics can be changed without affecting the rest of the codebase</p>
@@ -519,11 +519,11 @@ this module from <code>UI</code>. Respective Statistics will then be obtained fr
 <div class="paragraph">
 <p>Given that consideration, we decided that it will be the <code>UI</code> to trigger this call to <code>Logic</code> for calculation
 and then display the result of that call. Thus when Statistics need to be shown, the <code>UI</code> module will query the
-<code>Logic</code> for the respective data One of the motivation for this approach was to,
+<code>Logic</code> for the respective data One of the motivations for this approach was to,
 as much as possible, maintain the architecture that is already in place in AB3.
 Furthermore, given that this feature requires date input from the user, we will need to find a way to get <code>UI</code> to send
-the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains a feedback to user
-with the actual changes on data done with a call to model during <code>execute(model)</code>.</p>
+the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains feedback to the user
+with the actual changes on data done with a call to the model during <code>execute(model)</code>.</p>
 </div>
 </div>
 <div class="sect5">
@@ -532,22 +532,22 @@ with the actual changes on data done with a call to model during <code>execute(m
 <p>We decided to extend this command pattern by creating a <code>statsPayload</code> object. This object will hold the user
 queries for the statistic calculation (if there is any) and be bundled along with the <code>CommandResult</code> class to the
 <code>UI</code> to use in its query to logic. When the Ui executes the command to logic, the <code>CommandResult</code> is returned with
-this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>.The resulting change
-is that the <code>commandResult</code> type will have a slightly different behaviour.</p>
+this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>. The resulting change
+is that the <code>commandResult</code> type will have slightly different behaviour.</p>
 </div>
 <div class="paragraph">
 <p><strong>All <code>commands</code> that
 are not <code>statsCommand</code> will call the default constructor of the <code>commandResult</code> class, where there is  an
-<code>Optional.empty()</code> in place of the <code>StatsPayload</code></strong> .</p>
+<code>Optional.empty()</code> in place of the <code>StatsPayload</code></strong>.</p>
 </div>
 <div class="paragraph">
-<p>All <code>statsCommand</code> type will have call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.
+<p>All <code>statsCommand</code> type will have to call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.
 The key motivation behind this idea of a payload was to be able to encapsulate details about the calculation inside a
 single object, passed it to the appropriate place to be "unwrapped" when needed. This unwrapping is done by the
-<code>mainWindow</code> class in the application and subsequently the data is passed to the  <code>statistic</code> module.</p>
+<code>mainWindow</code> class in the application and subsequently, the data is passed to the  <code>statistic</code> module.</p>
 </div>
 <div class="paragraph">
-<p>A high level view of the packages working together:</p>
+<p>A high-level view of the packages working together:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -591,7 +591,7 @@ the <code>statsCommandParser</code> parses the input from the user, returning a
 </div>
 <div class="paragraph">
 <p>When this happens, the <code>StatsCommand</code> execute triggering a call to create the new <code>StatsPayload</code>. Then this is used to
-create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.
+create a new <code>CommandResult</code> object and returns that to <code>Logic</code>, completing the execution of the user input command.
 Seen here is the sequence diagram of the second step</p>
 </div>
 <div class="imageblock" style="text-align: center">
@@ -608,8 +608,8 @@ Seen here is the sequence diagram of the second step</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
-<code>performUiChanges</code> that handles the specific <code>UI</code> change.This then results in the <code>statsPayload</code> class being
+<p>Step 3: After the logic component completes its execution and return a <code>CommandResult</code>, the <code>UI</code> will call
+<code>performUiChanges</code> that handles the specific <code>UI</code> change. This then results in the <code>statsPayload</code> class being
 passed to <code>Logic</code> class and subsequently the <code>statistics</code> module,
 where the appropriate calculation will take place.</p>
 </div>
@@ -621,8 +621,8 @@ where the appropriate calculation will take place.</p>
 a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
-form or string form. With this the feature has finished executing! Attached below is the summary for step 3-5:</p>
+<p>Step 5: with this output from logic, <code>Statistic Window</code> will then handle the displaying of the statistic, be it in chart
+form or string form. With this, the feature has finished executing! Attached below is the summary for step 3-5:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -643,9 +643,9 @@ form or string form. With this the feature has finished executing! Attached belo
 </div>
 </div>
 <div class="sect3">
-<h4 id="limitations-note-to-developers"><a class="link" href="#limitations-note-to-developers">Limitations / note to developers:</a></h4>
+<h4 id="limitations-note-to-developers"><a class="link" href="#limitations-note-to-developers">Limitations/Note to developers:</a></h4>
 <div class="paragraph">
-<p>Developers working on adding features to this module should take note of these limitations that we have put in place for <code>v1.4</code> of SMLJ:</p>
+<p>Developers working on adding features to this module should take note of these limitations that we have put in place for <code>v1.4</code> of SML:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -692,4 +692,4 @@ class.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:19:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:06:14 UTC</div></div></div></body></html>

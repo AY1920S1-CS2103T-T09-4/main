@@ -52,8 +52,9 @@
 <li><a href="#adding-a-phone">G.2. Adding a phone</a></li>
 <li><a href="#deleting-a-customer">G.3. Deleting a customer</a></li>
 <li><a href="#editing-an-order">G.4. Editing an order</a></li>
-<li><a href="#saving-data">G.5. Saving data</a></li>
-<li><a href="#testing-statistics">G.6. Testing Statistics</a></li>
+<li><a href="#undo-code-clear-c-code">G.5. Undo <code>clear-c</code></a></li>
+<li><a href="#saving-data">G.6. Saving data</a></li>
+<li><a href="#testing-statistics">G.7. Testing Statistics</a></li>
 </ul>
 </li>
 </ul>
@@ -114,7 +115,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+<p><code>LogsCenter</code>: Used by many classes to write log messages to the App&#8217;s log file.</p>
 </li>
 </ul>
 </div>
@@ -185,17 +186,17 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong>: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts
-e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TabPanel</code> , <code>StatusBarFooter</code> etc.
-<code>TabPanel</code> consists of <code>CustomerListPanel</code> , <code>OrderListPanel</code>, <code>PhoneListPanel</code> , <code>CalendarListPanel</code>
+e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TabPanel</code>, <code>StatusBarFooter</code> etc.
+<code>TabPanel</code> consists of <code>CustomerListPanel</code>, <code>OrderListPanel</code>, <code>PhoneListPanel</code>, <code>CalendarListPanel</code>
 and <code>ArchivedOrderListPanel</code>
 All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFX UI framework. The layout of these UI parts is defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -209,7 +210,7 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 <p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
 </li>
 <li>
-<p>Different changes in each tab or panel is controlled via the enum <code>UiChange</code></p>
+<p>Different changes in each tab or panel are controlled via the enum <code>UiChange</code></p>
 </li>
 </ul>
 </div>
@@ -223,7 +224,7 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 <div class="title">Figure 5. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> :
+<p><strong>API</strong>:
 <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
@@ -276,7 +277,7 @@ The lifeline for <code>DeleteCustomerCommandParser</code> should end at the dest
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong>: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -332,7 +333,7 @@ An example of how such <code>UniqueList&lt;Tag&gt;</code> and <code>UniqueList&l
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong>: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -340,10 +341,10 @@ An example of how such <code>UniqueList&lt;Tag&gt;</code> and <code>UniqueList&l
 <div class="ulist">
 <ul>
 <li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+<p>can save <code>UserPref</code> objects in JSON format and read it back.</p>
 </li>
 <li>
-<p>can save the Customer Book data, Phone Book data, Order Book data and Schedule Book data in json format and read them
+<p>can save the Customer Book data, Phone Book data, Order Book data and Schedule Book data in JSON format and read them
 back.</p>
 </li>
 </ul>
@@ -368,9 +369,9 @@ back.</p>
 <div class="sect3">
 <h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.1. Implementation</a></h4>
 <div class="paragraph">
-<p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows seller to quickly
+<p>This statistic calculation and chart generation feature extends <code>Seller Manager Lite</code> which allows sellers to quickly
 generate total statistics from their <code>DataBooks</code>, through the use of a <code>statistic</code>
-module that handles this calculation. There is three type of statistic to be calculated and only on <code>completed orders</code>:</p>
+module that handles this calculation. There are three type of statistic to be calculated and only on <code>completed orders</code>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -385,7 +386,7 @@ module that handles this calculation. There is three type of statistic to be cal
 <div class="ulist">
 <ul>
 <li>
-<p>default mode with no date input: generates on all completed order total <code>profit</code> , <code>cost</code> or <code>revenue</code></p>
+<p>default mode with no date input: generates on all completed order total <code>profit</code>, <code>cost</code> or <code>revenue</code></p>
 <div class="ulist">
 <ul>
 <li>
@@ -395,12 +396,12 @@ module that handles this calculation. There is three type of statistic to be cal
 </div>
 </li>
 <li>
-<p>mode with date input from user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code>
+<p>mode with date input from the user: The statistic command takes in 2 <code>dates</code>, <code>starting date</code> and <code>ending date</code>
 and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>  each <code>month</code> between this 2 dates.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>command entered by user will be e.g for profit type`generate-s s/PROFIT s1/YYYY.MM.DD s2/YYYY.MM.DD`</p>
+<p>command entered by the user will be e.g for profit type`generate-s s/PROFIT s1/YYYY.MM.DD s2/YYYY.MM.DD`</p>
 </li>
 </ul>
 </div>
@@ -408,7 +409,7 @@ and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>
 </ul>
 </div>
 <div class="paragraph">
-<p>Here is the sequence of steps taken by SMLJ when it receives a <code>StatCommand</code>:</p>
+<p>Here is the sequence of steps taken by SML when it receives a <code>StatCommand</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -420,7 +421,7 @@ and generates the <code>profit</code>, <code>cost</code> or <code>revenue</code>
 <div class="paragraph">
 <p>The statistic module exposes the calculation operations in the <code>Statistics</code> interface.
 analogous to the output mode, there are 2 types of methods in this module, one that returns a
-<code>String</code> and the other and <code>XYChart.Series&lt;String,Number&gt;</code></p>
+<code>String</code> and the other and <code>XYChart.Series&lt;String, Number&gt;</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -441,7 +442,7 @@ analogous to the output mode, there are 2 types of methods in this module, one t
 </div>
 </li>
 <li>
-<p>Methods that return a <code>XYChart.Series&lt;String,Number&gt;</code>:</p>
+<p>Methods that return a <code>XYChart.Series&lt;String, Number&gt;</code>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -464,7 +465,7 @@ more readable and maintainable.</p>
 </div>
 <div class="paragraph">
 <p><code>org.apache.commons.math3.stat.StatUtils</code> library is used to calculate the raw data inside a <code>double[]</code>  (primitive double array).
-While the current <code>v1.4</code> only use <code>sum</code> to calculate the exact <code>profit</code> , <code>revenue</code> and <code>cost</code> , <code>v2.0</code> implementation
+While the current <code>v1.4</code> only use the <code>sum</code> to calculate the exact <code>profit</code>, <code>revenue</code> and <code>cost</code>, <code>v2.0</code> implementation
 will make use of the <code>linear regression</code> / <code>average</code> methods inside the library to generate more advanced statistics.</p>
 </div>
 </div>
@@ -482,9 +483,9 @@ the main focus of this feature was to <strong>calculate statistics only when nee
 <ul>
 <li>
 <p>To implement statistics, maintain a few running statistic
-counter upon loading of the main app, update these counters/values when calculation is needed
+counters upon loading of the main app, update these counters/values when the calculation is needed
 and then display it. This implementation would have been easy to implement within the existing AB3 code
-since it meant extending the <code>Model</code> class with a statistic model, than having the <code>UI</code> class to read from
+since it meant extending the <code>Model</code> class with a statistic model as compared to having the <code>UI</code> class to read from
 this value.</p>
 <div class="ulist">
 <ul>
@@ -492,7 +493,7 @@ this value.</p>
 <p>Pros: Easy to implement on top of AB3</p>
 </li>
 <li>
-<p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere, since any change in the database / models will cause the values to change</p>
+<p>cons: Seller will be unable to obtain an instance of past statistics at each point without storing the history of the statistics somewhere since any change in the database/models will cause the values to change</p>
 </li>
 </ul>
 </div>
@@ -510,7 +511,7 @@ this module from <code>UI</code>. Respective Statistics will then be obtained fr
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Ensure that the respective tasks are properly abstracted, adhering to Single Responsibility Principle.</p>
+<p>Pros: Ensure that the respective tasks are properly abstracted, adhering to the Single Responsibility Principle.</p>
 </li>
 <li>
 <p>Pros: Being standalone means the way of calculating the statistics can be changed without affecting the rest of the codebase</p>
@@ -531,11 +532,11 @@ this module from <code>UI</code>. Respective Statistics will then be obtained fr
 <div class="paragraph">
 <p>Given that consideration, we decided that it will be the <code>UI</code> to trigger this call to <code>Logic</code> for calculation
 and then display the result of that call. Thus when Statistics need to be shown, the <code>UI</code> module will query the
-<code>Logic</code> for the respective data One of the motivation for this approach was to,
+<code>Logic</code> for the respective data One of the motivations for this approach was to,
 as much as possible, maintain the architecture that is already in place in AB3.
 Furthermore, given that this feature requires date input from the user, we will need to find a way to get <code>UI</code> to send
-the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains a feedback to user
-with the actual changes on data done with a call to model during <code>execute(model)</code>.</p>
+the data to make that query to logic. For the old AB3 implementation, <code>CommandResult</code> only contains feedback to the user
+with the actual changes on data done with a call to the model during <code>execute(model)</code>.</p>
 </div>
 </div>
 <div class="sect5">
@@ -544,22 +545,22 @@ with the actual changes on data done with a call to model during <code>execute(m
 <p>We decided to extend this command pattern by creating a <code>statsPayload</code> object. This object will hold the user
 queries for the statistic calculation (if there is any) and be bundled along with the <code>CommandResult</code> class to the
 <code>UI</code> to use in its query to logic. When the Ui executes the command to logic, the <code>CommandResult</code> is returned with
-this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>.The resulting change
-is that the <code>commandResult</code> type will have a slightly different behaviour.</p>
+this object, which the <code>UI</code> will then use to communicate to <code>Logic</code>. The resulting change
+is that the <code>commandResult</code> type will have slightly different behaviour.</p>
 </div>
 <div class="paragraph">
 <p><strong>All <code>commands</code> that
 are not <code>statsCommand</code> will call the default constructor of the <code>commandResult</code> class, where there is  an
-<code>Optional.empty()</code> in place of the <code>StatsPayload</code></strong> .</p>
+<code>Optional.empty()</code> in place of the <code>StatsPayload</code></strong>.</p>
 </div>
 <div class="paragraph">
-<p>All <code>statsCommand</code> type will have call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.
+<p>All <code>statsCommand</code> type will have to call the constructor of <code>commandResult</code> class and pass the <code>StatsPayload</code> object in.
 The key motivation behind this idea of a payload was to be able to encapsulate details about the calculation inside a
 single object, passed it to the appropriate place to be "unwrapped" when needed. This unwrapping is done by the
-<code>mainWindow</code> class in the application and subsequently the data is passed to the  <code>statistic</code> module.</p>
+<code>mainWindow</code> class in the application and subsequently, the data is passed to the  <code>statistic</code> module.</p>
 </div>
 <div class="paragraph">
-<p>A high level view of the packages working together:</p>
+<p>A high-level view of the packages working together:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -603,7 +604,7 @@ the <code>statsCommandParser</code> parses the input from the user, returning a
 </div>
 <div class="paragraph">
 <p>When this happens, the <code>StatsCommand</code> execute triggering a call to create the new <code>StatsPayload</code>. Then this is used to
-create a new <code>CommandResult</code> object and returns that to <code>Logic</code> , completing the execution of the user input command.
+create a new <code>CommandResult</code> object and returns that to <code>Logic</code>, completing the execution of the user input command.
 Seen here is the sequence diagram of the second step</p>
 </div>
 <div class="imageblock" style="text-align: center">
@@ -620,8 +621,8 @@ Seen here is the sequence diagram of the second step</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3: After the logic component completes it execution and return a <code>CommandResult</code>, the <code>UI</code> will call
-<code>performUiChanges</code> that handles the specific <code>UI</code> change.This then results in the <code>statsPayload</code> class being
+<p>Step 3: After the logic component completes its execution and return a <code>CommandResult</code>, the <code>UI</code> will call
+<code>performUiChanges</code> that handles the specific <code>UI</code> change. This then results in the <code>statsPayload</code> class being
 passed to <code>Logic</code> class and subsequently the <code>statistics</code> module,
 where the appropriate calculation will take place.</p>
 </div>
@@ -633,8 +634,8 @@ where the appropriate calculation will take place.</p>
 a <code>String</code> or a <code>XYChart.Series&lt;String, Number&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 5: with this output from logic, <code>Statistic Window</code> will then handle the diplaying of the statistic, be it in chart
-form or string form. With this the feature has finished executing! Attached below is the summary for step 3-5:</p>
+<p>Step 5: with this output from logic, <code>Statistic Window</code> will then handle the displaying of the statistic, be it in chart
+form or string form. With this, the feature has finished executing! Attached below is the summary for step 3-5:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -655,9 +656,9 @@ form or string form. With this the feature has finished executing! Attached belo
 </div>
 </div>
 <div class="sect3">
-<h4 id="limitations-note-to-developers"><a class="link" href="#limitations-note-to-developers">3.1.4. Limitations / note to developers:</a></h4>
+<h4 id="limitations-note-to-developers"><a class="link" href="#limitations-note-to-developers">3.1.4. Limitations/Note to developers:</a></h4>
 <div class="paragraph">
-<p>Developers working on adding features to this module should take note of these limitations that we have put in place for <code>v1.4</code> of SMLJ:</p>
+<p>Developers working on adding features to this module should take note of these limitations that we have put in place for <code>v1.4</code> of SML:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -719,7 +720,7 @@ class.</p>
 <div class="paragraph">
 <p>The command box uses a custom <code>AutoCompleteTextField</code> which extends from JavaFX&#8217;s <code>TextField</code>, which adds an additional listener for changes in the input text.
 This listener reads the entire input text on each character change and performs comparisons with a predefined set of strings.
-For all predefined strings that matches the input text, they are sorted according to their "closeness", and a maximum of 5 is displayed.</p>
+For all predefined strings that match the input text, they are sorted according to their "closeness", and a maximum of 5 is displayed.</p>
 </div>
 </div>
 <div class="sect4">
@@ -731,7 +732,7 @@ For all predefined strings that matches the input text, they are sorted accordin
 <p>For example, the input text <code>add-c n/</code> would display a list of <code>CustomerName</code> that already exists in the <code>Customer</code> <code>DataBook</code>.</p>
 </div>
 <div class="paragraph">
-<p>In order to achieve this, the underlying data structure used is a directed <code>Graph</code> with every <code>Node</code> storing a reference to a set of values,
+<p>To achieve this, the underlying data structure used is a directed <code>Graph</code> with every <code>Node</code> storing a reference to a set of values,
 and a <code>Map&lt;String, Node&gt;</code> to represent outgoing edges. The keys of this map represent the possible prefixes for the next argument of the input text, such as <code>c/</code> or <code>e/</code>.</p>
 </div>
 </div>
@@ -761,7 +762,7 @@ which is consistent with the unlimited number of <code>Tag</code> a <code>Custom
 <div class="sect4">
 <h5 id="overview"><a class="link" href="#overview">Overview</a></h5>
 <div class="paragraph">
-<p>We decided to incorporate a third party library, <em>JFXtras&#8217;s Agenda</em>, to represent our schedules on a calendar for easy viewing by our users.<br>
+<p>We decided to incorporate a third-party library, <em>JFXtras&#8217;s Agenda</em>, to represent our schedules on a calendar for easy viewing by our users.<br>
 The full documentation for <code>Agenda</code> can be found <a href="http://jfxtras.org/doc/8.0/jfxtras-agenda/index.html">here</a>.</p>
 </div>
 </div>
@@ -824,7 +825,7 @@ Here is the class diagram for <code>CalendarPanel</code>:</p>
 <div class="sect4">
 <h5 id="how-the-display-works"><a class="link" href="#how-the-display-works">How the display works</a></h5>
 <div class="paragraph">
-<p>The schedules and date in the calendar panel shows is automatically updated depending on the commands executed by the users.
+<p>The schedules and date in the calendar panel shown are automatically updated depending on the commands executed by the users.
 For example:</p>
 </div>
 <div class="ulist">
@@ -841,7 +842,7 @@ For example:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Changes to the schedules are made in the <code>Model</code> by editing its own scheduleList.
+<p>Changes to the schedules are made in the <code>Model</code> by editing its scheduleList.
 <code>CalendarPanel</code> listens to the changes and calls <code>populateAgenda()</code> to generate the updated list of <code>Schedules</code> into <code>Appointments</code> to add to <code>Agenda</code>.</p>
 </div>
 <div class="paragraph">
@@ -849,7 +850,7 @@ For example:</p>
 The <code>CalendarDate</code> class uses <code>SimpleObjectProperty</code> to keep track of the Calendar (date) to be displayed.</p>
 </div>
 <div class="paragraph">
-<p>When any of the schedule commands are executed, model will edit <code>CalendarDate</code> with the updated Calendar (date).
+<p>When any of the schedule commands are executed, the model will edit <code>CalendarDate</code> with the updated Calendar (date).
 <code>CalendarPanel</code> listens to the changes and calls <code>setAgendaView()</code> to set the new <code>Calendar</code> in <code>CalendarDate</code> accordingly.</p>
 </div>
 <div class="paragraph">
@@ -861,7 +862,7 @@ The <code>CalendarDate</code> class uses <code>SimpleObjectProperty</code> to ke
 </div>
 </div>
 <div class="paragraph">
-<p>Basically, after the <code>setCalendarDate()</code> method in <code>Model</code> is executed, <code>CalendarPanel</code> listens to it and make the necessary changes to the agenda view by calling its <code>setAgendaView()</code> method.</p>
+<p>Basically, after the <code>setCalendarDate()</code> method in <code>Model</code> is executed, <code>CalendarPanel</code> listens to it and makes the necessary changes to the agenda view by calling its <code>setAgendaView()</code> method.</p>
 </div>
 </div>
 </div>
@@ -904,7 +905,7 @@ Then, <code>CalendarPanel</code> will be called in handleSchedule() to set the a
 <li>
 <p>This implementation was however changed because we thought that the date shown on the panel should be updated automatically.
 Hence, we decided to use a listener instead.
-<code>CalendarDate</code> is then placed in <code>Model</code> so that it can be edited immediately when <code>Model</code> executes any schedule related commands.
+<code>CalendarDate</code> is then placed in <code>Model</code> so that it can be edited immediately when <code>Model</code> executes any schedule-related commands.
 Also, this ensures that <code>CommandResult</code> remains unchanged and kept as simple as possible.</p>
 </li>
 </ul>
@@ -935,7 +936,7 @@ For simplicity&#8217;s sake, we will only focus on Customer in this section.</p>
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.4.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>In order to implement this feature, we decided to introduce a new predicate, <code>CustomerContainsKeywordsPredicate</code>.
+<p>To implement this feature, we decided to introduce a new predicate, <code>CustomerContainsKeywordsPredicate</code>.
 Similar to AddressBook3&#8217;s <code>NameContainsKeywordsPredicate</code>, the customer predicate tests that all keyword matches at least 1 data field of Customer.</p>
 </div>
 <div class="imageblock">
@@ -1078,12 +1079,12 @@ At the end, the strings are appended to get the full CSV file containing the var
 </div>
 <div class="paragraph">
 <p><code>UndoRedoStack</code> contains 2 stacks, <code>undoStack</code> and <code>redoStack</code>.
-<code>undoStack</code> and <code>redoStack</code> contains commands that are of type <code>UndoableCommand</code>.
+<code>undoStack</code> and <code>redoStack</code> contain commands that are of type <code>UndoableCommand</code>.
 <code>UndoableCommand</code> extends Command and has the following attributes and methods.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram" width="300">
+<img src="images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -1172,7 +1173,7 @@ UndoCommand will check whether if there is any command to be undone by calling t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
 </td>
 </tr>
 </table>
@@ -1216,7 +1217,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire mdodel.</p>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire model.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1236,7 +1237,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p>Pros: Will use less memory (e.g. for <code>delete-c</code>, just save the customer being deleted).</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: We must ensure that the implementation of each command is correct.</p>
 </li>
 </ul>
 </div>
@@ -1452,7 +1453,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">handphone seller</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">record and track the quantity of my phones</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">record and track the number of my phones</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">decide when to get more phones.</p></td>
 </tr>
 <tr>
@@ -1549,7 +1550,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">handphone seller</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cancel order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reflect the changes made by customer.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reflect the changes made by the customer.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1659,7 +1660,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p>Actor input phone name and other phone attributes.</p>
 </li>
 <li>
-<p>SML adds phone to the list of phones.</p>
+<p>SML adds a phone to the list of phones.</p>
 </li>
 <li>
 <p>SML shows the new list of phones.</p>
@@ -1696,7 +1697,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Actor add order to the system. SML displays the new order list.</p>
+<p>Actor adds order to the system. SML displays the new order list.</p>
 </li>
 <li>
 <p>Actor schedule order. (UC04)</p>
@@ -1712,14 +1713,14 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. SML is unable to add as command is missing fields.</p>
+<p>2a. SML is unable to add as the command is missing fields.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. SML shows error message that command is missing fields.</p>
+<p>2a1. SML shows an error message that command is missing fields.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1796,7 +1797,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. SML displays error message and does not create the file.</p>
+<p>1a1. SML displays an error message and does not create the file.</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -1820,7 +1821,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p>Should be able to hold up to 1000 customers/phones/orders without a noticeable sluggishness in performance for typical usage.</p>
 </li>
 <li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+<p>A user with above-average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 <li>
 <p>Single User for each session</p>
@@ -1832,13 +1833,13 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p>Quality and helpful information/feedback upon user action</p>
 </li>
 <li>
-<p>System should ideally respond within 5 seconds</p>
+<p>The system should ideally respond within 5 seconds</p>
 </li>
 <li>
-<p>System allows for wrong input from user and recovers from erroneous input</p>
+<p>The system allows for wrong input from user and recovers from erroneous input</p>
 </li>
 <li>
-<p>App can be downloaded and run via a jar file</p>
+<p>The application can be downloaded and run via a jar file</p>
 </li>
 </ol>
 </div>
@@ -1859,7 +1860,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <ol class="arabic">
 <li>
 <p><strong>SML</strong><br>
-Initialism for our application, Seller Manager Lite.</p>
+An initialism for our application, Seller Manager Lite.</p>
 </li>
 <li>
 <p><strong>Customer</strong><br>
@@ -1875,7 +1876,7 @@ A request for goods.</p>
 </li>
 <li>
 <p><strong>Schedule</strong><br>
-A meetup with buyer to pass the goods. There can only be 1 schedule associated with an order at any one time.</p>
+A meetup with a buyer to pass the goods. There can only be 1 schedule associated with an order at any one time.</p>
 </li>
 </ol>
 </div>
@@ -1944,11 +1945,11 @@ If you&#8217;ve made a mistake, you can simply revert to the previous command.</
 </li>
 <li>
 <p><strong>Redo</strong><br>
-Inverse of undo.</p>
+The inverse of undoing.</p>
 </li>
 <li>
 <p><strong>Copy</strong><br>
-Action of copying an entry into clipboard.</p>
+The action of copying an entry into the clipboard.</p>
 </li>
 </ol>
 </div>
@@ -2022,7 +2023,7 @@ These instructions only provide a starting point for testers to work on; testers
 <p>Download the jar file and copy into an empty folder</p>
 </li>
 <li>
-<p>Open your command line prompt / terminal, navigate and input <code>java -jar [filename]</code> to run the file<br>
+<p>Open your command line prompt/terminal, navigate and input <code>java -jar [filename]</code> to run the file<br>
 Expected: Shows the GUI with a set of sample data. The window size may not be optimum.</p>
 </li>
 </ol>
@@ -2037,7 +2038,7 @@ Expected: Shows the GUI with a set of sample data. The window size may not be op
 </li>
 <li>
 <p>Re-launch the app the same way you launched the application previously.<br>
-Expected: The most recent window size and location is retained.</p>
+Expected: The most recent window size and the location is retained.</p>
 </li>
 </ol>
 </div>
@@ -2059,7 +2060,7 @@ Expected: Phone with the above details is added the list. Details of the phone s
 </li>
 <li>
 <p>Test case: <code>add-p i/543407158585522 s/A123bcfe29 n/iPhone 11 b/Apple cp/128 cl/Purple t/NEW t/Cool</code><br>
-Expected: No phone is added. Error details shown in the status message. Missing fields.</p>
+Expected: No phone is added. Error details are shown in the status message. Missing fields.</p>
 </li>
 <li>
 <p>Other incorrect add commands to try: <code>add-c n/Steve Jobs c/12345678</code>, where the email field is missing.<br>
@@ -2084,11 +2085,11 @@ Expected: Similar to previous.</p>
 </li>
 <li>
 <p>Test case: <code>delete-c 1</code><br>
-Expected: First customer is deleted from the list. Details of the deleted customer shown in the status message.</p>
+Expected: The first customer is deleted from the list. Details of the deleted customer shown in the status message.</p>
 </li>
 <li>
 <p>Test case: <code>delete-c 0</code><br>
-Expected: No customer is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No customer is deleted. Error details are shown in the status message. The status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete-p</code>, <code>delete-p x</code> (where x is larger than the list size)<br>
@@ -2113,11 +2114,11 @@ Expected: Similar to previous.</p>
 </li>
 <li>
 <p>Test case: <code>edit-o 1 $/$1000</code><br>
-Expected: Price of the first order is edited. Details of the edited order is shown in the status message.</p>
+Expected: Price of the first order is edited. Details of the edited order are shown in the status message.</p>
 </li>
 <li>
 <p>Test case: <code>edit-o 1</code><br>
-Expected: Nothing is edited. Error details shown in the status message. No fields to be edited.</p>
+Expected: Nothing is edited. Error details are shown in the status message. No fields to be edited.</p>
 </li>
 <li>
 <p>Other incorrect edit commands to try: <code>edit-c 1 c/abc</code>, c/ is the prefix for contact number but alphabets are entered instead<br>
@@ -2130,7 +2131,28 @@ Expected: Error message shown due to erroneous input.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.5. Saving data</a></h3>
+<h3 id="undo-code-clear-c-code"><a class="link" href="#undo-code-clear-c-code">G.5. Undo <code>clear-c</code></a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Undo clear all orders command.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: <code>clear-o</code> must be the last undoable command that was executed.</p>
+</li>
+<li>
+<p>Test case: <code>undo</code><br>
+Expected: All the orders that were in the OrderBook will be shown.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.6. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2148,7 +2170,7 @@ Any corrupted data in any of the data files (customer, phone, order, schedule, a
 </div>
 </div>
 <div class="sect2">
-<h3 id="testing-statistics"><a class="link" href="#testing-statistics">G.6. Testing Statistics</a></h3>
+<h3 id="testing-statistics"><a class="link" href="#testing-statistics">G.7. Testing Statistics</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2156,12 +2178,12 @@ Any corrupted data in any of the data files (customer, phone, order, schedule, a
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: Ensure that archive order panel has suitable <code>Completed</code> and <code>scheduled</code> orders. Only these orders
+<p>Prerequisites: Ensure that archived order panel has suitable <code>Completed</code> and <code>scheduled</code> orders. Only these orders
 will show up in the calculation</p>
 </li>
 <li>
 <p>Test case: <code>generate-s s/revenue d1/2018.12.13 d2/2019.11.13</code>
-Expeected: Chart is displayed in popup window</p>
+Expeeted: Chart is displayed in pop-up window</p>
 </li>
 </ol>
 </div>
@@ -2170,4 +2192,4 @@ Expeected: Chart is displayed in popup window</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:19:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:06:14 UTC</div></div></div></body></html>

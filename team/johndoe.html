@@ -160,12 +160,12 @@
 </div>
 <div class="paragraph">
 <p><code>UndoRedoStack</code> contains 2 stacks, <code>undoStack</code> and <code>redoStack</code>.
-<code>undoStack</code> and <code>redoStack</code> contains commands that are of type <code>UndoableCommand</code>.
+<code>undoStack</code> and <code>redoStack</code> contain commands that are of type <code>UndoableCommand</code>.
 <code>UndoableCommand</code> extends Command and has the following attributes and methods.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram" width="300">
+<img src="../images/dg-diagram/UndoableCommandClassDiagram.png" alt="UndoableCommandClassDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -254,7 +254,7 @@ UndoCommand will check whether if there is any command to be undone by calling t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
 </td>
 </tr>
 </table>
@@ -298,7 +298,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire mdodel.</p>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire model.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -318,7 +318,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p>Pros: Will use less memory (e.g. for <code>delete-c</code>, just save the customer being deleted).</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: We must ensure that the implementation of each command is correct.</p>
 </li>
 </ul>
 </div>
@@ -344,4 +344,4 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:19:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:06:14 UTC</div></div></div></body></html>
