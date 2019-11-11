@@ -185,7 +185,7 @@ This will be explained in the activity diagram below.</p>
 <p>Next, when <code>UndoCommand</code> is being performed, <code>UndoStack</code> will remove the first command in its stack and add it to <code>RedoStack</code>.
 It will then call <code>UndoableCommand#undo()</code> of the command that is removed.
 The <code>undo()</code> method will then set the model to the previous snapshots of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.
-Afterwhich, it will save the original state of the model (e.g. before Undo took place) by calling <code>UndoableCommand#save(Model model)</code>.</p>
+After which, it will save the original state of the model (e.g. before Undo took place) by calling <code>UndoableCommand#save(Model model)</code>.</p>
 </div>
 <div class="paragraph">
 <p>Likewise, when <code>RedoCommand</code> is being performed, <code>RedoStack</code> will remove the first command in its stack and add it to <code>UndoStack</code>.
@@ -344,4 +344,4 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:07:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:05:31 UTC</div></div></div></body></html>

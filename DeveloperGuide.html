@@ -1104,7 +1104,7 @@ This will be explained in the activity diagram below.</p>
 <p>Next, when <code>UndoCommand</code> is being performed, <code>UndoStack</code> will remove the first command in its stack and add it to <code>RedoStack</code>.
 It will then call <code>UndoableCommand#undo()</code> of the command that is removed.
 The <code>undo()</code> method will then set the model to the previous snapshots of CustomerBook, PhoneBook, OrderBook, ScheduleBook and ArchivedOrderBook.
-Afterwhich, it will save the original state of the model (e.g. before Undo took place) by calling <code>UndoableCommand#save(Model model)</code>.</p>
+After which, it will save the original state of the model (e.g. before Undo took place) by calling <code>UndoableCommand#save(Model model)</code>.</p>
 </div>
 <div class="paragraph">
 <p>Likewise, when <code>RedoCommand</code> is being performed, <code>RedoStack</code> will remove the first command in its stack and add it to <code>UndoStack</code>.
@@ -1590,9 +1590,6 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1690,17 +1687,17 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 </li>
 </ul>
 </div>
-<h3 id="use-case-confirm-order-uc03" class="discrete">Use case: Confirm order (UC03)</h3>
+<h3 id="use-case-add-and-complete-order-uc03" class="discrete">Use case: Add and complete order (UC03)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Actor adds order to the system. SML displays the new order list.</p>
+<p>Actor adds an order to the system. SML displays the new order list.</p>
 </li>
 <li>
-<p>Actor schedule order. (UC04)</p>
+<p>Actor adds a schedule to the order. (UC04)</p>
 </li>
 <li>
 <p>Actor mark order as completed. SML displays completed order message.</p>
@@ -1730,7 +1727,7 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 </li>
 </ul>
 </div>
-<h3 id="use-case-actor-schedule-order-uc04" class="discrete">Use case: Actor schedule order (UC04)</h3>
+<h3 id="use-case-actor-adds-a-schedule-to-existing-order-uc04" class="discrete">Use case: Actor adds a schedule to existing order (UC04)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1842,9 +1839,6 @@ XYZ here refers to Customer, Phone, Order, Schedule and ArchivedOrder.
 <p>The application can be downloaded and run via a jar file</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>_ {More to be added}_</p>
 </div>
 </div>
 </div>
@@ -2182,8 +2176,8 @@ Any corrupted data in any of the data files (customer, phone, order, schedule, a
 will show up in the calculation</p>
 </li>
 <li>
-<p>Test case: <code>generate-s s/revenue d1/2018.12.13 d2/2019.11.13</code>
-Expeeted: Chart is displayed in pop-up window</p>
+<p>Test case: <code>generate-s s/revenue d1/2018.12.13 d2/2019.11.13</code><br>
+Expected: Chart is displayed in popup window</p>
 </li>
 </ol>
 </div>
@@ -2192,4 +2186,4 @@ Expeeted: Chart is displayed in pop-up window</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:07:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:05:31 UTC</div></div></div></body></html>
