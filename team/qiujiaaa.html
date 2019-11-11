@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Ooi Qiu Jia - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Seller Manager Lite</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T09-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Ooi Qiu Jia - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-seller-manager-lite-sml"><a class="link" href="#project-seller-manager-lite-sml">PROJECT: Seller Manager Lite (SML)</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seller Manager Lite (SML) is a desktop application used for handphone resellers to manage their customers, phones, orders and schedules.
+The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10+ kLoC.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>GUI to display schedules in a calendar.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This feature allows our users to view their schedules graphically, as well as navigate around the panel after adding/editing/deleting schedules.</p>
+</li>
+<li>
+<p>Justification: This feature is a critical addition for sellers who have numerous schedules planned throughout the week. Without a visual representation of a calendar, it would be extremely non-user-friendly as sellers would have to check through their list of schedules and the timings one by one.</p>
+</li>
+<li>
+<p>Highlights: I designed a panel class to contain the third-party library for rendering events as a calendar. The class acts as a wrapper around the calendar and contains the logic for controlling the calendar.
+To make the application more user friendly, the application automatically switches to the calendar panel when any schedule commands are executed. This is to provide users a visual confirmation of the results of their command.</p>
+</li>
+<li>
+<p>Credits: Used <em>JFXtras</em> for Calendar Panel to render schedules visually.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Schedule commands (Logic) to complement the calendar display.</p>
+</li>
+<li>
+<p>Assisted to set up some parts in Model initially. (Order and Schedule)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=qiujiaaa&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">RepoSense tP Code Dashboard</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Functional Code</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Calendar GUI (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/105">#105</a>)</p>
+</li>
+<li>
+<p>Logic: Basic CRUD + other Schedule commands (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/115">#115</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/138/files">#138</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/162">#162</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/187">#187</a>)</p>
+</li>
+<li>
+<p>Model (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/65">#65</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/162">#162</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Test Code</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Logic: Command and Parser tests (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/167">#167</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/187">#187</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/265">#265</a>)</p>
+</li>
+<li>
+<p>Model &amp; Model Manager (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/81">#81</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/172">#172</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added some issues in issue tracker. (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/issues/created_by/qiujiaaa">Issues</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote Contact Us page. (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/47">#47</a>)</p>
+</li>
+<li>
+<p>Initial tweak of AB3 User Guide to fit our application. (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/52">#52</a>)</p>
+</li>
+<li>
+<p>Edited and added diagrams in Developer Guide. (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/150/files">#150</a>)</p>
+</li>
+<li>
+<p>Added test cases in Appendix G (<a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/268">#268</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed PRs (with non-trivial review comments). (examples: <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/61">#61</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/73">#73</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/102">#102</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/111">#111</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/119">#119</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-4/main/pull/133">#133</a>)</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples: <a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/212">#212</a>, <a href="https://github.com/AY1920S1-CS2103T-T09-2/main/issues/214">#214</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated a third party library (jfxtras.Agenda) into SML.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="schedule-commands"><a class="link" href="#schedule-commands">Schedule Commands</a></h3>
+<div class="paragraph">
+<p>Commands that work on schedules you have.</p>
+</div>
+<div class="sect3">
+<h4 id="switch-to-schedule-tab-panel-code-switch-s-code"><a class="link" href="#switch-to-schedule-tab-panel-code-switch-s-code">Switch to Schedule Tab Panel : <code>switch-s</code></a></h4>
+<div class="paragraph">
+<p>Switches to Schedule Tab Panel.<br>
+<span class="underline">Format</span>: <code>switch-s</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="go-to-specific-date-in-calendar-code-schedule-code"><a class="link" href="#go-to-specific-date-in-calendar-code-schedule-code">Go to specific date in calendar : <code>schedule</code></a></h4>
+<div class="paragraph">
+<p>Shows the week of the date specified by the user.<br>
+<span class="underline">Format</span>: <code>schedule cd/DATE</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Date should be in the format YYYY.MM.DD with valid year, month and date. Only dates from year 1970 onwards are valid.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Month and date can be <strong>single digits</strong> where applicable.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">Add a schedule : <code>add-s</code></a></h4>
+<div class="paragraph">
+<p>Adds a schedule.<br>
+If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can add multiple schedules at the same time slot but it will affect the visibility of the order index on the schedule.</p>
+</li>
+<li>
+<p>Venue that is too long will be truncated / not visible on the calendar schedule. Simple hover your cursor over the schedule, the full venue should appear as a temporary pop-up in a while.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow]</code><br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Example</span>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-s 3 cd/2018.7.25 ct/18.00 v/Starbucks t/freebie -allow</code><br></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ug-command/ug-add-s.png" alt="ug add s" width="800">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Order index should be a positive integer and must exist in the order list.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Date should be in the format YYYY.MM.DD with valid year, month and date. Only dates from year 1970 onwards are valid.
+<strong>Month and date can be single digits if applicable.</strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Time should be in the 24-hour format HH.MM with valid hour and minute.
+<strong>Hour and minute can be single digits if applicable.</strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Schedule can have any number of tags, including 0.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-schedule-code-delete-s-code"><a class="link" href="#delete-a-schedule-code-delete-s-code">Delete a schedule : <code>delete-s</code></a></h4>
+<div class="paragraph">
+<p>Deletes a schedule.<br>
+<span class="underline">Format</span>: <code>delete-s ORDER_INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the schedule of the order at the specified <code>ORDER_INDEX</code>.</p>
+</li>
+<li>
+<p>Order index is a positive integer and must exist in the order list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Example</span>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the schedule of the 2nd order.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>list-o</code><br></p>
+</li>
+<li>
+<p><code>delete-s 2</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-a-schedule-code-edit-s-code"><a class="link" href="#edit-a-schedule-code-edit-s-code">Edit a schedule : <code>edit-s</code></a></h4>
+<div class="paragraph">
+<p>Edits an existing schedule.<br>
+If the edited schedule has conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules.<br>
+<strong>Note</strong>: You can add multiple schedules at the same time slot but it will affect the <strong>visibility of the order index and schedule venue</strong> on the calendar.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAG]… [-allow]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the schedule of the order at the specified <code>ORDER_INDEX</code>.</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the schedule will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the schedule&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Examples</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the date of the schedule of the 1st order and allow it to clash with the existing schedules.<br>
+<code>edit-s 1 cd/2019.12.12 -allow</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-the-schedules-code-clear-s-code"><a class="link" href="#clear-the-schedules-code-clear-s-code">Clear the schedules : <code>clear-s</code></a></h4>
+<div class="paragraph">
+<p>Clears every schedule in SML.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Format</span>: <code>clear-s</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="customise-schedule-duration-code-coming-in-v2-0-code"><a class="link" href="#customise-schedule-duration-code-coming-in-v2-0-code">Customise schedule duration <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>There will be an additional attribute in schedule which takes in the duration of the event (in minutes).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>SellerManagerParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a customer/phone/order/schedule).</p>
+</li>
+<li>
+<p>The result of the command execution, a <code>String</code> message and <code>UiChange</code> enum is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+<li>
+<p>In addition, the <code>UiChange</code> enum in the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying the respective panels or help/statistics window.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete-c 1")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+</div>
+<div class="title">Figure 1. Interactions Inside the Logic Component for the <code>delete-c 1</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>DeleteCustomerCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="calendar-schedule-feature"><a class="link" href="#calendar-schedule-feature">Calendar / Schedule feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>We decided to incorporate a third party library, <em>JFXtras&#8217;s Agenda</em>, to represent our schedules on a calendar for easy viewing by our users.</p>
+</div>
+<div class="paragraph">
+<p>Here is the class diagram for <code>CalendarPanel</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalendarPanelClassDiagram.png" alt="CalendarPanelClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>On instantiation of <code>CalendarPanel</code>, all the schedules in scheduleList will be converted to <code>Appointments</code> and then added to <code>Agenda</code> via <code>populateAgenda()</code>.
+To set the display information of the <code>Schedule</code> object, we will find its <code>Order</code> in the orderList and retrieve its index.</p>
+</div>
+<div class="paragraph">
+<p>Schedule supports a few main commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add&#8201;&#8212;&#8201;adds a new schedule into SML, command will be in this format: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAGS] [-allow]</code></p>
+</li>
+<li>
+<p>Edit&#8201;&#8212;&#8201;edits an existing schedule in SML, command will be in this format: <code>edit-s ORDER_INDEX [cd/DATE] [ct/TIME] [v/VENUE] [t/TAGS] [-allow]</code></p>
+</li>
+<li>
+<p>Delete&#8201;&#8212;&#8201;deletes an existing schedule in SML, command will be in this format: <code>delete-s ORDER_INDEX</code></p>
+</li>
+<li>
+<p>Schedule&#8201;&#8212;&#8201;switches the view on the panel to the week containing the date entered, command will be in this format: <code>schedule cd/DATE</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The schedules and date in the calendar panel shows is automatically updated depending on the commands executed by the users.
+For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the user adds/edits/deletes a schedule&#8201;&#8212;&#8201;calendar panel will display the week with the date of the schedule.</p>
+</li>
+<li>
+<p>If the user uses the switch-s command&#8201;&#8212;&#8201;calendar panel will display the week with today&#8217;s date.</p>
+</li>
+<li>
+<p>If the user uses the schedule command&#8201;&#8212;&#8201;calendar panel will display the week with the date requested by the user.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Changes to the schedules are made in the model by editing its own scheduleList.
+<code>CalendarPanel</code> adds a listener to its <code>scheduleList</code> variable and listens to the changes and calls <code>populateAgenda()</code> to generate the updated list of <code>Schedules</code> into <code>Appointments</code> to add to <code>Agenda</code>.</p>
+</div>
+<div class="paragraph">
+<p>The current date shown on the calendar panel is encapsulated in a <code>CalendarDate</code> object.
+The <code>CalendarDate</code> class uses <code>SimpleObjectProperty</code> to keep track of the Calendar (date).</p>
+</div>
+<div class="paragraph">
+<p>When any of the schedule commands are executed, model will edit the <code>CalendarDate</code> object with the updated Calendar (date).
+<code>CalendarPanel</code> adds a listener to its <code>CalendarDate</code> variable and listens to the changes and calls <code>setAgendaView()</code> to set the new <code>Calendar</code> in <code>CalendarDate</code> accordingly.</p>
+</div>
+<div class="paragraph">
+<p>Here is a sample of what happens when a user adds a schedule (AddScheduleCommand):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ScheduleCommandSequenceDiagram.png" alt="ScheduleCommandSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Basically, after the <code>setCalendarDate()</code> method in <code>Model</code> is executed, <code>CalendarPanel</code> listens to it and make the necessary changes to the agenda view by calling its <code>setAgendaView()</code> method.</p>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-alternative-designs-considered"><a class="link" href="#design-considerations-alternative-designs-considered">Design Considerations / Alternative designs considered</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Whether schedules should be kept as <code>Appointment</code> objects instead of <code>Schedule</code> objects.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We felt that the existence of our own <code>Schedule</code> object ensures that we can design it the way we want.</p>
+</li>
+<li>
+<p>We decided to not keep a list of <code>Appointment</code> in <code>CalendarPanel</code> as <code>Appointment</code> is only used for <code>Agenda</code> while the rest of our code uses <code>Schedule</code>.</p>
+</li>
+<li>
+<p>Instead, we have decided to only convert <code>Schedule</code> into <code>Appointment</code> when needed - during the creation of <code>CalendarPanel</code> or when there are changes made to the <code>UniqueList&lt;Schedule&gt;</code> variable.
+Not keeping a list of <code>Appointment</code> ensures that we do not keep duplicate information.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Where to store and change the date shown on Calendar Panel.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The changes to <code>CalendarDate</code> was initially done in the <code>CalendarPanel</code> itself.
+So, <code>CommandResult</code> was made to have one more variable <code>Optional&lt;Calendar&gt;</code>.
+In that case, every time a schedule command was executed, a specific <code>Calendar</code> (if any) will be placed inside the constructor while creating the <code>CommandResult</code> object.
+Else, Optional.Empty() will be placed inside.</p>
+</li>
+<li>
+<p>When the <code>MainWindow</code> executes the method performUiChanges(CommandResult), it will call the handleSchedule method with <code>Calendar</code> (from CommandResult) as an argument.
+If <code>Optional&lt;Calendar&gt;</code> in <code>CommandResult</code> is empty, today&#8217;s date and time will be used instead.
+Then, <code>CalendarPanel</code> will be called in handleSchedule() to set the agenda view.</p>
+</li>
+<li>
+<p>This implementation was however changed because we thought that the date shown on the panel should be updated automatically.
+Hence, we decided to use a listener instead.
+<code>CalendarDate</code> is then placed in <code>Model</code> so that it can be edited immediately when <code>Model</code> executes any schedule related commands.
+Also, this ensures that <code>CommandResult</code> remains unchanged and kept as simple as possible.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:07:54 UTC</div></div></div></body></html>

@@ -85,6 +85,7 @@
 <li><a href="#delete-a-schedule-code-delete-s-code">5.5.4. Delete a schedule : <code>delete-s</code></a></li>
 <li><a href="#edit-a-schedule-code-edit-s-code">5.5.5. Edit a schedule : <code>edit-s</code></a></li>
 <li><a href="#clear-the-schedules-code-clear-s-code">5.5.6. Clear the schedules : <code>clear-s</code></a></li>
+<li><a href="#customise-schedule-duration-code-coming-in-v2-0-code">5.5.7. Customise schedule duration <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#archived-orders-commands">5.6. Archived Orders Commands:</a>
@@ -301,7 +302,7 @@ A request for goods.</p>
 </li>
 <li>
 <p><strong>Schedule</strong><br>
-A meetup with buyer to pass the goods. There can only be 1 schedule associated with an order at any one time.</p>
+A meetup with buyer to pass the goods. There can only be 1 schedule associated with an order at any one time. Duration of schedule is set to be 1 hour.</p>
 </li>
 </ol>
 </div>
@@ -1385,17 +1386,47 @@ Date should be in the format YYYY.MM.DD with valid year, month and date. Only da
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Month and date can be <strong>single digits</strong> where applicable.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="add-a-schedule-code-add-s-code"><a class="link" href="#add-a-schedule-code-add-s-code">5.5.3. Add a schedule : <code>add-s</code></a></h4>
 <div class="paragraph">
 <p>Adds a schedule.<br>
-If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules.<br>
-<strong>Note</strong>: You can add multiple schedules at the same time slot but it will affect the visibility of the order index on the schedule.<br></p>
+If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can add multiple schedules at the same time slot but it will affect the visibility of the order index on the schedule.</p>
+</li>
+<li>
+<p>Venue that is too long will be truncated / not visible on the calendar schedule. Simple hover your cursor over the schedule, the full venue should appear as a temporary pop-up in a while.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p><span class="underline">Format</span>: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow]</code><br>
-<span class="underline">Example</span>:<br></p>
+<p><span class="underline">Format</span>: <code>add-s ORDER_INDEX cd/DATE ct/TIME v/VENUE [t/TAG]… [-allow]</code><br></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Example</span>:<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1429,6 +1460,7 @@ Order index should be a positive integer and must exist in the order list.
 </td>
 <td class="content">
 Date should be in the format YYYY.MM.DD with valid year, month and date. Only dates from year 1970 onwards are valid.
+<strong>Month and date can be single digits if applicable.</strong>
 </td>
 </tr>
 </table>
@@ -1441,6 +1473,7 @@ Date should be in the format YYYY.MM.DD with valid year, month and date. Only da
 </td>
 <td class="content">
 Time should be in the 24-hour format HH.MM with valid hour and minute.
+<strong>Hour and minute can be single digits if applicable.</strong>
 </td>
 </tr>
 </table>
@@ -1503,7 +1536,7 @@ Schedule can have any number of tags, including 0.
 <h4 id="edit-a-schedule-code-edit-s-code"><a class="link" href="#edit-a-schedule-code-edit-s-code">5.5.5. Edit a schedule : <code>edit-s</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing schedule.<br>
-If there are conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules.<br>
+If the edited schedule has conflicts with the existing schedules, use the <code>-allow</code> flag to allow clashing schedules.<br>
 <strong>Note</strong>: You can add multiple schedules at the same time slot but it will affect the <strong>visibility of the order index and schedule venue</strong> on the calendar.<br></p>
 </div>
 <div class="paragraph">
@@ -1551,6 +1584,12 @@ If there are conflicts with the existing schedules, use the <code>-allow</code> 
 </div>
 <div class="paragraph">
 <p><span class="underline">Format</span>: <code>clear-s</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="customise-schedule-duration-code-coming-in-v2-0-code"><a class="link" href="#customise-schedule-duration-code-coming-in-v2-0-code">5.5.7. Customise schedule duration <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>There will be an additional attribute in schedule which takes in the duration of the event (in minutes).</p>
 </div>
 </div>
 </div>
@@ -2645,4 +2684,4 @@ The hash tag represents the length of the valid input for the primary key.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 15:14:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:07:54 UTC</div></div></div></body></html>
